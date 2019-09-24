@@ -1,0 +1,12 @@
+Stage                   ZH    Nonresonant WZ ZZ Z$\gamma$ Others
+------------------------------------------------------------------
+Preselection                                                                                                                              65.1  869.6   110.7  32.2  4341.7  385.3
+$\mathrm{p_\mathrm{T}}^{\mathrm{miss}}>$110GeV                                                                                            29.2  343.1    43.9  11.0   150.8  178.5
+$|\mathrm{m_{\ell\ell}}-m_{\mathrm{Z}}|$<10GeV                                                                                            27.7   92.7    33.7   6.7    93.1   46.3
+Anti-b-tagging                                                                                                                            25.1   20.8    21.4   4.9    77.0    8.3
+$\mathrm{M_{\mathrm{T}}}>$350GeV                                                                                                          25.1   20.0    21.2   4.8    71.8    6.9
+$m_{\ell\ell\gamma}>$100GeV                                                                                                               25.0   19.8    20.9   4.0    68.2    6.8
+$\mathrm{p_{\mathrm{T}}}$-balance$<$0.4                                                                                                   20.7    8.8    12.7   2.4    31.4    2.8
+$\Delta\phi_{{p_\mathrm{T}}^{\mathrm{\vec{p}_\mathrm{T}}^{\mathrm{miss}}+\vec{p}^{\gamma}_\mathrm{T}},\overrightarrow{\ell\ell}}$>2.4     19.1    2.6     8.9   1.8     9.0    1.1
+$N_{\mathrm{jets}}\leq$2                                                                                                                  18.6    2.5     8.6   1.7     4.2    0.7
+$\Delta\phi_{\mathrm{\vec{p}_\mathrm{T}}^{\mathrm{miss}},\mathrm{jet}}$>0.5                                                               17.9    2.4     8.3   1.5     0.7    0.7

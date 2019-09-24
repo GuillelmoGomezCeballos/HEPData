@@ -1,0 +1,8 @@
+A search is presented for decays of a Higgs boson to an invisible particle 
+together with an isolated photon, using the CMS experiment at the Large Hadron 
+Collider. The Higgs boson is produced in association with a Z boson. The 
+analysis is performed using a dataset recorded in 2016-18 corresponding to an 
+integrated luminosity of 137 fb-1, at a center-of-mass energy of 13 TeV. No 
+significant excess of events above the standard model expectation is found, and 
+the results are interpreted to place limits on the cross section times 
+branching fraction of such decays of the Higgs boson.
