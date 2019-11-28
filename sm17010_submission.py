@@ -84,47 +84,47 @@ table2_data.values = [str(x) for x in data2[:,0]]
 
 table2_yields1 = Variable("Luminosity", is_independent=False, is_binned=False, units="")
 table2_yields1.values = [float(x) for x in data2[:,1]]
-table2_yields1.add_qualifier("Uncertainty in \%", "Z selection")
+table2_yields1.add_qualifier("Uncertainty in %", "Z selection")
 table2_yields1.add_qualifier("SQRT(S)", 13, "TeV")
 
 table2_yields2 = Variable("Muon reconstruction efficiency", is_independent=False, is_binned=False, units="")
 table2_yields2.values = [float(x) for x in data2[:,2]]
-table2_yields2.add_qualifier("Uncertainty in \%", "Z selection")
+table2_yields2.add_qualifier("Uncertainty in %", "Z selection")
 table2_yields2.add_qualifier("SQRT(S)", 13, "TeV")
 
 table2_yields3 = Variable("Muon selection efficiency", is_independent=False, is_binned=False, units="")
 table2_yields3.values = [float(x) for x in data2[:,3]]
-table2_yields3.add_qualifier("Uncertainty in \%", "Z selection")
+table2_yields3.add_qualifier("Uncertainty in %", "Z selection")
 table2_yields3.add_qualifier("SQRT(S)", 13, "TeV")
 
 table2_yields4 = Variable("Muon momentum scale", is_independent=False, is_binned=False, units="")
 table2_yields4.values = [float(x) for x in data2[:,4]]
-table2_yields4.add_qualifier("Uncertainty in \%", "Z selection")
+table2_yields4.add_qualifier("Uncertainty in %", "Z selection")
 table2_yields4.add_qualifier("SQRT(S)", 13, "TeV")
 
 table2_yields5 = Variable("Electron reconstruction efficiency", is_independent=False, is_binned=False, units="")
 table2_yields5.values = [float(x) for x in data2[:,5]]
-table2_yields5.add_qualifier("Uncertainty in \%", "Z selection")
+table2_yields5.add_qualifier("Uncertainty in %", "Z selection")
 table2_yields5.add_qualifier("SQRT(S)", 13, "TeV")
 
 table2_yields6 = Variable("Electron selection efficiency", is_independent=False, is_binned=False, units="")
 table2_yields6.values = [float(x) for x in data2[:,6]]
-table2_yields6.add_qualifier("Uncertainty in \%", "Z selection")
+table2_yields6.add_qualifier("Uncertainty in %", "Z selection")
 table2_yields6.add_qualifier("SQRT(S)", 13, "TeV")
 
 table2_yields7 = Variable("Electron momentum scale", is_independent=False, is_binned=False, units="")
 table2_yields7.values = [float(x) for x in data2[:,7]]
-table2_yields7.add_qualifier("Uncertainty in \%", "Z selection")
+table2_yields7.add_qualifier("Uncertainty in %", "Z selection")
 table2_yields7.add_qualifier("SQRT(S)", 13, "TeV")
 
-table2_yields8 = Variable("Electron momentum scale", is_independent=False, is_binned=False, units="")
-table2_yields8.values = [float(x) for x in data2[:,7]]
-table2_yields8.add_qualifier("Background estimation", "Z selection")
+table2_yields8 = Variable("Background estimation", is_independent=False, is_binned=False, units="")
+table2_yields8.values = [float(x) for x in data2[:,8]]
+table2_yields8.add_qualifier("Uncertainty in %", "Z selection")
 table2_yields8.add_qualifier("SQRT(S)", 13, "TeV")
 
 table2_yields9 = Variable("Total (excluding luminosity)", is_independent=False, is_binned=False, units="")
-table2_yields9.values = [float(x) for x in data2[:,7]]
-table2_yields9.add_qualifier("Uncertainty in \%", "Z selection")
+table2_yields9.values = [float(x) for x in data2[:,9]]
+table2_yields9.add_qualifier("Uncertainty in %", "Z selection")
 table2_yields9.add_qualifier("SQRT(S)", 13, "TeV")
 
 table2.add_variable(table2_data)
@@ -158,20 +158,20 @@ data3 = np.loadtxt("HEPData/inputs/smp17010/total_cross_section.txt", dtype='str
 print(data3)
 
 table3_data = Variable("Final State", is_independent=True, is_binned=False, units="")
-table3_data.values = [str(x) for x in data1[:,0]]
+table3_data.values = [str(x) for x in data3[:,0]]
 
 table3_yields1 = Variable("Cross Section", is_independent=False, is_binned=False, units="")
-table3_yields1.values = [float(x) for x in data1[:,1]]
+table3_yields1.values = [float(x) for x in data3[:,1]]
 table3_yields1.add_qualifier("pb", "Cross Section")
 table3_yields1.add_qualifier("SQRT(S)", 13, "TeV")
 
 table3_yields2 = Variable("Experimental uncertainty", is_independent=False, is_binned=False, units="")
-table3_yields2.values = [float(x) for x in data1[:,2]]
+table3_yields2.values = [float(x) for x in data3[:,2]]
 table3_yields2.add_qualifier("pb", "Cross Section")
 table3_yields2.add_qualifier("SQRT(S)", 13, "TeV")
 
 table3_yields3 = Variable("Luminosity uncertainty", is_independent=False, is_binned=False, units="")
-table3_yields3.values = [float(x) for x in data1[:,3]]
+table3_yields3.values = [float(x) for x in data3[:,3]]
 table3_yields3.add_qualifier("pb", "Cross Section")
 table3_yields3.add_qualifier("SQRT(S)", 13, "TeV")
 
@@ -191,7 +191,7 @@ for table3 in submission.tables:
 reader_Fig1a = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPt_nsel0_dy3_rebin1_default.root")
 
 tableFig1a = Table("Figure 1a")
-tableFig1a.description = "The relative statistical and systematic uncertainties from various sources for the absolute cross section measurements in bins of Z pt on dimuons."
+tableFig1a.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute cross section measurements in bins of Z pt on dimuons."
 tableFig1a.location = "Data from Figure 1a"
 tableFig1a.keywords["observables"] = ["N"]
 
@@ -253,7 +253,7 @@ submission.add_table(tableFig1a)
 reader_Fig1b = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPt_nsel1_dy3_rebin1_default.root")
 
 tableFig1b = Table("Figure 1b")
-tableFig1b.description = "The relative statistical and systematic uncertainties from various sources for the absolute cross section measurements in bins of Z pt on dielectrons."
+tableFig1b.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute cross section measurements in bins of Z pt on dielectrons."
 tableFig1b.location = "Data from Figure 1b"
 tableFig1b.keywords["observables"] = ["N"]
 
@@ -315,7 +315,7 @@ submission.add_table(tableFig1b)
 reader_Fig1c = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystRap_nsel0_dy3_rebin1_default.root")
 
 tableFig1c = Table("Figure 1c")
-tableFig1c.description = "The relative statistical and systematic uncertainties from various sources for the absolute cross section measurements in bins of rapidity on dimuons."
+tableFig1c.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute cross section measurements in bins of |y(Z)| on dimuons."
 tableFig1c.location = "Data from Figure 1c"
 tableFig1c.keywords["observables"] = ["N"]
 
@@ -333,7 +333,7 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig1c = Variable("Rapidity", is_independent=True, is_binned=False, units="")
+mmed_Fig1c = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
 mmed_Fig1c.values = histoSystPlot_0["x"]
 
 # y-axis: N events
@@ -377,7 +377,7 @@ submission.add_table(tableFig1c)
 reader_Fig1d = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystRap_nsel1_dy3_rebin1_default.root")
 
 tableFig1d = Table("Figure 1d")
-tableFig1d.description = "The relative statistical and systematic uncertainties from various sources for the absolute cross section measurements in bins of rapidity on dielectrons."
+tableFig1d.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute cross section measurements in bins of |y(Z)| on dielectrons."
 tableFig1d.location = "Data from Figure 1d"
 tableFig1d.keywords["observables"] = ["N"]
 
@@ -395,7 +395,7 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig1d = Variable("Rapidity", is_independent=True, is_binned=False, units="")
+mmed_Fig1d = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
 mmed_Fig1d.values = histoSystPlot_0["x"]
 
 # y-axis: N events
@@ -439,7 +439,7 @@ submission.add_table(tableFig1d)
 reader_Fig1e = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPhiStar_nsel0_dy3_rebin1_default.root")
 
 tableFig1e = Table("Figure 1e")
-tableFig1e.description = "The relative statistical and systematic uncertainties from various sources for the absolute cross section measurements in bins of $\phi^{\scriptscriptstyle *}_\eta$ on dimuons."
+tableFig1e.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute cross section measurements in bins of $\phi^{\scriptscriptstyle *}_\eta$ on dimuons."
 tableFig1e.location = "Data from Figure 1e"
 tableFig1e.keywords["observables"] = ["N"]
 
@@ -501,7 +501,7 @@ submission.add_table(tableFig1e)
 reader_Fig1f = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPhiStar_nsel1_dy3_rebin1_default.root")
 
 tableFig1f = Table("Figure 1f")
-tableFig1f.description = "The relative statistical and systematic uncertainties from various sources for the absolute cross section measurements in bins of $\phi^{\scriptscriptstyle *}_\eta$ on dielectrons."
+tableFig1f.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute cross section measurements in bins of $\phi^{\scriptscriptstyle *}_\eta$ on dielectrons."
 tableFig1f.location = "Data from Figure 1f"
 tableFig1f.keywords["observables"] = ["N"]
 
@@ -563,7 +563,7 @@ submission.add_table(tableFig1f)
 reader_Fig2a = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystPt_nsel0_dy3_rebin1_default.root")
 
 tableFig2a = Table("Figure 2a")
-tableFig2a.description = "The relative statistical and systematic uncertainties from various sources for the normalized cross section measurements in bins of Z pt on dimuons."
+tableFig2a.description = "The relative statistical and systematic uncertainties in % from various sources for the normalized cross section measurements in bins of Z pt on dimuons."
 tableFig2a.location = "Data from Figure 2a"
 tableFig2a.keywords["observables"] = ["N"]
 
@@ -625,7 +625,7 @@ submission.add_table(tableFig2a)
 reader_Fig2b = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystPt_nsel1_dy3_rebin1_default.root")
 
 tableFig2b = Table("Figure 2b")
-tableFig2b.description = "The relative statistical and systematic uncertainties from various sources for the normalized cross section measurements in bins of Z pt on dielectrons."
+tableFig2b.description = "The relative statistical and systematic uncertainties in % from various sources for the normalized cross section measurements in bins of Z pt on dielectrons."
 tableFig2b.location = "Data from Figure 2b"
 tableFig2b.keywords["observables"] = ["N"]
 
@@ -687,7 +687,7 @@ submission.add_table(tableFig2b)
 reader_Fig2c = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystRap_nsel0_dy3_rebin1_default.root")
 
 tableFig2c = Table("Figure 2c")
-tableFig2c.description = "The relative statistical and systematic uncertainties from various sources for the normalized cross section measurements in bins of rapidity on dimuons."
+tableFig2c.description = "The relative statistical and systematic uncertainties in % from various sources for the normalized cross section measurements in bins of |y(Z)| on dimuons."
 tableFig2c.location = "Data from Figure 2c"
 tableFig2c.keywords["observables"] = ["N"]
 
@@ -705,7 +705,7 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig2c = Variable("Rapidity", is_independent=True, is_binned=False, units="")
+mmed_Fig2c = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
 mmed_Fig2c.values = histoSystPlot_0["x"]
 
 # y-axis: N events
@@ -749,7 +749,7 @@ submission.add_table(tableFig2c)
 reader_Fig2d = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystRap_nsel1_dy3_rebin1_default.root")
 
 tableFig2d = Table("Figure 2d")
-tableFig2d.description = "The relative statistical and systematic uncertainties from various sources for the normalized cross section measurements in bins of rapidity on dielectrons."
+tableFig2d.description = "The relative statistical and systematic uncertainties in % from various sources for the normalized cross section measurements in bins of |y(Z)| on dielectrons."
 tableFig2d.location = "Data from Figure 2d"
 tableFig2d.keywords["observables"] = ["N"]
 
@@ -767,7 +767,7 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig2d = Variable("Rapidity", is_independent=True, is_binned=False, units="")
+mmed_Fig2d = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
 mmed_Fig2d.values = histoSystPlot_0["x"]
 
 # y-axis: N events
@@ -811,7 +811,7 @@ submission.add_table(tableFig2d)
 reader_Fig2e = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystPhiStar_nsel0_dy3_rebin1_default.root")
 
 tableFig2e = Table("Figure 2e")
-tableFig2e.description = "The relative statistical and systematic uncertainties from various sources for the normalized cross section measurements in bins of $\phi^{\scriptscriptstyle *}_\eta$ on dimuons."
+tableFig2e.description = "The relative statistical and systematic uncertainties in % from various sources for the normalized cross section measurements in bins of $\phi^{\scriptscriptstyle *}_\eta$ on dimuons."
 tableFig2e.location = "Data from Figure 2e"
 tableFig2e.keywords["observables"] = ["N"]
 
@@ -873,7 +873,7 @@ submission.add_table(tableFig2e)
 reader_Fig2f = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystPhiStar_nsel1_dy3_rebin1_default.root")
 
 tableFig2f = Table("Figure 2f")
-tableFig2f.description = "The relative statistical and systematic uncertainties from various sources for the normalized cross section measurements in bins of $\phi^{\scriptscriptstyle *}_\eta$ on dielectrons."
+tableFig2f.description = "The relative statistical and systematic uncertainties in % from various sources for the normalized cross section measurements in bins of $\phi^{\scriptscriptstyle *}_\eta$ on dielectrons."
 tableFig2f.location = "Data from Figure 2f"
 tableFig2f.keywords["observables"] = ["N"]
 
@@ -935,7 +935,7 @@ submission.add_table(tableFig2f)
 reader_Fig3a = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPtRap0_nsel0_dy3_rebin1_default.root")
 
 tableFig3a = Table("Figure 3a")
-tableFig3a.description = "The relative statistical and systematic uncertainties from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 0 < rapidity < 0.4 bin in the dimuon final state."
+tableFig3a.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dimuon final state."
 tableFig3a.location = "Data from Figure 3a"
 tableFig3a.keywords["observables"] = ["N"]
 
@@ -997,7 +997,7 @@ submission.add_table(tableFig3a)
 reader_Fig3b = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPtRap1_nsel0_dy3_rebin1_default.root")
 
 tableFig3b = Table("Figure 3b")
-tableFig3b.description = "The relative statistical and systematic uncertainties from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 0.4 < rapidity < 0.8 bin in the dimuon final state."
+tableFig3b.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dimuon final state."
 tableFig3b.location = "Data from Figure 3b"
 tableFig3b.keywords["observables"] = ["N"]
 
@@ -1059,7 +1059,7 @@ submission.add_table(tableFig3b)
 reader_Fig3c = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPtRap2_nsel0_dy3_rebin1_default.root")
 
 tableFig3c = Table("Figure 3c")
-tableFig3c.description = "The relative statistical and systematic uncertainties from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 0.8 < rapidity < 1.2 bin in the dimuon final state."
+tableFig3c.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dimuon final state."
 tableFig3c.location = "Data from Figure 3c"
 tableFig3c.keywords["observables"] = ["N"]
 
@@ -1121,7 +1121,7 @@ submission.add_table(tableFig3c)
 reader_Fig3d = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPtRap3_nsel0_dy3_rebin1_default.root")
 
 tableFig3d = Table("Figure 3d")
-tableFig3d.description = "The relative statistical and systematic uncertainties from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 1.2 < rapidity < 1.6 bin in the dimuon final state."
+tableFig3d.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dimuon final state."
 tableFig3d.location = "Data from Figure 3d"
 tableFig3d.keywords["observables"] = ["N"]
 
@@ -1183,7 +1183,7 @@ submission.add_table(tableFig3d)
 reader_Fig3e = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPtRap4_nsel0_dy3_rebin1_default.root")
 
 tableFig3e = Table("Figure 3e")
-tableFig3e.description = "The relative statistical and systematic uncertainties from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 1.6 < rapidity < 2.4 bin in the dimuon final state."
+tableFig3e.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dimuon final state."
 tableFig3e.location = "Data from Figure 3e"
 tableFig3e.keywords["observables"] = ["N"]
 
@@ -1245,7 +1245,7 @@ submission.add_table(tableFig3e)
 reader_Fig4a = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPtRap0_nsel1_dy3_rebin1_default.root")
 
 tableFig4a = Table("Figure 4a")
-tableFig4a.description = "The relative statistical and systematic uncertainties from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 0 < rapidity < 0.4 bin in the dielectron final state."
+tableFig4a.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dielectron final state."
 tableFig4a.location = "Data from Figure 4a"
 tableFig4a.keywords["observables"] = ["N"]
 
@@ -1307,7 +1307,7 @@ submission.add_table(tableFig4a)
 reader_Fig4b = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPtRap1_nsel1_dy3_rebin1_default.root")
 
 tableFig4b = Table("Figure 4b")
-tableFig4b.description = "The relative statistical and systematic uncertainties from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 0.4 < rapidity < 0.8 bin in the dielectron final state."
+tableFig4b.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dielectron final state."
 tableFig4b.location = "Data from Figure 4b"
 tableFig4b.keywords["observables"] = ["N"]
 
@@ -1369,7 +1369,7 @@ submission.add_table(tableFig4b)
 reader_Fig4c = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPtRap2_nsel1_dy3_rebin1_default.root")
 
 tableFig4c = Table("Figure 4c")
-tableFig4c.description = "The relative statistical and systematic uncertainties from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 0.8 < rapidity < 1.2 bin in the dielectron final state."
+tableFig4c.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dielectron final state."
 tableFig4c.location = "Data from Figure 4c"
 tableFig4c.keywords["observables"] = ["N"]
 
@@ -1431,7 +1431,7 @@ submission.add_table(tableFig4c)
 reader_Fig4d = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPtRap3_nsel1_dy3_rebin1_default.root")
 
 tableFig4d = Table("Figure 4d")
-tableFig4d.description = "The relative statistical and systematic uncertainties from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 1.2 < rapidity < 1.6 bin in the dielectron final state."
+tableFig4d.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dielectron final state."
 tableFig4d.location = "Data from Figure 4d"
 tableFig4d.keywords["observables"] = ["N"]
 
@@ -1493,7 +1493,7 @@ submission.add_table(tableFig4d)
 reader_Fig4e = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPtRap4_nsel1_dy3_rebin1_default.root")
 
 tableFig4e = Table("Figure 4e")
-tableFig4e.description = "The relative statistical and systematic uncertainties from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 1.6 < rapidity < 2.4 bin in the dielectron final state."
+tableFig4e.description = "The relative statistical and systematic uncertainties in % from various sources for the absolute double-differential cross section measurements in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dielectron final state."
 tableFig4e.location = "Data from Figure 4e"
 tableFig4e.keywords["observables"] = ["N"]
 
@@ -1557,7 +1557,7 @@ reader_Fig5b = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/ou
 reader_Fig5c = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystRap_nsel2_dy3_rebin1_default.root")
 
 tableFig5 = Table("Figure 5")
-tableFig5.description = "The measured absolute cross sections in bins of rapidity."
+tableFig5.description = "The measured absolute cross sections in bins of |y(Z)|. The cross sections are normalized by the bin width."
 tableFig5.location = "Data from Figure 5"
 tableFig5.keywords["observables"] = ["N"]
 
@@ -1570,11 +1570,11 @@ histo_unfoldFig5a.keys()
 for key in histo_unfoldFig5a.keys():
     print(key, type(histo_unfoldFig5a[key]), type(histo_unfoldFig5a[key][0]))
 
-mmed_Fig5 = Variable("Rapidity", is_independent=True, is_binned=False, units="")
+mmed_Fig5 = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
 mmed_Fig5.values = histo_unfoldFig5a["x"]
 
 # y-axis: N events
-unfoldFig5a = Variable("Dimuon cross section", is_independent=False, is_binned=False, units="")
+unfoldFig5a = Variable("Dimuon cross section (pb)", is_independent=False, is_binned=False, units="")
 unfoldFig5a.values = histo_unfoldFig5a["y"]
 
 unc_unfoldFig5a = Uncertainty("", is_symmetric=True)
@@ -1582,7 +1582,7 @@ unc_unfoldFig5a.values = histo_unfoldFig5a["dy"]
 
 unfoldFig5a.add_uncertainty(unc_unfoldFig5a)
 
-unfoldFig5b = Variable("Dielectron cross section", is_independent=False, is_binned=False, units="")
+unfoldFig5b = Variable("Dielectron cross section (pb)", is_independent=False, is_binned=False, units="")
 unfoldFig5b.values = histo_unfoldFig5b["y"]
 
 unc_unfoldFig5b = Uncertainty("", is_symmetric=True)
@@ -1590,7 +1590,7 @@ unc_unfoldFig5b.values = histo_unfoldFig5b["dy"]
 
 unfoldFig5b.add_uncertainty(unc_unfoldFig5b)
 
-unfoldFig5c = Variable("Dilepton cross section", is_independent=False, is_binned=False, units="")
+unfoldFig5c = Variable("Dilepton cross section (pb)", is_independent=False, is_binned=False, units="")
 unfoldFig5c.values = histo_unfoldFig5c["y"]
 
 unc_unfoldFig5c = Uncertainty("", is_symmetric=True)
@@ -1615,7 +1615,7 @@ reader_Fig6b = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/ou
 reader_Fig6c = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPt_nsel2_dy3_rebin1_default.root")
 
 tableFig6 = Table("Figure 6")
-tableFig6.description = "The measured absolute cross sections in bins of Z pt."
+tableFig6.description = "The measured absolute cross sections in bins of Z pt. The cross sections are normalized by the bin width."
 tableFig6.location = "Data from Figure 6"
 tableFig6.keywords["observables"] = ["N"]
 
@@ -1632,7 +1632,7 @@ mmed_Fig6 = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV
 mmed_Fig6.values = histo_unfoldFig6a["x"]
 
 # y-axis: N events
-unfoldFig6a = Variable("Dimuon cross section", is_independent=False, is_binned=False, units="")
+unfoldFig6a = Variable("Dimuon cross section (pb)", is_independent=False, is_binned=False, units="")
 unfoldFig6a.values = histo_unfoldFig6a["y"]
 
 unc_unfoldFig6a = Uncertainty("", is_symmetric=True)
@@ -1640,7 +1640,7 @@ unc_unfoldFig6a.values = histo_unfoldFig6a["dy"]
 
 unfoldFig6a.add_uncertainty(unc_unfoldFig6a)
 
-unfoldFig6b = Variable("Dielectron cross section", is_independent=False, is_binned=False, units="")
+unfoldFig6b = Variable("Dielectron cross section (pb)", is_independent=False, is_binned=False, units="")
 unfoldFig6b.values = histo_unfoldFig6b["y"]
 
 unc_unfoldFig6b = Uncertainty("", is_symmetric=True)
@@ -1648,7 +1648,7 @@ unc_unfoldFig6b.values = histo_unfoldFig6b["dy"]
 
 unfoldFig6b.add_uncertainty(unc_unfoldFig6b)
 
-unfoldFig6c = Variable("Dilepton cross section", is_independent=False, is_binned=False, units="")
+unfoldFig6c = Variable("Dilepton cross section (pb)", is_independent=False, is_binned=False, units="")
 unfoldFig6c.values = histo_unfoldFig6c["y"]
 
 unc_unfoldFig6c = Uncertainty("", is_symmetric=True)
@@ -1673,7 +1673,7 @@ reader_Fig8b = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/ou
 reader_Fig8c = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPhiStar_nsel2_dy3_rebin1_default.root")
 
 tableFig8 = Table("Figure 8")
-tableFig8.description = "The measured absolute cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$."
+tableFig8.description = "The measured absolute cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$. The cross sections are normalized by the bin width."
 tableFig8.location = "Data from Figure 8"
 tableFig8.keywords["observables"] = ["N"]
 
@@ -1690,7 +1690,7 @@ mmed_Fig8 = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, 
 mmed_Fig8.values = histo_unfoldFig8a["x"]
 
 # y-axis: N events
-unfoldFig8a = Variable("Dimuon cross section", is_independent=False, is_binned=False, units="")
+unfoldFig8a = Variable("Dimuon cross section (pb)", is_independent=False, is_binned=False, units="")
 unfoldFig8a.values = histo_unfoldFig8a["y"]
 
 unc_unfoldFig8a = Uncertainty("", is_symmetric=True)
@@ -1698,7 +1698,7 @@ unc_unfoldFig8a.values = histo_unfoldFig8a["dy"]
 
 unfoldFig8a.add_uncertainty(unc_unfoldFig8a)
 
-unfoldFig8b = Variable("Dielectron cross section", is_independent=False, is_binned=False, units="")
+unfoldFig8b = Variable("Dielectron cross section (pb)", is_independent=False, is_binned=False, units="")
 unfoldFig8b.values = histo_unfoldFig8b["y"]
 
 unc_unfoldFig8b = Uncertainty("", is_symmetric=True)
@@ -1706,7 +1706,7 @@ unc_unfoldFig8b.values = histo_unfoldFig8b["dy"]
 
 unfoldFig8b.add_uncertainty(unc_unfoldFig8b)
 
-unfoldFig8c = Variable("Dilepton cross section", is_independent=False, is_binned=False, units="")
+unfoldFig8c = Variable("Dilepton cross section (pb)", is_independent=False, is_binned=False, units="")
 unfoldFig8c.values = histo_unfoldFig8c["y"]
 
 unc_unfoldFig8c = Uncertainty("", is_symmetric=True)
@@ -1733,7 +1733,7 @@ reader_Fig9to13d = RootFileReader("HEPData/inputs/smp17010/folders_dressedlepton
 reader_Fig9to13e = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPtRap4_nsel2_dy3_rebin1_default.root")
 
 tableFig9to13 = Table("Figures 9 to 13")
-tableFig9to13.description = "The measured absolute cross sections in bins of Z pt different rapidity bins."
+tableFig9to13.description = "The measured absolute cross sections in bins of Z pt different |y(Z)| bins. The cross sections are normalized by the bin width."
 tableFig9to13.location = "Data from Figures 9 to 13"
 tableFig9to13.keywords["observables"] = ["N"]
 
@@ -1752,7 +1752,7 @@ mmed_Fig9to13 = Variable("$p_{T}$", is_independent=True, is_binned=False, units=
 mmed_Fig9to13.values = histo_unfoldFig9to13a["x"]
 
 # y-axis: N events
-unfoldFig9to13a = Variable("Dilepton cross section in 0 < rapidity < 0.4 bin", is_independent=False, is_binned=False, units="")
+unfoldFig9to13a = Variable("Dilepton cross section (pb) in 0 < |y(Z)| < 0.4 bin", is_independent=False, is_binned=False, units="")
 unfoldFig9to13a.values = histo_unfoldFig9to13a["y"]
 
 unc_unfoldFig9to13a = Uncertainty("", is_symmetric=True)
@@ -1760,7 +1760,7 @@ unc_unfoldFig9to13a.values = histo_unfoldFig9to13a["dy"]
 
 unfoldFig9to13a.add_uncertainty(unc_unfoldFig9to13a)
 
-unfoldFig9to13b = Variable("Dilepton cross section in 0.4 < rapidity < 0.8 bin", is_independent=False, is_binned=False, units="")
+unfoldFig9to13b = Variable("Dilepton cross section (pb) in 0.4 < |y(Z)| < 0.8 bin", is_independent=False, is_binned=False, units="")
 unfoldFig9to13b.values = histo_unfoldFig9to13b["y"]
 
 unc_unfoldFig9to13b = Uncertainty("", is_symmetric=True)
@@ -1768,7 +1768,7 @@ unc_unfoldFig9to13b.values = histo_unfoldFig9to13b["dy"]
 
 unfoldFig9to13b.add_uncertainty(unc_unfoldFig9to13b)
 
-unfoldFig9to13c = Variable("Dilepton cross section in 0.8 < rapidity < 1.2 bin", is_independent=False, is_binned=False, units="")
+unfoldFig9to13c = Variable("Dilepton cross section (pb) in 0.8 < |y(Z)| < 1.2 bin", is_independent=False, is_binned=False, units="")
 unfoldFig9to13c.values = histo_unfoldFig9to13c["y"]
 
 unc_unfoldFig9to13c = Uncertainty("", is_symmetric=True)
@@ -1776,7 +1776,7 @@ unc_unfoldFig9to13c.values = histo_unfoldFig9to13c["dy"]
 
 unfoldFig9to13c.add_uncertainty(unc_unfoldFig9to13c)
 
-unfoldFig9to13d = Variable("Dilepton cross section in 1.2 < rapidity < 1.6 bin", is_independent=False, is_binned=False, units="")
+unfoldFig9to13d = Variable("Dilepton cross section (pb) in 1.2 < |y(Z)| < 1.6 bin", is_independent=False, is_binned=False, units="")
 unfoldFig9to13d.values = histo_unfoldFig9to13d["y"]
 
 unc_unfoldFig9to13d = Uncertainty("", is_symmetric=True)
@@ -1784,7 +1784,7 @@ unc_unfoldFig9to13d.values = histo_unfoldFig9to13d["dy"]
 
 unfoldFig9to13d.add_uncertainty(unc_unfoldFig9to13d)
 
-unfoldFig9to13e = Variable("Dilepton cross section in 1.6 < rapidity < 2.4 bin", is_independent=False, is_binned=False, units="")
+unfoldFig9to13e = Variable("Dilepton cross section (pb) in 1.6 < |y(Z)| < 2.4 bin", is_independent=False, is_binned=False, units="")
 unfoldFig9to13e.values = histo_unfoldFig9to13e["y"]
 
 unc_unfoldFig9to13e = Uncertainty("", is_symmetric=True)
@@ -1807,7 +1807,6 @@ tableFig9to13.add_variable(unfoldFig9to13e)
 submission.add_table(tableFig9to13)
 ### End Fig9to13
 
-
 ### Begin Fig14a
 reader_Fig14a = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystPt_nsel2_dy3_rebin1_default.root")
 
@@ -1817,10 +1816,10 @@ tableFig14a.location = "Data from Figure 14a"
 tableFig14a.keywords["observables"] = ["N"]
 
 histo_unfoldFig14a = reader_Fig14a.read_hist_1d("unfold")
-histo_unfoldFig14a = reader_Fig14a.read_hist_1d("unfold")
 
 histo_unfoldFig14a.keys()
 
+inv_total_sum = 1.0/sum(histo_unfoldFig14a["y"])
 for key in histo_unfoldFig14a.keys():
     print(key, type(histo_unfoldFig14a[key]), type(histo_unfoldFig14a[key][0]))
 
@@ -1828,7 +1827,7 @@ mmed_Fig14a = Variable("$p_{T}$", is_independent=True, is_binned=False, units="G
 mmed_Fig14a.values = histo_unfoldFig14a["x"]
 
 # y-axis: N events
-unfoldFig14a = Variable("Dilepton cross section", is_independent=False, is_binned=False, units="")
+unfoldFig14a = Variable("Normalized dilepton cross section", is_independent=False, is_binned=False, units="")
 unfoldFig14a.values = histo_unfoldFig14a["y"]
 
 unc_unfoldFig14a = Uncertainty("", is_symmetric=True)
@@ -1836,7 +1835,7 @@ unc_unfoldFig14a.values = histo_unfoldFig14a["dy"]
 
 unfoldFig14a.add_uncertainty(unc_unfoldFig14a)
 
-unfoldFig14a.scale_values(lumi_sf)
+unfoldFig14a.scale_values(inv_total_sum)
 
 tableFig14a.add_variable(mmed_Fig14a)
 tableFig14a.add_variable(unfoldFig14a)
@@ -1852,10 +1851,10 @@ tableFig14b.location = "Data from Figure 14b"
 tableFig14b.keywords["observables"] = ["N"]
 
 histo_unfoldFig14b = reader_Fig14b.read_hist_1d("unfold")
-histo_unfoldFig14b = reader_Fig14b.read_hist_1d("unfold")
 
 histo_unfoldFig14b.keys()
 
+inv_total_sum = 1.0/sum(histo_unfoldFig14b["y"])
 for key in histo_unfoldFig14b.keys():
     print(key, type(histo_unfoldFig14b[key]), type(histo_unfoldFig14b[key][0]))
 
@@ -1863,7 +1862,7 @@ mmed_Fig14b = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True
 mmed_Fig14b.values = histo_unfoldFig14b["x"]
 
 # y-axis: N events
-unfoldFig14b = Variable("Dilepton cross section", is_independent=False, is_binned=False, units="")
+unfoldFig14b = Variable("Normalized dilepton cross section", is_independent=False, is_binned=False, units="")
 unfoldFig14b.values = histo_unfoldFig14b["y"]
 
 unc_unfoldFig14b = Uncertainty("", is_symmetric=True)
@@ -1871,7 +1870,7 @@ unc_unfoldFig14b.values = histo_unfoldFig14b["dy"]
 
 unfoldFig14b.add_uncertainty(unc_unfoldFig14b)
 
-unfoldFig14b.scale_values(lumi_sf)
+unfoldFig14b.scale_values(inv_total_sum)
 
 tableFig14b.add_variable(mmed_Fig14b)
 tableFig14b.add_variable(unfoldFig14b)
@@ -1882,23 +1881,23 @@ submission.add_table(tableFig14b)
 reader_Fig14c = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystRap_nsel2_dy3_rebin1_default.root")
 
 tableFig14c = Table("Figure 14c")
-tableFig14c.description = "The measured normalized cross sections in bins of rapidity."
+tableFig14c.description = "The measured normalized cross sections in bins of |y(Z)|."
 tableFig14c.location = "Data from Figure 14c"
 tableFig14c.keywords["observables"] = ["N"]
 
 histo_unfoldFig14c = reader_Fig14c.read_hist_1d("unfold")
-histo_unfoldFig14c = reader_Fig14c.read_hist_1d("unfold")
 
 histo_unfoldFig14c.keys()
 
+inv_total_sum = 1.0/sum(histo_unfoldFig14c["y"])
 for key in histo_unfoldFig14c.keys():
     print(key, type(histo_unfoldFig14c[key]), type(histo_unfoldFig14c[key][0]))
 
-mmed_Fig14c = Variable("Rapidity", is_independent=True, is_binned=False, units="")
+mmed_Fig14c = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
 mmed_Fig14c.values = histo_unfoldFig14c["x"]
 
 # y-axis: N events
-unfoldFig14c = Variable("Dilepton cross section", is_independent=False, is_binned=False, units="")
+unfoldFig14c = Variable("Normalized dilepton cross section", is_independent=False, is_binned=False, units="")
 unfoldFig14c.values = histo_unfoldFig14c["y"]
 
 unc_unfoldFig14c = Uncertainty("", is_symmetric=True)
@@ -1906,7 +1905,7 @@ unc_unfoldFig14c.values = histo_unfoldFig14c["dy"]
 
 unfoldFig14c.add_uncertainty(unc_unfoldFig14c)
 
-unfoldFig14c.scale_values(lumi_sf)
+unfoldFig14c.scale_values(inv_total_sum)
 
 tableFig14c.add_variable(mmed_Fig14c)
 tableFig14c.add_variable(unfoldFig14c)
@@ -1921,7 +1920,7 @@ reader_Fig15to19d = RootFileReader("HEPData/inputs/smp17010/folders_dressedlepto
 reader_Fig15to19e = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystPtRap4_nsel2_dy3_rebin1_default.root")
 
 tableFig15to19 = Table("Figures 15 to 19")
-tableFig15to19.description = "The measured normalized cross sections (left) in bins of Z pt in rapidity bins."
+tableFig15to19.description = "The measured normalized cross sections (left) in bins of Z pt in |y(Z)| bins."
 tableFig15to19.location = "Data from Figure 15 to 19"
 tableFig15to19.keywords["observables"] = ["N"]
 
@@ -1933,6 +1932,11 @@ histo_unfoldFig15to19e = reader_Fig15to19e.read_hist_1d("unfold")
 
 histo_unfoldFig15to19a.keys()
 
+inv_total_suma = 1.0/sum(histo_unfoldFig15to19a["y"])
+inv_total_sumb = 1.0/sum(histo_unfoldFig15to19b["y"])
+inv_total_sumc = 1.0/sum(histo_unfoldFig15to19c["y"])
+inv_total_sumd = 1.0/sum(histo_unfoldFig15to19d["y"])
+inv_total_sume = 1.0/sum(histo_unfoldFig15to19e["y"])
 for key in histo_unfoldFig15to19a.keys():
     print(key, type(histo_unfoldFig15to19a[key]), type(histo_unfoldFig15to19a[key][0]))
 
@@ -1940,41 +1944,41 @@ mmed_Fig15to19 = Variable("$p_{T}$", is_independent=True, is_binned=False, units
 mmed_Fig15to19.values = histo_unfoldFig15to19a["x"]
 
 # y-axis: N events
-unfoldFig15to19a = Variable("Dilepton cross section in 0 < rapidity < 0.4", is_independent=False, is_binned=False, units="")
+unfoldFig15to19a = Variable("Normalized dilepton cross section in 0 < |y(Z)| < 0.4", is_independent=False, is_binned=False, units="")
 unfoldFig15to19a.values = histo_unfoldFig15to19a["y"]
 unc_unfoldFig15to19a = Uncertainty("", is_symmetric=True)
 unc_unfoldFig15to19a.values = histo_unfoldFig15to19a["dy"]
 unfoldFig15to19a.add_uncertainty(unc_unfoldFig15to19a)
 
-unfoldFig15to19b = Variable("Dilepton cross section in 0.4 < rapidity < 0.8", is_independent=False, is_binned=False, units="")
+unfoldFig15to19b = Variable("Normalized dilepton cross section in 0.4 < |y(Z)| < 0.8", is_independent=False, is_binned=False, units="")
 unfoldFig15to19b.values = histo_unfoldFig15to19b["y"]
 unc_unfoldFig15to19b = Uncertainty("", is_symmetric=True)
 unc_unfoldFig15to19b.values = histo_unfoldFig15to19b["dy"]
 unfoldFig15to19b.add_uncertainty(unc_unfoldFig15to19b)
 
-unfoldFig15to19c = Variable("Dilepton cross section in 0.8 < rapidity < 1.2", is_independent=False, is_binned=False, units="")
+unfoldFig15to19c = Variable("Normalized dilepton cross section in 0.8 < |y(Z)| < 1.2", is_independent=False, is_binned=False, units="")
 unfoldFig15to19c.values = histo_unfoldFig15to19c["y"]
 unc_unfoldFig15to19c = Uncertainty("", is_symmetric=True)
 unc_unfoldFig15to19c.values = histo_unfoldFig15to19c["dy"]
 unfoldFig15to19c.add_uncertainty(unc_unfoldFig15to19c)
 
-unfoldFig15to19d = Variable("Dilepton cross section in 1.2 < rapidity < 1.6", is_independent=False, is_binned=False, units="")
+unfoldFig15to19d = Variable("Normalized dilepton cross section in 1.2 < |y(Z)| < 1.6", is_independent=False, is_binned=False, units="")
 unfoldFig15to19d.values = histo_unfoldFig15to19d["y"]
 unc_unfoldFig15to19d = Uncertainty("", is_symmetric=True)
 unc_unfoldFig15to19d.values = histo_unfoldFig15to19d["dy"]
 unfoldFig15to19d.add_uncertainty(unc_unfoldFig15to19d)
 
-unfoldFig15to19e = Variable("Dilepton cross section in 1.6 < rapidity < 2.4", is_independent=False, is_binned=False, units="")
+unfoldFig15to19e = Variable("Normalized dilepton cross section in 1.6 < |y(Z)| < 2.4", is_independent=False, is_binned=False, units="")
 unfoldFig15to19e.values = histo_unfoldFig15to19e["y"]
 unc_unfoldFig15to19e = Uncertainty("", is_symmetric=True)
 unc_unfoldFig15to19e.values = histo_unfoldFig15to19e["dy"]
 unfoldFig15to19e.add_uncertainty(unc_unfoldFig15to19e)
 
-unfoldFig15to19a.scale_values(lumi_sf)
-unfoldFig15to19b.scale_values(lumi_sf)
-unfoldFig15to19c.scale_values(lumi_sf)
-unfoldFig15to19d.scale_values(lumi_sf)
-unfoldFig15to19e.scale_values(lumi_sf)
+unfoldFig15to19a.scale_values(inv_total_suma)
+unfoldFig15to19b.scale_values(inv_total_sumb)
+unfoldFig15to19c.scale_values(inv_total_sumc)
+unfoldFig15to19d.scale_values(inv_total_sumd)
+unfoldFig15to19e.scale_values(inv_total_sume)
 
 tableFig15to19.add_variable(mmed_Fig15to19)
 tableFig15to19.add_variable(unfoldFig15to19a)
@@ -1985,9 +1989,9 @@ tableFig15to19.add_variable(unfoldFig15to19e)
 submission.add_table(tableFig15to19)
 ### End Fig15to19
 
-### Begin covariance mumu
+### Begin covariance mumu dressed
 # Create a reader for the input file
-reader_covariance_mm_Pt = RootFileReader("HEPData/inputs/smp17010/output_root/matrix03_Pt.root")
+reader_covariance_mm_Pt = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix03_Pt.root")
 # Read the histogram
 data_covariance_mm_Pt = reader_covariance_mm_Pt.read_hist_2d("covariance_totsum_0")
 # Create variable objects
@@ -1998,15 +2002,15 @@ y_covariance_mm_Pt.values = data_covariance_mm_Pt["y"]
 z_covariance_mm_Pt = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_mm_Pt.values = data_covariance_mm_Pt["z"]
 
-table_covariance_mm_Pt = Table("Covariance Matrix auxiliary 1a")
-table_covariance_mm_Pt.description = "Covariance matrix for all bins used in bins of Z pt in the dimuon final state."
+table_covariance_mm_Pt = Table("Covariance Matrix auxiliary Figure 1a")
+table_covariance_mm_Pt.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt in the dimuon final state."
 table_covariance_mm_Pt.location = "Supplementary material"
 for var in [x_covariance_mm_Pt,y_covariance_mm_Pt,z_covariance_mm_Pt]:
     table_covariance_mm_Pt.add_variable(var)
 submission.add_table(table_covariance_mm_Pt)
 
 # Create a reader for the input file
-reader_covariance_mm_Rap = RootFileReader("HEPData/inputs/smp17010/output_root/matrix03_Rap.root")
+reader_covariance_mm_Rap = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix03_Rap.root")
 # Read the histogram
 data_covariance_mm_Rap = reader_covariance_mm_Rap.read_hist_2d("covariance_totsum_0")
 # Create variable objects
@@ -2017,15 +2021,15 @@ y_covariance_mm_Rap.values = data_covariance_mm_Rap["y"]
 z_covariance_mm_Rap = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_mm_Rap.values = data_covariance_mm_Rap["z"]
 
-table_covariance_mm_Rap = Table("Covariance Matrix auxiliary 1b")
-table_covariance_mm_Rap.description = "Covariance matrix for all bins used in bins of rapidity in the dimuon final state."
+table_covariance_mm_Rap = Table("Covariance Matrix auxiliary Figure 1c")
+table_covariance_mm_Rap.description = "Covariance matrix using dressed leptons for all bins used in bins of |y(Z)| in the dimuon final state."
 table_covariance_mm_Rap.location = "Supplementary material"
 for var in [x_covariance_mm_Rap,y_covariance_mm_Rap,z_covariance_mm_Rap]:
     table_covariance_mm_Rap.add_variable(var)
 submission.add_table(table_covariance_mm_Rap)
 
 # Create a reader for the input file
-reader_covariance_mm_PhiStar = RootFileReader("HEPData/inputs/smp17010/output_root/matrix03_PhiStar.root")
+reader_covariance_mm_PhiStar = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix03_PhiStar.root")
 # Read the histogram
 data_covariance_mm_PhiStar = reader_covariance_mm_PhiStar.read_hist_2d("covariance_totsum_0")
 # Create variable objects
@@ -2036,15 +2040,15 @@ y_covariance_mm_PhiStar.values = data_covariance_mm_PhiStar["y"]
 z_covariance_mm_PhiStar = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_mm_PhiStar.values = data_covariance_mm_PhiStar["z"]
 
-table_covariance_mm_PhiStar = Table("Covariance Matrix auxiliary 1c")
-table_covariance_mm_PhiStar.description = "Covariance matrix for all bins used in bins of $\phi^{\scriptscriptstyle *}_\eta$ in the dimuon final state."
+table_covariance_mm_PhiStar = Table("Covariance Matrix auxiliary Figure 1e")
+table_covariance_mm_PhiStar.description = "Covariance matrix using dressed leptons for all bins used in bins of $\phi^{\scriptscriptstyle *}_\eta$ in the dimuon final state."
 table_covariance_mm_PhiStar.location = "Supplementary material"
 for var in [x_covariance_mm_PhiStar,y_covariance_mm_PhiStar,z_covariance_mm_PhiStar]:
     table_covariance_mm_PhiStar.add_variable(var)
 submission.add_table(table_covariance_mm_PhiStar)
 
 # Create a reader for the input file
-reader_covariance_mm_PtRap0 = RootFileReader("HEPData/inputs/smp17010/output_root/matrix03_PtRap0.root")
+reader_covariance_mm_PtRap0 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix03_PtRap0.root")
 # Read the histogram
 data_covariance_mm_PtRap0 = reader_covariance_mm_PtRap0.read_hist_2d("covariance_totsum_0")
 # Create variable objects
@@ -2055,15 +2059,15 @@ y_covariance_mm_PtRap0.values = data_covariance_mm_PtRap0["y"]
 z_covariance_mm_PtRap0 = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_mm_PtRap0.values = data_covariance_mm_PtRap0["z"]
 
-table_covariance_mm_PtRap0 = Table("Covariance Matrix auxiliary 1d")
-table_covariance_mm_PtRap0.description = "Covariance matrix for all bins used in bins of Z pt for the 0 < rapidity < 0.4 bin in the dimuon final state."
+table_covariance_mm_PtRap0 = Table("Covariance Matrix auxiliary Figure 2a")
+table_covariance_mm_PtRap0.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dimuon final state."
 table_covariance_mm_PtRap0.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap0,y_covariance_mm_PtRap0,z_covariance_mm_PtRap0]:
     table_covariance_mm_PtRap0.add_variable(var)
 submission.add_table(table_covariance_mm_PtRap0)
 
 # Create a reader for the input file
-reader_covariance_mm_PtRap1 = RootFileReader("HEPData/inputs/smp17010/output_root/matrix03_PtRap1.root")
+reader_covariance_mm_PtRap1 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix03_PtRap1.root")
 # Read the histogram
 data_covariance_mm_PtRap1 = reader_covariance_mm_PtRap1.read_hist_2d("covariance_totsum_0")
 # Create variable objects
@@ -2074,15 +2078,15 @@ y_covariance_mm_PtRap1.values = data_covariance_mm_PtRap1["y"]
 z_covariance_mm_PtRap1 = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_mm_PtRap1.values = data_covariance_mm_PtRap1["z"]
 
-table_covariance_mm_PtRap1 = Table("Covariance Matrix auxiliary 1e")
-table_covariance_mm_PtRap1.description = "Covariance matrix for all bins used in bins of Z pt for the 0.4 < rapidity < 0.8 bin in the dimuon final state."
+table_covariance_mm_PtRap1 = Table("Covariance Matrix auxiliary Figure 2b")
+table_covariance_mm_PtRap1.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dimuon final state."
 table_covariance_mm_PtRap1.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap1,y_covariance_mm_PtRap1,z_covariance_mm_PtRap1]:
     table_covariance_mm_PtRap1.add_variable(var)
 submission.add_table(table_covariance_mm_PtRap1)
 
 # Create a reader for the input file
-reader_covariance_mm_PtRap2 = RootFileReader("HEPData/inputs/smp17010/output_root/matrix03_PtRap2.root")
+reader_covariance_mm_PtRap2 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix03_PtRap2.root")
 # Read the histogram
 data_covariance_mm_PtRap2 = reader_covariance_mm_PtRap2.read_hist_2d("covariance_totsum_0")
 # Create variable objects
@@ -2093,15 +2097,15 @@ y_covariance_mm_PtRap2.values = data_covariance_mm_PtRap2["y"]
 z_covariance_mm_PtRap2 = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_mm_PtRap2.values = data_covariance_mm_PtRap2["z"]
 
-table_covariance_mm_PtRap2 = Table("Covariance Matrix auxiliary 1f")
-table_covariance_mm_PtRap2.description = "Covariance matrix for all bins used in bins of Z pt for the 0.8 < rapidity < 1.2 bin in the dimuon final state."
+table_covariance_mm_PtRap2 = Table("Covariance Matrix auxiliary Figure 2c")
+table_covariance_mm_PtRap2.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dimuon final state."
 table_covariance_mm_PtRap2.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap2,y_covariance_mm_PtRap2,z_covariance_mm_PtRap2]:
     table_covariance_mm_PtRap2.add_variable(var)
 submission.add_table(table_covariance_mm_PtRap2)
 
 # Create a reader for the input file
-reader_covariance_mm_PtRap3 = RootFileReader("HEPData/inputs/smp17010/output_root/matrix03_PtRap3.root")
+reader_covariance_mm_PtRap3 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix03_PtRap3.root")
 # Read the histogram
 data_covariance_mm_PtRap3 = reader_covariance_mm_PtRap3.read_hist_2d("covariance_totsum_0")
 # Create variable objects
@@ -2112,15 +2116,15 @@ y_covariance_mm_PtRap3.values = data_covariance_mm_PtRap3["y"]
 z_covariance_mm_PtRap3 = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_mm_PtRap3.values = data_covariance_mm_PtRap3["z"]
 
-table_covariance_mm_PtRap3 = Table("Covariance Matrix auxiliary 1g")
-table_covariance_mm_PtRap3.description = "Covariance matrix for all bins used in bins of Z pt for the 1.2 < rapidity < 1.6 bin in the dimuon final state."
+table_covariance_mm_PtRap3 = Table("Covariance Matrix auxiliary Figure 2d")
+table_covariance_mm_PtRap3.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dimuon final state."
 table_covariance_mm_PtRap3.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap3,y_covariance_mm_PtRap3,z_covariance_mm_PtRap3]:
     table_covariance_mm_PtRap3.add_variable(var)
 submission.add_table(table_covariance_mm_PtRap3)
 
 # Create a reader for the input file
-reader_covariance_mm_PtRap4 = RootFileReader("HEPData/inputs/smp17010/output_root/matrix03_PtRap4.root")
+reader_covariance_mm_PtRap4 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix03_PtRap4.root")
 # Read the histogram
 data_covariance_mm_PtRap4 = reader_covariance_mm_PtRap4.read_hist_2d("covariance_totsum_0")
 # Create variable objects
@@ -2131,17 +2135,17 @@ y_covariance_mm_PtRap4.values = data_covariance_mm_PtRap4["y"]
 z_covariance_mm_PtRap4 = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_mm_PtRap4.values = data_covariance_mm_PtRap4["z"]
 
-table_covariance_mm_PtRap4 = Table("Covariance Matrix auxiliary 1h")
-table_covariance_mm_PtRap4.description = "Covariance matrix for all bins used in bins of Z pt for the 1.6 < rapidity < 2.4 bin in the dimuon final state."
+table_covariance_mm_PtRap4 = Table("Covariance Matrix auxiliary Figure 2e")
+table_covariance_mm_PtRap4.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dimuon final state."
 table_covariance_mm_PtRap4.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap4,y_covariance_mm_PtRap4,z_covariance_mm_PtRap4]:
     table_covariance_mm_PtRap4.add_variable(var)
 submission.add_table(table_covariance_mm_PtRap4)
 ### End covariance mumu
 
-### Begin covariance ee
+### Begin covariance ee dressed
 # Create a reader for the input file
-reader_covariance_ee_Pt = RootFileReader("HEPData/inputs/smp17010/output_root/matrix13_Pt.root")
+reader_covariance_ee_Pt = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix13_Pt.root")
 # Read the histogram
 data_covariance_ee_Pt = reader_covariance_ee_Pt.read_hist_2d("covariance_totsum_1")
 # Create variable objects
@@ -2152,15 +2156,15 @@ y_covariance_ee_Pt.values = data_covariance_ee_Pt["y"]
 z_covariance_ee_Pt = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_ee_Pt.values = data_covariance_ee_Pt["z"]
 
-table_covariance_ee_Pt = Table("Covariance Matrix auxiliary 2a")
-table_covariance_ee_Pt.description = "Covariance matrix for all bins used in bins of Z pt in the dielectron final state."
+table_covariance_ee_Pt = Table("Covariance Matrix auxiliary Figure 1b")
+table_covariance_ee_Pt.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt in the dielectron final state."
 table_covariance_ee_Pt.location = "Supplementary material"
 for var in [x_covariance_ee_Pt,y_covariance_ee_Pt,z_covariance_ee_Pt]:
     table_covariance_ee_Pt.add_variable(var)
 submission.add_table(table_covariance_ee_Pt)
 
 # Create a reader for the input file
-reader_covariance_ee_Rap = RootFileReader("HEPData/inputs/smp17010/output_root/matrix13_Rap.root")
+reader_covariance_ee_Rap = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix13_Rap.root")
 # Read the histogram
 data_covariance_ee_Rap = reader_covariance_ee_Rap.read_hist_2d("covariance_totsum_1")
 # Create variable objects
@@ -2171,15 +2175,15 @@ y_covariance_ee_Rap.values = data_covariance_ee_Rap["y"]
 z_covariance_ee_Rap = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_ee_Rap.values = data_covariance_ee_Rap["z"]
 
-table_covariance_ee_Rap = Table("Covariance Matrix auxiliary 2b")
-table_covariance_ee_Rap.description = "Covariance matrix for all bins used in bins of rapidity in the dielectron final state."
+table_covariance_ee_Rap = Table("Covariance Matrix auxiliary Figure 1d")
+table_covariance_ee_Rap.description = "Covariance matrix using dressed leptons for all bins used in bins of |y(Z)| in the dielectron final state."
 table_covariance_ee_Rap.location = "Supplementary material"
 for var in [x_covariance_ee_Rap,y_covariance_ee_Rap,z_covariance_ee_Rap]:
     table_covariance_ee_Rap.add_variable(var)
 submission.add_table(table_covariance_ee_Rap)
 
 # Create a reader for the input file
-reader_covariance_ee_PhiStar = RootFileReader("HEPData/inputs/smp17010/output_root/matrix13_PhiStar.root")
+reader_covariance_ee_PhiStar = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix13_PhiStar.root")
 # Read the histogram
 data_covariance_ee_PhiStar = reader_covariance_ee_PhiStar.read_hist_2d("covariance_totsum_1")
 # Create variable objects
@@ -2190,15 +2194,15 @@ y_covariance_ee_PhiStar.values = data_covariance_ee_PhiStar["y"]
 z_covariance_ee_PhiStar = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_ee_PhiStar.values = data_covariance_ee_PhiStar["z"]
 
-table_covariance_ee_PhiStar = Table("Covariance Matrix auxiliary 2c")
-table_covariance_ee_PhiStar.description = "Covariance matrix for all bins used in bins of $\phi^{\scriptscriptstyle *}_\eta$ in the dielectron final state."
+table_covariance_ee_PhiStar = Table("Covariance Matrix auxiliary Figure 1f")
+table_covariance_ee_PhiStar.description = "Covariance matrix using dressed leptons for all bins used in bins of $\phi^{\scriptscriptstyle *}_\eta$ in the dielectron final state."
 table_covariance_ee_PhiStar.location = "Supplementary material"
 for var in [x_covariance_ee_PhiStar,y_covariance_ee_PhiStar,z_covariance_ee_PhiStar]:
     table_covariance_ee_PhiStar.add_variable(var)
 submission.add_table(table_covariance_ee_PhiStar)
 
 # Create a reader for the input file
-reader_covariance_ee_PtRap0 = RootFileReader("HEPData/inputs/smp17010/output_root/matrix13_PtRap0.root")
+reader_covariance_ee_PtRap0 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix13_PtRap0.root")
 # Read the histogram
 data_covariance_ee_PtRap0 = reader_covariance_ee_PtRap0.read_hist_2d("covariance_totsum_1")
 # Create variable objects
@@ -2209,15 +2213,15 @@ y_covariance_ee_PtRap0.values = data_covariance_ee_PtRap0["y"]
 z_covariance_ee_PtRap0 = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_ee_PtRap0.values = data_covariance_ee_PtRap0["z"]
 
-table_covariance_ee_PtRap0 = Table("Covariance Matrix auxiliary 2d")
-table_covariance_ee_PtRap0.description = "Covariance matrix for all bins used in bins of Z pt for the 0 < rapidity < 0.4 bin in the dielectron final state."
+table_covariance_ee_PtRap0 = Table("Covariance Matrix auxiliary Figure 3a")
+table_covariance_ee_PtRap0.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dielectron final state."
 table_covariance_ee_PtRap0.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap0,y_covariance_ee_PtRap0,z_covariance_ee_PtRap0]:
     table_covariance_ee_PtRap0.add_variable(var)
 submission.add_table(table_covariance_ee_PtRap0)
 
 # Create a reader for the input file
-reader_covariance_ee_PtRap1 = RootFileReader("HEPData/inputs/smp17010/output_root/matrix13_PtRap1.root")
+reader_covariance_ee_PtRap1 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix13_PtRap1.root")
 # Read the histogram
 data_covariance_ee_PtRap1 = reader_covariance_ee_PtRap1.read_hist_2d("covariance_totsum_1")
 # Create variable objects
@@ -2228,15 +2232,15 @@ y_covariance_ee_PtRap1.values = data_covariance_ee_PtRap1["y"]
 z_covariance_ee_PtRap1 = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_ee_PtRap1.values = data_covariance_ee_PtRap1["z"]
 
-table_covariance_ee_PtRap1 = Table("Covariance Matrix auxiliary 2e")
-table_covariance_ee_PtRap1.description = "Covariance matrix for all bins used in bins of Z pt for the 0.4 < rapidity < 0.8 bin in the dielectron final state."
+table_covariance_ee_PtRap1 = Table("Covariance Matrix auxiliary Figure 3b")
+table_covariance_ee_PtRap1.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dielectron final state."
 table_covariance_ee_PtRap1.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap1,y_covariance_ee_PtRap1,z_covariance_ee_PtRap1]:
     table_covariance_ee_PtRap1.add_variable(var)
 submission.add_table(table_covariance_ee_PtRap1)
 
 # Create a reader for the input file
-reader_covariance_ee_PtRap2 = RootFileReader("HEPData/inputs/smp17010/output_root/matrix13_PtRap2.root")
+reader_covariance_ee_PtRap2 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix13_PtRap2.root")
 # Read the histogram
 data_covariance_ee_PtRap2 = reader_covariance_ee_PtRap2.read_hist_2d("covariance_totsum_1")
 # Create variable objects
@@ -2247,15 +2251,15 @@ y_covariance_ee_PtRap2.values = data_covariance_ee_PtRap2["y"]
 z_covariance_ee_PtRap2 = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_ee_PtRap2.values = data_covariance_ee_PtRap2["z"]
 
-table_covariance_ee_PtRap2 = Table("Covariance Matrix auxiliary 2f")
-table_covariance_ee_PtRap2.description = "Covariance matrix for all bins used in bins of Z pt for the 0.8 < rapidity < 1.2 bin in the dielectron final state."
+table_covariance_ee_PtRap2 = Table("Covariance Matrix auxiliary Figure 3c")
+table_covariance_ee_PtRap2.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dielectron final state."
 table_covariance_ee_PtRap2.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap2,y_covariance_ee_PtRap2,z_covariance_ee_PtRap2]:
     table_covariance_ee_PtRap2.add_variable(var)
 submission.add_table(table_covariance_ee_PtRap2)
 
 # Create a reader for the input file
-reader_covariance_ee_PtRap3 = RootFileReader("HEPData/inputs/smp17010/output_root/matrix13_PtRap3.root")
+reader_covariance_ee_PtRap3 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix13_PtRap3.root")
 # Read the histogram
 data_covariance_ee_PtRap3 = reader_covariance_ee_PtRap3.read_hist_2d("covariance_totsum_1")
 # Create variable objects
@@ -2266,15 +2270,15 @@ y_covariance_ee_PtRap3.values = data_covariance_ee_PtRap3["y"]
 z_covariance_ee_PtRap3 = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_ee_PtRap3.values = data_covariance_ee_PtRap3["z"]
 
-table_covariance_ee_PtRap3 = Table("Covariance Matrix auxiliary 2g")
-table_covariance_ee_PtRap3.description = "Covariance matrix for all bins used in bins of Z pt for the 1.2 < rapidity < 1.6 bin in the dielectron final state."
+table_covariance_ee_PtRap3 = Table("Covariance Matrix auxiliary Figure 3d")
+table_covariance_ee_PtRap3.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dielectron final state."
 table_covariance_ee_PtRap3.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap3,y_covariance_ee_PtRap3,z_covariance_ee_PtRap3]:
     table_covariance_ee_PtRap3.add_variable(var)
 submission.add_table(table_covariance_ee_PtRap3)
 
 # Create a reader for the input file
-reader_covariance_ee_PtRap4 = RootFileReader("HEPData/inputs/smp17010/output_root/matrix13_PtRap4.root")
+reader_covariance_ee_PtRap4 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix13_PtRap4.root")
 # Read the histogram
 data_covariance_ee_PtRap4 = reader_covariance_ee_PtRap4.read_hist_2d("covariance_totsum_1")
 # Create variable objects
@@ -2285,415 +2289,760 @@ y_covariance_ee_PtRap4.values = data_covariance_ee_PtRap4["y"]
 z_covariance_ee_PtRap4 = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_ee_PtRap4.values = data_covariance_ee_PtRap4["z"]
 
-table_covariance_ee_PtRap4 = Table("Covariance Matrix auxiliary 2h")
-table_covariance_ee_PtRap4.description = "Covariance matrix for all bins used in bins of Z pt for the 1.6 < rapidity < 2.4 bin in the dielectron final state."
+table_covariance_ee_PtRap4 = Table("Covariance Matrix auxiliary Figure 3e")
+table_covariance_ee_PtRap4.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dielectron final state."
 table_covariance_ee_PtRap4.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap4,y_covariance_ee_PtRap4,z_covariance_ee_PtRap4]:
     table_covariance_ee_PtRap4.add_variable(var)
 submission.add_table(table_covariance_ee_PtRap4)
 ### End covariance ee
 
-"""
-### Begin WZ CR
-reader_wzcr = RootFileReader("HEPData/inputs/exo19007/histo_zhg_region1.root")
 
-tableWZCR = Table("Figure 2b")
-tableWZCR.description = "$\mathrm{M_{\mathrm{T}}}$ distribution for the WZ control region."
-tableWZCR.location = "Data from Figure 2b"
-tableWZCR.keywords["observables"] = ["N"]
+### Begin covariance mumu born
+# Create a reader for the input file
+reader_covariance_mm_Pt = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix03_Pt.root")
+# Read the histogram
+data_covariance_mm_Pt = reader_covariance_mm_Pt.read_hist_2d("covariance_totsum_0")
+# Create variable objects
+x_covariance_mm_Pt = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_mm_Pt.values = data_covariance_mm_Pt["x"]
+y_covariance_mm_Pt = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_mm_Pt.values = data_covariance_mm_Pt["y"]
+z_covariance_mm_Pt = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_mm_Pt.values = data_covariance_mm_Pt["z"]
 
-histo_Data_wzcr  = reader_wzcr.read_hist_1d("histo_Data")
-histo_ZZ_wzcr    = reader_wzcr.read_hist_1d("histo_ZZ")
-histo_WZ_wzcr    = reader_wzcr.read_hist_1d("histo_WZ")
-histo_VVV_wzcr   = reader_wzcr.read_hist_1d("histo_VVV")
-histo_VG_wzcr    = reader_wzcr.read_hist_1d("histo_VG")
-histo_WZ_wzcr    = reader_wzcr.read_hist_1d("histo_WZ")
-histo_ZH125_wzcr = reader_wzcr.read_hist_1d("histo_ZH125")
-histo_ZH200_wzcr = reader_wzcr.read_hist_1d("histo_ZH200")
-histo_ZH300_wzcr = reader_wzcr.read_hist_1d("histo_ZH300")
-histo_Bck_wzcr   = reader_wzcr.read_hist_1d("histo_WZ")
+table_covariance_mm_Pt = Table("Covariance Matrix auxiliary Figure 4a")
+table_covariance_mm_Pt.description = "Covariance matrix using born leptons for all bins used in bins of Z pt in the dimuon final state."
+table_covariance_mm_Pt.location = "Supplementary material"
+for var in [x_covariance_mm_Pt,y_covariance_mm_Pt,z_covariance_mm_Pt]:
+    table_covariance_mm_Pt.add_variable(var)
+submission.add_table(table_covariance_mm_Pt)
 
-histo_Bck_wzcr.keys()
+# Create a reader for the input file
+reader_covariance_mm_Rap = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix03_Rap.root")
+# Read the histogram
+data_covariance_mm_Rap = reader_covariance_mm_Rap.read_hist_2d("covariance_totsum_0")
+# Create variable objects
+x_covariance_mm_Rap = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_mm_Rap.values = data_covariance_mm_Rap["x"]
+y_covariance_mm_Rap = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_mm_Rap.values = data_covariance_mm_Rap["y"]
+z_covariance_mm_Rap = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_mm_Rap.values = data_covariance_mm_Rap["z"]
 
-mmed_wzcr = Variable("$M_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_wzcr.values = histo_ZH125_wzcr["x"]
+table_covariance_mm_Rap = Table("Covariance Matrix auxiliary Figure 4c")
+table_covariance_mm_Rap.description = "Covariance matrix using born leptons for all bins used in bins of |y(Z)| in the dimuon final state."
+table_covariance_mm_Rap.location = "Supplementary material"
+for var in [x_covariance_mm_Rap,y_covariance_mm_Rap,z_covariance_mm_Rap]:
+    table_covariance_mm_Rap.add_variable(var)
+submission.add_table(table_covariance_mm_Rap)
+
+# Create a reader for the input file
+reader_covariance_mm_PhiStar = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix03_PhiStar.root")
+# Read the histogram
+data_covariance_mm_PhiStar = reader_covariance_mm_PhiStar.read_hist_2d("covariance_totsum_0")
+# Create variable objects
+x_covariance_mm_PhiStar = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_mm_PhiStar.values = data_covariance_mm_PhiStar["x"]
+y_covariance_mm_PhiStar = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_mm_PhiStar.values = data_covariance_mm_PhiStar["y"]
+z_covariance_mm_PhiStar = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_mm_PhiStar.values = data_covariance_mm_PhiStar["z"]
+
+table_covariance_mm_PhiStar = Table("Covariance Matrix auxiliary Figure 4e")
+table_covariance_mm_PhiStar.description = "Covariance matrix using born leptons for all bins used in bins of $\phi^{\scriptscriptstyle *}_\eta$ in the dimuon final state."
+table_covariance_mm_PhiStar.location = "Supplementary material"
+for var in [x_covariance_mm_PhiStar,y_covariance_mm_PhiStar,z_covariance_mm_PhiStar]:
+    table_covariance_mm_PhiStar.add_variable(var)
+submission.add_table(table_covariance_mm_PhiStar)
+
+# Create a reader for the input file
+reader_covariance_mm_PtRap0 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix03_PtRap0.root")
+# Read the histogram
+data_covariance_mm_PtRap0 = reader_covariance_mm_PtRap0.read_hist_2d("covariance_totsum_0")
+# Create variable objects
+x_covariance_mm_PtRap0 = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_mm_PtRap0.values = data_covariance_mm_PtRap0["x"]
+y_covariance_mm_PtRap0 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_mm_PtRap0.values = data_covariance_mm_PtRap0["y"]
+z_covariance_mm_PtRap0 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_mm_PtRap0.values = data_covariance_mm_PtRap0["z"]
+
+table_covariance_mm_PtRap0 = Table("Covariance Matrix auxiliary Figure 5a")
+table_covariance_mm_PtRap0.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dimuon final state."
+table_covariance_mm_PtRap0.location = "Supplementary material"
+for var in [x_covariance_mm_PtRap0,y_covariance_mm_PtRap0,z_covariance_mm_PtRap0]:
+    table_covariance_mm_PtRap0.add_variable(var)
+submission.add_table(table_covariance_mm_PtRap0)
+
+# Create a reader for the input file
+reader_covariance_mm_PtRap1 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix03_PtRap1.root")
+# Read the histogram
+data_covariance_mm_PtRap1 = reader_covariance_mm_PtRap1.read_hist_2d("covariance_totsum_0")
+# Create variable objects
+x_covariance_mm_PtRap1 = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_mm_PtRap1.values = data_covariance_mm_PtRap1["x"]
+y_covariance_mm_PtRap1 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_mm_PtRap1.values = data_covariance_mm_PtRap1["y"]
+z_covariance_mm_PtRap1 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_mm_PtRap1.values = data_covariance_mm_PtRap1["z"]
+
+table_covariance_mm_PtRap1 = Table("Covariance Matrix auxiliary Figure 5b")
+table_covariance_mm_PtRap1.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dimuon final state."
+table_covariance_mm_PtRap1.location = "Supplementary material"
+for var in [x_covariance_mm_PtRap1,y_covariance_mm_PtRap1,z_covariance_mm_PtRap1]:
+    table_covariance_mm_PtRap1.add_variable(var)
+submission.add_table(table_covariance_mm_PtRap1)
+
+# Create a reader for the input file
+reader_covariance_mm_PtRap2 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix03_PtRap2.root")
+# Read the histogram
+data_covariance_mm_PtRap2 = reader_covariance_mm_PtRap2.read_hist_2d("covariance_totsum_0")
+# Create variable objects
+x_covariance_mm_PtRap2 = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_mm_PtRap2.values = data_covariance_mm_PtRap2["x"]
+y_covariance_mm_PtRap2 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_mm_PtRap2.values = data_covariance_mm_PtRap2["y"]
+z_covariance_mm_PtRap2 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_mm_PtRap2.values = data_covariance_mm_PtRap2["z"]
+
+table_covariance_mm_PtRap2 = Table("Covariance Matrix auxiliary Figure 5c")
+table_covariance_mm_PtRap2.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dimuon final state."
+table_covariance_mm_PtRap2.location = "Supplementary material"
+for var in [x_covariance_mm_PtRap2,y_covariance_mm_PtRap2,z_covariance_mm_PtRap2]:
+    table_covariance_mm_PtRap2.add_variable(var)
+submission.add_table(table_covariance_mm_PtRap2)
+
+# Create a reader for the input file
+reader_covariance_mm_PtRap3 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix03_PtRap3.root")
+# Read the histogram
+data_covariance_mm_PtRap3 = reader_covariance_mm_PtRap3.read_hist_2d("covariance_totsum_0")
+# Create variable objects
+x_covariance_mm_PtRap3 = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_mm_PtRap3.values = data_covariance_mm_PtRap3["x"]
+y_covariance_mm_PtRap3 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_mm_PtRap3.values = data_covariance_mm_PtRap3["y"]
+z_covariance_mm_PtRap3 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_mm_PtRap3.values = data_covariance_mm_PtRap3["z"]
+
+table_covariance_mm_PtRap3 = Table("Covariance Matrix auxiliary Figure 5d")
+table_covariance_mm_PtRap3.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dimuon final state."
+table_covariance_mm_PtRap3.location = "Supplementary material"
+for var in [x_covariance_mm_PtRap3,y_covariance_mm_PtRap3,z_covariance_mm_PtRap3]:
+    table_covariance_mm_PtRap3.add_variable(var)
+submission.add_table(table_covariance_mm_PtRap3)
+
+# Create a reader for the input file
+reader_covariance_mm_PtRap4 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix03_PtRap4.root")
+# Read the histogram
+data_covariance_mm_PtRap4 = reader_covariance_mm_PtRap4.read_hist_2d("covariance_totsum_0")
+# Create variable objects
+x_covariance_mm_PtRap4 = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_mm_PtRap4.values = data_covariance_mm_PtRap4["x"]
+y_covariance_mm_PtRap4 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_mm_PtRap4.values = data_covariance_mm_PtRap4["y"]
+z_covariance_mm_PtRap4 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_mm_PtRap4.values = data_covariance_mm_PtRap4["z"]
+
+table_covariance_mm_PtRap4 = Table("Covariance Matrix auxiliary Figure 5e")
+table_covariance_mm_PtRap4.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dimuon final state."
+table_covariance_mm_PtRap4.location = "Supplementary material"
+for var in [x_covariance_mm_PtRap4,y_covariance_mm_PtRap4,z_covariance_mm_PtRap4]:
+    table_covariance_mm_PtRap4.add_variable(var)
+submission.add_table(table_covariance_mm_PtRap4)
+### End covariance mumu
+
+### Begin covariance ee born
+# Create a reader for the input file
+reader_covariance_ee_Pt = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix13_Pt.root")
+# Read the histogram
+data_covariance_ee_Pt = reader_covariance_ee_Pt.read_hist_2d("covariance_totsum_1")
+# Create variable objects
+x_covariance_ee_Pt = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_ee_Pt.values = data_covariance_ee_Pt["x"]
+y_covariance_ee_Pt = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ee_Pt.values = data_covariance_ee_Pt["y"]
+z_covariance_ee_Pt = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ee_Pt.values = data_covariance_ee_Pt["z"]
+
+table_covariance_ee_Pt = Table("Covariance Matrix auxiliary Figure 4b")
+table_covariance_ee_Pt.description = "Covariance matrix using born leptons for all bins used in bins of Z pt in the dielectron final state."
+table_covariance_ee_Pt.location = "Supplementary material"
+for var in [x_covariance_ee_Pt,y_covariance_ee_Pt,z_covariance_ee_Pt]:
+    table_covariance_ee_Pt.add_variable(var)
+submission.add_table(table_covariance_ee_Pt)
+
+# Create a reader for the input file
+reader_covariance_ee_Rap = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix13_Rap.root")
+# Read the histogram
+data_covariance_ee_Rap = reader_covariance_ee_Rap.read_hist_2d("covariance_totsum_1")
+# Create variable objects
+x_covariance_ee_Rap = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_ee_Rap.values = data_covariance_ee_Rap["x"]
+y_covariance_ee_Rap = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ee_Rap.values = data_covariance_ee_Rap["y"]
+z_covariance_ee_Rap = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ee_Rap.values = data_covariance_ee_Rap["z"]
+
+table_covariance_ee_Rap = Table("Covariance Matrix auxiliary Figure 4d")
+table_covariance_ee_Rap.description = "Covariance matrix using born leptons for all bins used in bins of |y(Z)| in the dielectron final state."
+table_covariance_ee_Rap.location = "Supplementary material"
+for var in [x_covariance_ee_Rap,y_covariance_ee_Rap,z_covariance_ee_Rap]:
+    table_covariance_ee_Rap.add_variable(var)
+submission.add_table(table_covariance_ee_Rap)
+
+# Create a reader for the input file
+reader_covariance_ee_PhiStar = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix13_PhiStar.root")
+# Read the histogram
+data_covariance_ee_PhiStar = reader_covariance_ee_PhiStar.read_hist_2d("covariance_totsum_1")
+# Create variable objects
+x_covariance_ee_PhiStar = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_ee_PhiStar.values = data_covariance_ee_PhiStar["x"]
+y_covariance_ee_PhiStar = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ee_PhiStar.values = data_covariance_ee_PhiStar["y"]
+z_covariance_ee_PhiStar = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ee_PhiStar.values = data_covariance_ee_PhiStar["z"]
+
+table_covariance_ee_PhiStar = Table("Covariance Matrix auxiliary Figure 4f")
+table_covariance_ee_PhiStar.description = "Covariance matrix using born leptons for all bins used in bins of $\phi^{\scriptscriptstyle *}_\eta$ in the dielectron final state."
+table_covariance_ee_PhiStar.location = "Supplementary material"
+for var in [x_covariance_ee_PhiStar,y_covariance_ee_PhiStar,z_covariance_ee_PhiStar]:
+    table_covariance_ee_PhiStar.add_variable(var)
+submission.add_table(table_covariance_ee_PhiStar)
+
+# Create a reader for the input file
+reader_covariance_ee_PtRap0 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix13_PtRap0.root")
+# Read the histogram
+data_covariance_ee_PtRap0 = reader_covariance_ee_PtRap0.read_hist_2d("covariance_totsum_1")
+# Create variable objects
+x_covariance_ee_PtRap0 = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_ee_PtRap0.values = data_covariance_ee_PtRap0["x"]
+y_covariance_ee_PtRap0 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ee_PtRap0.values = data_covariance_ee_PtRap0["y"]
+z_covariance_ee_PtRap0 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ee_PtRap0.values = data_covariance_ee_PtRap0["z"]
+
+table_covariance_ee_PtRap0 = Table("Covariance Matrix auxiliary Figure 6a")
+table_covariance_ee_PtRap0.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dielectron final state."
+table_covariance_ee_PtRap0.location = "Supplementary material"
+for var in [x_covariance_ee_PtRap0,y_covariance_ee_PtRap0,z_covariance_ee_PtRap0]:
+    table_covariance_ee_PtRap0.add_variable(var)
+submission.add_table(table_covariance_ee_PtRap0)
+
+# Create a reader for the input file
+reader_covariance_ee_PtRap1 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix13_PtRap1.root")
+# Read the histogram
+data_covariance_ee_PtRap1 = reader_covariance_ee_PtRap1.read_hist_2d("covariance_totsum_1")
+# Create variable objects
+x_covariance_ee_PtRap1 = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_ee_PtRap1.values = data_covariance_ee_PtRap1["x"]
+y_covariance_ee_PtRap1 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ee_PtRap1.values = data_covariance_ee_PtRap1["y"]
+z_covariance_ee_PtRap1 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ee_PtRap1.values = data_covariance_ee_PtRap1["z"]
+
+table_covariance_ee_PtRap1 = Table("Covariance Matrix auxiliary Figure 6b")
+table_covariance_ee_PtRap1.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dielectron final state."
+table_covariance_ee_PtRap1.location = "Supplementary material"
+for var in [x_covariance_ee_PtRap1,y_covariance_ee_PtRap1,z_covariance_ee_PtRap1]:
+    table_covariance_ee_PtRap1.add_variable(var)
+submission.add_table(table_covariance_ee_PtRap1)
+
+# Create a reader for the input file
+reader_covariance_ee_PtRap2 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix13_PtRap2.root")
+# Read the histogram
+data_covariance_ee_PtRap2 = reader_covariance_ee_PtRap2.read_hist_2d("covariance_totsum_1")
+# Create variable objects
+x_covariance_ee_PtRap2 = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_ee_PtRap2.values = data_covariance_ee_PtRap2["x"]
+y_covariance_ee_PtRap2 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ee_PtRap2.values = data_covariance_ee_PtRap2["y"]
+z_covariance_ee_PtRap2 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ee_PtRap2.values = data_covariance_ee_PtRap2["z"]
+
+table_covariance_ee_PtRap2 = Table("Covariance Matrix auxiliary Figure 6c")
+table_covariance_ee_PtRap2.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dielectron final state."
+table_covariance_ee_PtRap2.location = "Supplementary material"
+for var in [x_covariance_ee_PtRap2,y_covariance_ee_PtRap2,z_covariance_ee_PtRap2]:
+    table_covariance_ee_PtRap2.add_variable(var)
+submission.add_table(table_covariance_ee_PtRap2)
+
+# Create a reader for the input file
+reader_covariance_ee_PtRap3 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix13_PtRap3.root")
+# Read the histogram
+data_covariance_ee_PtRap3 = reader_covariance_ee_PtRap3.read_hist_2d("covariance_totsum_1")
+# Create variable objects
+x_covariance_ee_PtRap3 = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_ee_PtRap3.values = data_covariance_ee_PtRap3["x"]
+y_covariance_ee_PtRap3 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ee_PtRap3.values = data_covariance_ee_PtRap3["y"]
+z_covariance_ee_PtRap3 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ee_PtRap3.values = data_covariance_ee_PtRap3["z"]
+
+table_covariance_ee_PtRap3 = Table("Covariance Matrix auxiliary Figure 6d")
+table_covariance_ee_PtRap3.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dielectron final state."
+table_covariance_ee_PtRap3.location = "Supplementary material"
+for var in [x_covariance_ee_PtRap3,y_covariance_ee_PtRap3,z_covariance_ee_PtRap3]:
+    table_covariance_ee_PtRap3.add_variable(var)
+submission.add_table(table_covariance_ee_PtRap3)
+
+# Create a reader for the input file
+reader_covariance_ee_PtRap4 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix13_PtRap4.root")
+# Read the histogram
+data_covariance_ee_PtRap4 = reader_covariance_ee_PtRap4.read_hist_2d("covariance_totsum_1")
+# Create variable objects
+x_covariance_ee_PtRap4 = Variable("Bin X", is_independent=True, is_binned=False)
+x_covariance_ee_PtRap4.values = data_covariance_ee_PtRap4["x"]
+y_covariance_ee_PtRap4 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ee_PtRap4.values = data_covariance_ee_PtRap4["y"]
+z_covariance_ee_PtRap4 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ee_PtRap4.values = data_covariance_ee_PtRap4["z"]
+
+table_covariance_ee_PtRap4 = Table("Covariance Matrix auxiliary Figure 6e")
+table_covariance_ee_PtRap4.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dielectron final state."
+table_covariance_ee_PtRap4.location = "Supplementary material"
+for var in [x_covariance_ee_PtRap4,y_covariance_ee_PtRap4,z_covariance_ee_PtRap4]:
+    table_covariance_ee_PtRap4.add_variable(var)
+submission.add_table(table_covariance_ee_PtRap4)
+### End covariance ee
+
+### Begin FigAux7
+reader_FigAux7a = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystRap_nsel0_dy3_rebin1_default.root")
+reader_FigAux7b = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystRap_nsel1_dy3_rebin1_default.root")
+reader_FigAux7c = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystRap_nsel2_dy3_rebin1_default.root")
+
+tableFigAux7 = Table("Auxiliary Figure 7")
+tableFigAux7.description = "The measured absolute cross sections in bins of |y(Z)|. The cross sections are normalized by the bin width."
+tableFigAux7.location = "Data from Auxiliary Figure 7"
+tableFigAux7.keywords["observables"] = ["N"]
+
+histo_unfoldFigAux7a = reader_FigAux7a.read_hist_1d("unfold")
+histo_unfoldFigAux7b = reader_FigAux7b.read_hist_1d("unfold")
+histo_unfoldFigAux7c = reader_FigAux7c.read_hist_1d("unfold")
+
+histo_unfoldFigAux7a.keys()
+
+for key in histo_unfoldFigAux7a.keys():
+    print(key, type(histo_unfoldFigAux7a[key]), type(histo_unfoldFigAux7a[key][0]))
+
+mmed_FigAux7 = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
+mmed_FigAux7.values = histo_unfoldFigAux7a["x"]
 
 # y-axis: N events
-ZH125_wzcr = Variable("Number of ZH(125) signal events", is_independent=False, is_binned=False, units="")
-ZH125_wzcr.values = histo_ZH125_wzcr["y"]
+unfoldFigAux7a = Variable("Dimuon cross section (pb)", is_independent=False, is_binned=False, units="")
+unfoldFigAux7a.values = histo_unfoldFigAux7a["y"]
 
-ZH200_wzcr = Variable("Number of ZH(200) signal events", is_independent=False, is_binned=False, units="")
-ZH200_wzcr.values = histo_ZH200_wzcr["y"]
+unc_unfoldFigAux7a = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux7a.values = histo_unfoldFigAux7a["dy"]
 
-ZH300_wzcr = Variable("Number of ZH(300) signal events", is_independent=False, is_binned=False, units="")
-ZH300_wzcr.values = histo_ZH300_wzcr["y"]
+unfoldFigAux7a.add_uncertainty(unc_unfoldFigAux7a)
 
-totalbackground_wzcr = Variable("Number of background events", is_independent=False, is_binned=False, units="")
-totalbackground_wzcr.values = histo_Bck_wzcr["y"]
+unfoldFigAux7b = Variable("Dielectron cross section (pb)", is_independent=False, is_binned=False, units="")
+unfoldFigAux7b.values = histo_unfoldFigAux7b["y"]
 
-unc_totalbackground_wzcr = Uncertainty("total uncertainty", is_symmetric=True)
-unc_totalbackground_wzcr.values = histo_Bck_wzcr["dy"]
+unc_unfoldFigAux7b = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux7b.values = histo_unfoldFigAux7b["dy"]
 
-totalbackground_wzcr.add_uncertainty(unc_totalbackground_wzcr)
+unfoldFigAux7b.add_uncertainty(unc_unfoldFigAux7b)
 
-ZZ_wzcr = Variable("Number of ZZ events", is_independent=False, is_binned=False, units="")
-ZZ_wzcr.values = histo_ZZ_wzcr["y"]
+unfoldFigAux7c = Variable("Dilepton cross section (pb)", is_independent=False, is_binned=False, units="")
+unfoldFigAux7c.values = histo_unfoldFigAux7c["y"]
 
-WZ_wzcr = Variable("Number of WZ events", is_independent=False, is_binned=False, units="")
-WZ_wzcr.values = histo_WZ_wzcr["y"]
+unc_unfoldFigAux7c = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux7c.values = histo_unfoldFigAux7c["dy"]
 
-VVV_wzcr = Variable("Number of VVV events", is_independent=False, is_binned=False, units="")
-VVV_wzcr.values = histo_VVV_wzcr["y"]
+unfoldFigAux7c.add_uncertainty(unc_unfoldFigAux7c)
 
-VG_wzcr = Variable("Number of VG events", is_independent=False, is_binned=False, units="")
-VG_wzcr.values = histo_VG_wzcr["y"]
+unfoldFigAux7a.scale_values(lumi_sf)
+unfoldFigAux7b.scale_values(lumi_sf)
+unfoldFigAux7c.scale_values(lumi_sf)
 
-EM_wzcr = Variable("Number of nonresonant events", is_independent=False, is_binned=False, units="")
-EM_wzcr.values = histo_WZ_wzcr["y"]
+tableFigAux7.add_variable(mmed_FigAux7)
+tableFigAux7.add_variable(unfoldFigAux7a)
+tableFigAux7.add_variable(unfoldFigAux7b)
+tableFigAux7.add_variable(unfoldFigAux7c)
+submission.add_table(tableFigAux7)
+### End FigAux7
 
-Data_wzcr = Variable("Number of data events", is_independent=False, is_binned=False, units="")
-Data_wzcr.values = histo_Data_wzcr["y"]
+### Begin FigAux8
+reader_FigAux8a = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystPt_nsel0_dy3_rebin1_default.root")
+reader_FigAux8b = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystPt_nsel1_dy3_rebin1_default.root")
+reader_FigAux8c = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystPt_nsel2_dy3_rebin1_default.root")
 
-unc_data_wzcr = Uncertainty("Poisson errors", is_symmetric=True)
-unc_data_wzcr.values = histo_Data_wzcr["dy"]
-Data_wzcr.add_uncertainty(unc_data_wzcr)
+tableFigAux8 = Table("Auxiliary Figure 8")
+tableFigAux8.description = "The measured absolute cross sections in bins of Z pt. The cross sections are normalized by the bin width."
+tableFigAux8.location = "Data from Auxiliary Figure 8"
+tableFigAux8.keywords["observables"] = ["N"]
 
-tableWZCR.add_variable(mmed_wzcr)
-tableWZCR.add_variable(ZH125_wzcr)
-tableWZCR.add_variable(ZH200_wzcr)
-tableWZCR.add_variable(ZH300_wzcr)
-tableWZCR.add_variable(totalbackground_wzcr)
-tableWZCR.add_variable(ZZ_wzcr)
-tableWZCR.add_variable(WZ_wzcr)
-tableWZCR.add_variable(VVV_wzcr)
-tableWZCR.add_variable(VG_wzcr)
-tableWZCR.add_variable(EM_wzcr)
-tableWZCR.add_variable(Data_wzcr)
-submission.add_table(tableWZCR)
-### End WZ CR
+histo_unfoldFigAux8a = reader_FigAux8a.read_hist_1d("unfold")
+histo_unfoldFigAux8b = reader_FigAux8b.read_hist_1d("unfold")
+histo_unfoldFigAux8c = reader_FigAux8c.read_hist_1d("unfold")
 
-### Begin ZZ CR
-reader_zzcr = RootFileReader("HEPData/inputs/exo19007/histo_zhg_region2.root")
+histo_unfoldFigAux8a.keys()
 
-tableZZCR = Table("Figure 2c")
-tableZZCR.description = "$\mathrm{M_{\mathrm{T}}}$ distribution for the ZZ control region."
-tableZZCR.location = "Data from Figure 2c"
-tableZZCR.keywords["observables"] = ["N"]
+for key in histo_unfoldFigAux8a.keys():
+    print(key, type(histo_unfoldFigAux8a[key]), type(histo_unfoldFigAux8a[key][0]))
 
-histo_Data_zzcr  = reader_zzcr.read_hist_1d("histo_Data")
-histo_ZZ_zzcr    = reader_zzcr.read_hist_1d("histo_ZZ")
-histo_WZ_zzcr    = reader_zzcr.read_hist_1d("histo_WZ")
-histo_VVV_zzcr   = reader_zzcr.read_hist_1d("histo_VVV")
-histo_VG_zzcr    = reader_zzcr.read_hist_1d("histo_VG")
-histo_ZZ_zzcr    = reader_zzcr.read_hist_1d("histo_ZZ")
-histo_ZH125_zzcr = reader_zzcr.read_hist_1d("histo_ZH125")
-histo_ZH200_zzcr = reader_zzcr.read_hist_1d("histo_ZH200")
-histo_ZH300_zzcr = reader_zzcr.read_hist_1d("histo_ZH300")
-histo_Bck_zzcr   = reader_zzcr.read_hist_1d("histo_ZZ")
-
-histo_Bck_zzcr.keys()
-
-mmed_zzcr = Variable("$M_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_zzcr.values = histo_ZH125_zzcr["x"]
+mmed_FigAux8 = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
+mmed_FigAux8.values = histo_unfoldFigAux8a["x"]
 
 # y-axis: N events
-ZH125_zzcr = Variable("Number of ZH(125) signal events", is_independent=False, is_binned=False, units="")
-ZH125_zzcr.values = histo_ZH125_zzcr["y"]
+unfoldFigAux8a = Variable("Dimuon cross section (pb)", is_independent=False, is_binned=False, units="")
+unfoldFigAux8a.values = histo_unfoldFigAux8a["y"]
 
-ZH200_zzcr = Variable("Number of ZH(200) signal events", is_independent=False, is_binned=False, units="")
-ZH200_zzcr.values = histo_ZH200_zzcr["y"]
+unc_unfoldFigAux8a = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux8a.values = histo_unfoldFigAux8a["dy"]
 
-ZH300_zzcr = Variable("Number of ZH(300) signal events", is_independent=False, is_binned=False, units="")
-ZH300_zzcr.values = histo_ZH300_zzcr["y"]
+unfoldFigAux8a.add_uncertainty(unc_unfoldFigAux8a)
 
-totalbackground_zzcr = Variable("Number of background events", is_independent=False, is_binned=False, units="")
-totalbackground_zzcr.values = histo_Bck_zzcr["y"]
+unfoldFigAux8b = Variable("Dielectron cross section (pb)", is_independent=False, is_binned=False, units="")
+unfoldFigAux8b.values = histo_unfoldFigAux8b["y"]
 
-unc_totalbackground_zzcr = Uncertainty("total uncertainty", is_symmetric=True)
-unc_totalbackground_zzcr.values = histo_Bck_zzcr["dy"]
+unc_unfoldFigAux8b = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux8b.values = histo_unfoldFigAux8b["dy"]
 
-totalbackground_zzcr.add_uncertainty(unc_totalbackground_zzcr)
+unfoldFigAux8b.add_uncertainty(unc_unfoldFigAux8b)
 
-ZZ_zzcr = Variable("Number of ZZ events", is_independent=False, is_binned=False, units="")
-ZZ_zzcr.values = histo_ZZ_zzcr["y"]
+unfoldFigAux8c = Variable("Dilepton cross section (pb)", is_independent=False, is_binned=False, units="")
+unfoldFigAux8c.values = histo_unfoldFigAux8c["y"]
 
-WZ_zzcr = Variable("Number of WZ events", is_independent=False, is_binned=False, units="")
-WZ_zzcr.values = histo_WZ_zzcr["y"]
+unc_unfoldFigAux8c = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux8c.values = histo_unfoldFigAux8c["dy"]
 
-VVV_zzcr = Variable("Number of VVV events", is_independent=False, is_binned=False, units="")
-VVV_zzcr.values = histo_VVV_zzcr["y"]
+unfoldFigAux8c.add_uncertainty(unc_unfoldFigAux8c)
 
-VG_zzcr = Variable("Number of VG events", is_independent=False, is_binned=False, units="")
-VG_zzcr.values = histo_VG_zzcr["y"]
+unfoldFigAux8a.scale_values(lumi_sf)
+unfoldFigAux8b.scale_values(lumi_sf)
+unfoldFigAux8c.scale_values(lumi_sf)
 
-EM_zzcr = Variable("Number of nonresonant events", is_independent=False, is_binned=False, units="")
-EM_zzcr.values = histo_ZZ_zzcr["y"]
+tableFigAux8.add_variable(mmed_FigAux8)
+tableFigAux8.add_variable(unfoldFigAux8a)
+tableFigAux8.add_variable(unfoldFigAux8b)
+tableFigAux8.add_variable(unfoldFigAux8c)
+submission.add_table(tableFigAux8)
+### End FigAux8
 
-Data_zzcr = Variable("Number of data events", is_independent=False, is_binned=False, units="")
-Data_zzcr.values = histo_Data_zzcr["y"]
+### Begin FigAux9
+reader_FigAux9a = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystPhiStar_nsel0_dy3_rebin1_default.root")
+reader_FigAux9b = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystPhiStar_nsel1_dy3_rebin1_default.root")
+reader_FigAux9c = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystPhiStar_nsel2_dy3_rebin1_default.root")
 
-unc_data_zzcr = Uncertainty("Poisson errors", is_symmetric=True)
-unc_data_zzcr.values = histo_Data_zzcr["dy"]
-Data_zzcr.add_uncertainty(unc_data_zzcr)
+tableFigAux9 = Table("Auxiliary Figure 9")
+tableFigAux9.description = "The measured absolute cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$. The cross sections are normalized by the bin width."
+tableFigAux9.location = "Data from Auxiliary Figure 9"
+tableFigAux9.keywords["observables"] = ["N"]
 
-tableZZCR.add_variable(mmed_zzcr)
-tableZZCR.add_variable(ZH125_zzcr)
-tableZZCR.add_variable(ZH200_zzcr)
-tableZZCR.add_variable(ZH300_zzcr)
-tableZZCR.add_variable(totalbackground_zzcr)
-tableZZCR.add_variable(ZZ_zzcr)
-tableZZCR.add_variable(WZ_zzcr)
-tableZZCR.add_variable(VVV_zzcr)
-tableZZCR.add_variable(VG_zzcr)
-tableZZCR.add_variable(EM_zzcr)
-tableZZCR.add_variable(Data_zzcr)
-submission.add_table(tableZZCR)
-### End ZZ CR
+histo_unfoldFigAux9a = reader_FigAux9a.read_hist_1d("unfold")
+histo_unfoldFigAux9b = reader_FigAux9b.read_hist_1d("unfold")
+histo_unfoldFigAux9c = reader_FigAux9c.read_hist_1d("unfold")
 
-### Begin ETAGLT1SR CR
-reader_etaglt1sr = RootFileReader("HEPData/inputs/exo19007/histo_zhg_region3.root")
+histo_unfoldFigAux9a.keys()
 
-tableETAGLT1SR = Table("Figure 3a")
-tableETAGLT1SR.description = "$\mathrm{M_{\mathrm{T}}}$ distribution for the signal region, events with $|\eta_{\gamma}|<1$."
-tableETAGLT1SR.location = "Data from Figure 3a"
-tableETAGLT1SR.keywords["observables"] = ["N"]
+for key in histo_unfoldFigAux9a.keys():
+    print(key, type(histo_unfoldFigAux9a[key]), type(histo_unfoldFigAux9a[key][0]))
 
-histo_Data_etaglt1sr  = reader_etaglt1sr.read_hist_1d("histo_Data")
-histo_ZZ_etaglt1sr    = reader_etaglt1sr.read_hist_1d("histo_ZZ")
-histo_WZ_etaglt1sr    = reader_etaglt1sr.read_hist_1d("histo_WZ")
-histo_VVV_etaglt1sr   = reader_etaglt1sr.read_hist_1d("histo_VVV")
-histo_VG_etaglt1sr    = reader_etaglt1sr.read_hist_1d("histo_VG")
-histo_EM_etaglt1sr    = reader_etaglt1sr.read_hist_1d("histo_EM")
-histo_ZH125_etaglt1sr = reader_etaglt1sr.read_hist_1d("histo_ZH125")
-histo_ZH200_etaglt1sr = reader_etaglt1sr.read_hist_1d("histo_ZH200")
-histo_ZH300_etaglt1sr = reader_etaglt1sr.read_hist_1d("histo_ZH300")
-histo_Bck_etaglt1sr   = reader_etaglt1sr.read_hist_1d("histo_EM")
-
-histo_Bck_etaglt1sr.keys()
-
-mmed_etaglt1sr = Variable("$M_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_etaglt1sr.values = histo_ZH125_etaglt1sr["x"]
+mmed_FigAux9 = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=False, units="")
+mmed_FigAux9.values = histo_unfoldFigAux9a["x"]
 
 # y-axis: N events
-ZH125_etaglt1sr = Variable("Number of ZH(125) signal events", is_independent=False, is_binned=False, units="")
-ZH125_etaglt1sr.values = histo_ZH125_etaglt1sr["y"]
+unfoldFigAux9a = Variable("Dimuon cross section (pb)", is_independent=False, is_binned=False, units="")
+unfoldFigAux9a.values = histo_unfoldFigAux9a["y"]
 
-ZH200_etaglt1sr = Variable("Number of ZH(200) signal events", is_independent=False, is_binned=False, units="")
-ZH200_etaglt1sr.values = histo_ZH200_etaglt1sr["y"]
+unc_unfoldFigAux9a = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux9a.values = histo_unfoldFigAux9a["dy"]
 
-ZH300_etaglt1sr = Variable("Number of ZH(300) signal events", is_independent=False, is_binned=False, units="")
-ZH300_etaglt1sr.values = histo_ZH300_etaglt1sr["y"]
+unfoldFigAux9a.add_uncertainty(unc_unfoldFigAux9a)
 
-totalbackground_etaglt1sr = Variable("Number of background events", is_independent=False, is_binned=False, units="")
-totalbackground_etaglt1sr.values = histo_Bck_etaglt1sr["y"]
+unfoldFigAux9b = Variable("Dielectron cross section (pb)", is_independent=False, is_binned=False, units="")
+unfoldFigAux9b.values = histo_unfoldFigAux9b["y"]
 
-unc_totalbackground_etaglt1sr = Uncertainty("total uncertainty", is_symmetric=True)
-unc_totalbackground_etaglt1sr.values = histo_Bck_etaglt1sr["dy"]
+unc_unfoldFigAux9b = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux9b.values = histo_unfoldFigAux9b["dy"]
 
-totalbackground_etaglt1sr.add_uncertainty(unc_totalbackground_etaglt1sr)
+unfoldFigAux9b.add_uncertainty(unc_unfoldFigAux9b)
 
-ZZ_etaglt1sr = Variable("Number of ZZ events", is_independent=False, is_binned=False, units="")
-ZZ_etaglt1sr.values = histo_ZZ_etaglt1sr["y"]
+unfoldFigAux9c = Variable("Dilepton cross section (pb)", is_independent=False, is_binned=False, units="")
+unfoldFigAux9c.values = histo_unfoldFigAux9c["y"]
 
-WZ_etaglt1sr = Variable("Number of WZ events", is_independent=False, is_binned=False, units="")
-WZ_etaglt1sr.values = histo_WZ_etaglt1sr["y"]
+unc_unfoldFigAux9c = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux9c.values = histo_unfoldFigAux9c["dy"]
 
-VVV_etaglt1sr = Variable("Number of VVV events", is_independent=False, is_binned=False, units="")
-VVV_etaglt1sr.values = histo_VVV_etaglt1sr["y"]
+unfoldFigAux9c.add_uncertainty(unc_unfoldFigAux9c)
 
-VG_etaglt1sr = Variable("Number of VG events", is_independent=False, is_binned=False, units="")
-VG_etaglt1sr.values = histo_VG_etaglt1sr["y"]
+unfoldFigAux9a.scale_values(lumi_sf)
+unfoldFigAux9b.scale_values(lumi_sf)
+unfoldFigAux9c.scale_values(lumi_sf)
 
-EM_etaglt1sr = Variable("Number of nonresonant events", is_independent=False, is_binned=False, units="")
-EM_etaglt1sr.values = histo_EM_etaglt1sr["y"]
+tableFigAux9.add_variable(mmed_FigAux9)
+tableFigAux9.add_variable(unfoldFigAux9a)
+tableFigAux9.add_variable(unfoldFigAux9b)
+tableFigAux9.add_variable(unfoldFigAux9c)
+submission.add_table(tableFigAux9)
+### End FigAux9
 
-Data_etaglt1sr = Variable("Number of data events", is_independent=False, is_binned=False, units="")
-Data_etaglt1sr.values = histo_Data_etaglt1sr["y"]
+### Begin FigAux10to14
+reader_FigAux10to14a = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystPtRap0_nsel2_dy3_rebin1_default.root")
+reader_FigAux10to14b = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystPtRap1_nsel2_dy3_rebin1_default.root")
+reader_FigAux10to14c = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystPtRap2_nsel2_dy3_rebin1_default.root")
+reader_FigAux10to14d = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystPtRap3_nsel2_dy3_rebin1_default.root")
+reader_FigAux10to14e = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystPtRap4_nsel2_dy3_rebin1_default.root")
 
-unc_data_etaglt1sr = Uncertainty("Poisson errors", is_symmetric=True)
-unc_data_etaglt1sr.values = histo_Data_etaglt1sr["dy"]
-Data_etaglt1sr.add_uncertainty(unc_data_etaglt1sr)
+tableFigAux10to14 = Table("Auxiliary Figures 10 to 14")
+tableFigAux10to14.description = "The measured absolute cross sections in bins of Z pt different |y(Z)| bins. The cross sections are normalized by the bin width."
+tableFigAux10to14.location = "Data from Auxiliary Figures 10 to 14"
+tableFigAux10to14.keywords["observables"] = ["N"]
 
-tableETAGLT1SR.add_variable(mmed_etaglt1sr)
-tableETAGLT1SR.add_variable(ZH125_etaglt1sr)
-tableETAGLT1SR.add_variable(ZH200_etaglt1sr)
-tableETAGLT1SR.add_variable(ZH300_etaglt1sr)
-tableETAGLT1SR.add_variable(totalbackground_etaglt1sr)
-tableETAGLT1SR.add_variable(ZZ_etaglt1sr)
-tableETAGLT1SR.add_variable(WZ_etaglt1sr)
-tableETAGLT1SR.add_variable(VVV_etaglt1sr)
-tableETAGLT1SR.add_variable(VG_etaglt1sr)
-tableETAGLT1SR.add_variable(EM_etaglt1sr)
-tableETAGLT1SR.add_variable(Data_etaglt1sr)
-submission.add_table(tableETAGLT1SR)
-### End ETAGLT1SR CR
+histo_unfoldFigAux10to14a = reader_FigAux10to14a.read_hist_1d("unfold")
+histo_unfoldFigAux10to14b = reader_FigAux10to14b.read_hist_1d("unfold")
+histo_unfoldFigAux10to14c = reader_FigAux10to14c.read_hist_1d("unfold")
+histo_unfoldFigAux10to14d = reader_FigAux10to14d.read_hist_1d("unfold")
+histo_unfoldFigAux10to14e = reader_FigAux10to14e.read_hist_1d("unfold")
 
-### Begin ETAGGT1SR CR
-reader_etaggt1sr = RootFileReader("HEPData/inputs/exo19007/histo_zhg_region4.root")
+histo_unfoldFigAux10to14a.keys()
 
-tableETAGGT1SR = Table("Figure 3b")
-tableETAGGT1SR.description = "$\mathrm{M_{\mathrm{T}}}$ distribution for the signal region, events with $|\eta_{\gamma}|>1$."
-tableETAGGT1SR.location = "Data from Figure 3b"
-tableETAGGT1SR.keywords["observables"] = ["N"]
+for key in histo_unfoldFigAux10to14a.keys():
+    print(key, type(histo_unfoldFigAux10to14a[key]), type(histo_unfoldFigAux10to14a[key][0]))
 
-histo_Data_etaggt1sr  = reader_etaggt1sr.read_hist_1d("histo_Data")
-histo_ZZ_etaggt1sr    = reader_etaggt1sr.read_hist_1d("histo_ZZ")
-histo_WZ_etaggt1sr    = reader_etaggt1sr.read_hist_1d("histo_WZ")
-histo_VVV_etaggt1sr   = reader_etaggt1sr.read_hist_1d("histo_VVV")
-histo_VG_etaggt1sr    = reader_etaggt1sr.read_hist_1d("histo_VG")
-histo_EM_etaggt1sr    = reader_etaggt1sr.read_hist_1d("histo_EM")
-histo_ZH125_etaggt1sr = reader_etaggt1sr.read_hist_1d("histo_ZH125")
-histo_ZH200_etaggt1sr = reader_etaggt1sr.read_hist_1d("histo_ZH200")
-histo_ZH300_etaggt1sr = reader_etaggt1sr.read_hist_1d("histo_ZH300")
-histo_Bck_etaggt1sr   = reader_etaggt1sr.read_hist_1d("histo_EM")
-
-histo_Bck_etaggt1sr.keys()
-
-mmed_etaggt1sr = Variable("$M_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_etaggt1sr.values = histo_ZH125_etaggt1sr["x"]
+mmed_FigAux10to14 = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
+mmed_FigAux10to14.values = histo_unfoldFigAux10to14a["x"]
 
 # y-axis: N events
-ZH125_etaggt1sr = Variable("Number of ZH(125) signal events", is_independent=False, is_binned=False, units="")
-ZH125_etaggt1sr.values = histo_ZH125_etaggt1sr["y"]
+unfoldFigAux10to14a = Variable("Dilepton cross section (pb) in 0 < |y(Z)| < 0.4 bin", is_independent=False, is_binned=False, units="")
+unfoldFigAux10to14a.values = histo_unfoldFigAux10to14a["y"]
 
-ZH200_etaggt1sr = Variable("Number of ZH(200) signal events", is_independent=False, is_binned=False, units="")
-ZH200_etaggt1sr.values = histo_ZH200_etaggt1sr["y"]
+unc_unfoldFigAux10to14a = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux10to14a.values = histo_unfoldFigAux10to14a["dy"]
 
-ZH300_etaggt1sr = Variable("Number of ZH(300) signal events", is_independent=False, is_binned=False, units="")
-ZH300_etaggt1sr.values = histo_ZH300_etaggt1sr["y"]
+unfoldFigAux10to14a.add_uncertainty(unc_unfoldFigAux10to14a)
 
-totalbackground_etaggt1sr = Variable("Number of background events", is_independent=False, is_binned=False, units="")
-totalbackground_etaggt1sr.values = histo_Bck_etaggt1sr["y"]
+unfoldFigAux10to14b = Variable("Dilepton cross section (pb) in 0.4 < |y(Z)| < 0.8 bin", is_independent=False, is_binned=False, units="")
+unfoldFigAux10to14b.values = histo_unfoldFigAux10to14b["y"]
 
-unc_totalbackground_etaggt1sr = Uncertainty("total uncertainty", is_symmetric=True)
-unc_totalbackground_etaggt1sr.values = histo_Bck_etaggt1sr["dy"]
+unc_unfoldFigAux10to14b = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux10to14b.values = histo_unfoldFigAux10to14b["dy"]
 
-totalbackground_etaggt1sr.add_uncertainty(unc_totalbackground_etaggt1sr)
+unfoldFigAux10to14b.add_uncertainty(unc_unfoldFigAux10to14b)
 
-ZZ_etaggt1sr = Variable("Number of ZZ events", is_independent=False, is_binned=False, units="")
-ZZ_etaggt1sr.values = histo_ZZ_etaggt1sr["y"]
+unfoldFigAux10to14c = Variable("Dilepton cross section (pb) in 0.8 < |y(Z)| < 1.2 bin", is_independent=False, is_binned=False, units="")
+unfoldFigAux10to14c.values = histo_unfoldFigAux10to14c["y"]
 
-WZ_etaggt1sr = Variable("Number of WZ events", is_independent=False, is_binned=False, units="")
-WZ_etaggt1sr.values = histo_WZ_etaggt1sr["y"]
+unc_unfoldFigAux10to14c = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux10to14c.values = histo_unfoldFigAux10to14c["dy"]
 
-VVV_etaggt1sr = Variable("Number of VVV events", is_independent=False, is_binned=False, units="")
-VVV_etaggt1sr.values = histo_VVV_etaggt1sr["y"]
+unfoldFigAux10to14c.add_uncertainty(unc_unfoldFigAux10to14c)
 
-VG_etaggt1sr = Variable("Number of VG events", is_independent=False, is_binned=False, units="")
-VG_etaggt1sr.values = histo_VG_etaggt1sr["y"]
+unfoldFigAux10to14d = Variable("Dilepton cross section (pb) in 1.2 < |y(Z)| < 1.6 bin", is_independent=False, is_binned=False, units="")
+unfoldFigAux10to14d.values = histo_unfoldFigAux10to14d["y"]
 
-EM_etaggt1sr = Variable("Number of nonresonant events", is_independent=False, is_binned=False, units="")
-EM_etaggt1sr.values = histo_EM_etaggt1sr["y"]
+unc_unfoldFigAux10to14d = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux10to14d.values = histo_unfoldFigAux10to14d["dy"]
 
-Data_etaggt1sr = Variable("Number of data events", is_independent=False, is_binned=False, units="")
-Data_etaggt1sr.values = histo_Data_etaggt1sr["y"]
+unfoldFigAux10to14d.add_uncertainty(unc_unfoldFigAux10to14d)
 
-unc_data_etaggt1sr = Uncertainty("Poisson errors", is_symmetric=True)
-unc_data_etaggt1sr.values = histo_Data_etaggt1sr["dy"]
-Data_etaggt1sr.add_uncertainty(unc_data_etaggt1sr)
+unfoldFigAux10to14e = Variable("Dilepton cross section (pb) in 1.6 < |y(Z)| < 2.4 bin", is_independent=False, is_binned=False, units="")
+unfoldFigAux10to14e.values = histo_unfoldFigAux10to14e["y"]
 
-tableETAGGT1SR.add_variable(mmed_etaggt1sr)
-tableETAGGT1SR.add_variable(ZH125_etaggt1sr)
-tableETAGGT1SR.add_variable(ZH200_etaggt1sr)
-tableETAGGT1SR.add_variable(ZH300_etaggt1sr)
-tableETAGGT1SR.add_variable(totalbackground_etaggt1sr)
-tableETAGGT1SR.add_variable(ZZ_etaggt1sr)
-tableETAGGT1SR.add_variable(WZ_etaggt1sr)
-tableETAGGT1SR.add_variable(VVV_etaggt1sr)
-tableETAGGT1SR.add_variable(VG_etaggt1sr)
-tableETAGGT1SR.add_variable(EM_etaggt1sr)
-tableETAGGT1SR.add_variable(Data_etaggt1sr)
-submission.add_table(tableETAGGT1SR)
-### End ETAGGT1SR CR
+unc_unfoldFigAux10to14e = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux10to14e.values = histo_unfoldFigAux10to14e["dy"]
 
-submission.add_additional_resource(description="Generator configuration files", location="HEPData/inputs/exo19007/zh_signal.tar.gz", copy_file=True)
+unfoldFigAux10to14e.add_uncertainty(unc_unfoldFigAux10to14e)
 
-### Begin hDEffMuEtaPt
-# Create a reader for the input file
-reader_EffMu = RootFileReader("HEPData/inputs/exo19007/histo_objectEfficiency.root")
-# Read the histogram
-data_EffMu = reader_EffMu.read_hist_2d("hDEffMuEtaPt")
-# Create variable objects
-x_EffMu = Variable("$|\eta|$", is_independent=True, is_binned=False)
-x_EffMu.values = data_EffMu["x"]
-y_EffMu = Variable("$\mathrm{p_\mathrm{T}}$ (GeV)", is_independent=True, is_binned=False)
-y_EffMu.values = data_EffMu["y"]
-z_EffMu = Variable("Muon efficiency", is_independent=False, is_binned=False)
-z_EffMu.values = data_EffMu["z"]
+unfoldFigAux10to14a.scale_values(lumi_sf)
+unfoldFigAux10to14b.scale_values(lumi_sf)
+unfoldFigAux10to14c.scale_values(lumi_sf)
+unfoldFigAux10to14d.scale_values(lumi_sf)
+unfoldFigAux10to14e.scale_values(lumi_sf)
 
-table_EffMu = Table("Muon efficiency")
-table_EffMu.description = "Muon reconstruction, identification, and isolation efficiency as a function of $|\eta|$ and $\mathrm{p_\mathrm{T}}$."
-table_EffMu.location = "Supplementary material"
-for var in [x_EffMu,y_EffMu,z_EffMu]:
-    table_EffMu.add_variable(var)
-submission.add_table(table_EffMu)
-### End hDEffMuEtaPt
+tableFigAux10to14.add_variable(mmed_FigAux10to14)
+tableFigAux10to14.add_variable(unfoldFigAux10to14a)
+tableFigAux10to14.add_variable(unfoldFigAux10to14b)
+tableFigAux10to14.add_variable(unfoldFigAux10to14c)
+tableFigAux10to14.add_variable(unfoldFigAux10to14d)
+tableFigAux10to14.add_variable(unfoldFigAux10to14e)
+submission.add_table(tableFigAux10to14)
+### End FigAux10to14
 
-### Begin hDEffElEtaPt
-# Create a reader for the input file
-reader_EffEl = RootFileReader("HEPData/inputs/exo19007/histo_objectEfficiency.root")
-# Read the histogram
-data_EffEl = reader_EffEl.read_hist_2d("hDEffElEtaPt")
-# Create variable objects
-x_EffEl = Variable("$|\eta|$", is_independent=True, is_binned=False)
-x_EffEl.values = data_EffEl["x"]
-y_EffEl = Variable("$\mathrm{p_\mathrm{T}}$ (GeV)", is_independent=True, is_binned=False)
-y_EffEl.values = data_EffEl["y"]
-z_EffEl = Variable("Electron efficiency", is_independent=False, is_binned=False)
-z_EffEl.values = data_EffEl["z"]
+### Begin FigAux15a
+reader_FigAux15a = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystPt_nsel2_dy3_rebin1_default.root")
 
-table_EffEl = Table("Electron efficiency")
-table_EffEl.description = "Electron reconstruction, identification, and isolation efficiency as a function of $|\eta|$ and $\mathrm{p_\mathrm{T}}$."
-table_EffEl.location = "Supplementary material"
-for var in [x_EffEl,y_EffEl,z_EffEl]:
-    table_EffEl.add_variable(var)
-submission.add_table(table_EffEl)
-### End hDEffElEtaPt
+tableFigAux15a = Table("Auxiliary Figure 15a")
+tableFigAux15a.description = "The measured normalized cross sections in bins of Z pt."
+tableFigAux15a.location = "Data from Auxiliary Figure 15a"
+tableFigAux15a.keywords["observables"] = ["N"]
 
-### Begin hDEffPhEtaPt
-# Create a reader for the input file
-reader_EffPh = RootFileReader("HEPData/inputs/exo19007/histo_objectEfficiency.root")
-# Read the histogram
-data_EffPh = reader_EffPh.read_hist_2d("hDEffPhEtaPt")
-# Create variable objects
-x_EffPh = Variable("$|\eta|$", is_independent=True, is_binned=False)
-x_EffPh.values = data_EffPh["x"]
-y_EffPh = Variable("$\mathrm{p_\mathrm{T}}$ (GeV)", is_independent=True, is_binned=False)
-y_EffPh.values = data_EffPh["y"]
-z_EffPh = Variable("Photon reconstruction, identification, and isolation efficiency", is_independent=False, is_binned=False)
-z_EffPh.values = data_EffPh["z"]
+histo_unfoldFigAux15a = reader_FigAux15a.read_hist_1d("unfold")
 
-table_EffPh = Table("Photon efficiency")
-table_EffPh.description = "Photon efficiency as a function of $|\eta|$ and $\mathrm{p_\mathrm{T}}$."
-table_EffPh.location = "Supplementary material"
-for var in [x_EffPh,y_EffPh,z_EffPh]:
-    table_EffPh.add_variable(var)
-submission.add_table(table_EffPh)
-### End hDEffPhEtaPt
+histo_unfoldFigAux15a.keys()
 
+inv_total_sum = 1.0/sum(histo_unfoldFigAux15a["y"])
+for key in histo_unfoldFigAux15a.keys():
+    print(key, type(histo_unfoldFigAux15a[key]), type(histo_unfoldFigAux15a[key][0]))
 
-### Begin covariance
-# Create a reader for the input file
-reader_covariance = RootFileReader("HEPData/inputs/exo19007/fitDiagnosticszhg_comb_125.root")
-# Read the histogram
-data_covariance = reader_covariance.read_hist_2d("shapes_fit_b/overall_total_covar")
-# Create variable objects
-x_covariance = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance.values = data_covariance["x"]
-y_covariance = Variable("Bin Y", is_independent=True, is_binned=False)
-y_covariance.values = data_covariance["y"]
-z_covariance = Variable("covariance Matrix", is_independent=False, is_binned=False)
-z_covariance.values = data_covariance["z"]
+mmed_FigAux15a = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
+mmed_FigAux15a.values = histo_unfoldFigAux15a["x"]
 
-table_covariance = Table("Covariance Matrix")
-table_covariance.description = "Covariance matrix for all bins used in the analysis. There are 45 bins in total, 15 for every data-taking year. For every year, the first bin corresponds to events in the $\mathrm{e}\mu$ control region, the following five bins correspond to events with $|\eta^\gamma|< 1$ in the signal region, the next five bins correspond to events with $|\eta^\gamma|> 1$ in the signal region, the next two bins correspond to events in the WZ control region, and finally the last two bins correspond to events in the ZZ control region."
-table_covariance.location = "Supplementary material"
-for var in [x_covariance,y_covariance,z_covariance]:
-    table_covariance.add_variable(var)
-submission.add_table(table_covariance)
-### End covariance
+# y-axis: N events
+unfoldFigAux15a = Variable("Normalized dilepton cross section", is_independent=False, is_binned=False, units="")
+unfoldFigAux15a.values = histo_unfoldFigAux15a["y"]
 
-"""
+unc_unfoldFigAux15a = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux15a.values = histo_unfoldFigAux15a["dy"]
+
+unfoldFigAux15a.add_uncertainty(unc_unfoldFigAux15a)
+
+unfoldFigAux15a.scale_values(inv_total_sum)
+
+tableFigAux15a.add_variable(mmed_FigAux15a)
+tableFigAux15a.add_variable(unfoldFigAux15a)
+submission.add_table(tableFigAux15a)
+### End FigAux15a
+
+### Begin FigAux15b
+reader_FigAux15b = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystPhiStar_nsel2_dy3_rebin1_default.root")
+
+tableFigAux15b = Table("Auxiliary Figure 15b")
+tableFigAux15b.description = "The measured normalized cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$."
+tableFigAux15b.location = "Data from Auxiliary Figure 15b"
+tableFigAux15b.keywords["observables"] = ["N"]
+
+histo_unfoldFigAux15b = reader_FigAux15b.read_hist_1d("unfold")
+
+histo_unfoldFigAux15b.keys()
+
+inv_total_sum = 1.0/sum(histo_unfoldFigAux15b["y"])
+for key in histo_unfoldFigAux15b.keys():
+    print(key, type(histo_unfoldFigAux15b[key]), type(histo_unfoldFigAux15b[key][0]))
+
+mmed_FigAux15b = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=False, units="")
+mmed_FigAux15b.values = histo_unfoldFigAux15b["x"]
+
+# y-axis: N events
+unfoldFigAux15b = Variable("Normalized dilepton cross section", is_independent=False, is_binned=False, units="")
+unfoldFigAux15b.values = histo_unfoldFigAux15b["y"]
+
+unc_unfoldFigAux15b = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux15b.values = histo_unfoldFigAux15b["dy"]
+
+unfoldFigAux15b.add_uncertainty(unc_unfoldFigAux15b)
+
+unfoldFigAux15b.scale_values(inv_total_sum)
+
+tableFigAux15b.add_variable(mmed_FigAux15b)
+tableFigAux15b.add_variable(unfoldFigAux15b)
+submission.add_table(tableFigAux15b)
+### End FigAux15b
+
+### Begin FigAux15c
+reader_FigAux15c = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystRap_nsel2_dy3_rebin1_default.root")
+
+tableFigAux15c = Table("Auxiliary Figure 15c")
+tableFigAux15c.description = "The measured normalized cross sections in bins of |y(Z)|."
+tableFigAux15c.location = "Data from Auxiliary Figure 15c"
+tableFigAux15c.keywords["observables"] = ["N"]
+
+histo_unfoldFigAux15c = reader_FigAux15c.read_hist_1d("unfold")
+
+histo_unfoldFigAux15c.keys()
+
+inv_total_sum = 1.0/sum(histo_unfoldFigAux15c["y"])
+for key in histo_unfoldFigAux15c.keys():
+    print(key, type(histo_unfoldFigAux15c[key]), type(histo_unfoldFigAux15c[key][0]))
+
+mmed_FigAux15c = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
+mmed_FigAux15c.values = histo_unfoldFigAux15c["x"]
+
+# y-axis: N events
+unfoldFigAux15c = Variable("Normalized dilepton cross section", is_independent=False, is_binned=False, units="")
+unfoldFigAux15c.values = histo_unfoldFigAux15c["y"]
+
+unc_unfoldFigAux15c = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux15c.values = histo_unfoldFigAux15c["dy"]
+
+unfoldFigAux15c.add_uncertainty(unc_unfoldFigAux15c)
+
+unfoldFigAux15c.scale_values(inv_total_sum)
+
+tableFigAux15c.add_variable(mmed_FigAux15c)
+tableFigAux15c.add_variable(unfoldFigAux15c)
+submission.add_table(tableFigAux15c)
+### End FigAux15c
+
+### Begin FigAux16to20
+reader_FigAux16to20a = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystPtRap0_nsel2_dy3_rebin1_default.root")
+reader_FigAux16to20b = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystPtRap1_nsel2_dy3_rebin1_default.root")
+reader_FigAux16to20c = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystPtRap2_nsel2_dy3_rebin1_default.root")
+reader_FigAux16to20d = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystPtRap3_nsel2_dy3_rebin1_default.root")
+reader_FigAux16to20e = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystPtRap4_nsel2_dy3_rebin1_default.root")
+
+tableFigAux16to20 = Table("Auxiliary Figures 16 to 20")
+tableFigAux16to20.description = "The measured normalized cross sections (left) in bins of Z pt in |y(Z)| bins."
+tableFigAux16to20.location = "Data from Auxiliary Figures 16 to 20"
+tableFigAux16to20.keywords["observables"] = ["N"]
+
+histo_unfoldFigAux16to20a = reader_FigAux16to20a.read_hist_1d("unfold")
+histo_unfoldFigAux16to20b = reader_FigAux16to20b.read_hist_1d("unfold")
+histo_unfoldFigAux16to20c = reader_FigAux16to20c.read_hist_1d("unfold")
+histo_unfoldFigAux16to20d = reader_FigAux16to20d.read_hist_1d("unfold")
+histo_unfoldFigAux16to20e = reader_FigAux16to20e.read_hist_1d("unfold")
+
+histo_unfoldFigAux16to20a.keys()
+
+inv_total_suma = 1.0/sum(histo_unfoldFigAux16to20a["y"])
+inv_total_sumb = 1.0/sum(histo_unfoldFigAux16to20b["y"])
+inv_total_sumc = 1.0/sum(histo_unfoldFigAux16to20c["y"])
+inv_total_sumd = 1.0/sum(histo_unfoldFigAux16to20d["y"])
+inv_total_sume = 1.0/sum(histo_unfoldFigAux16to20e["y"])
+for key in histo_unfoldFigAux16to20a.keys():
+    print(key, type(histo_unfoldFigAux16to20a[key]), type(histo_unfoldFigAux16to20a[key][0]))
+
+mmed_FigAux16to20 = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
+mmed_FigAux16to20.values = histo_unfoldFigAux16to20a["x"]
+
+# y-axis: N events
+unfoldFigAux16to20a = Variable("Normalized dilepton cross section in 0 < |y(Z)| < 0.4", is_independent=False, is_binned=False, units="")
+unfoldFigAux16to20a.values = histo_unfoldFigAux16to20a["y"]
+unc_unfoldFigAux16to20a = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux16to20a.values = histo_unfoldFigAux16to20a["dy"]
+unfoldFigAux16to20a.add_uncertainty(unc_unfoldFigAux16to20a)
+
+unfoldFigAux16to20b = Variable("Normalized dilepton cross section in 0.4 < |y(Z)| < 0.8", is_independent=False, is_binned=False, units="")
+unfoldFigAux16to20b.values = histo_unfoldFigAux16to20b["y"]
+unc_unfoldFigAux16to20b = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux16to20b.values = histo_unfoldFigAux16to20b["dy"]
+unfoldFigAux16to20b.add_uncertainty(unc_unfoldFigAux16to20b)
+
+unfoldFigAux16to20c = Variable("Normalized dilepton cross section in 0.8 < |y(Z)| < 1.2", is_independent=False, is_binned=False, units="")
+unfoldFigAux16to20c.values = histo_unfoldFigAux16to20c["y"]
+unc_unfoldFigAux16to20c = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux16to20c.values = histo_unfoldFigAux16to20c["dy"]
+unfoldFigAux16to20c.add_uncertainty(unc_unfoldFigAux16to20c)
+
+unfoldFigAux16to20d = Variable("Normalized dilepton cross section in 1.2 < |y(Z)| < 1.6", is_independent=False, is_binned=False, units="")
+unfoldFigAux16to20d.values = histo_unfoldFigAux16to20d["y"]
+unc_unfoldFigAux16to20d = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux16to20d.values = histo_unfoldFigAux16to20d["dy"]
+unfoldFigAux16to20d.add_uncertainty(unc_unfoldFigAux16to20d)
+
+unfoldFigAux16to20e = Variable("Normalized dilepton cross section in 1.6 < |y(Z)| < 2.4", is_independent=False, is_binned=False, units="")
+unfoldFigAux16to20e.values = histo_unfoldFigAux16to20e["y"]
+unc_unfoldFigAux16to20e = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux16to20e.values = histo_unfoldFigAux16to20e["dy"]
+unfoldFigAux16to20e.add_uncertainty(unc_unfoldFigAux16to20e)
+
+unfoldFigAux16to20a.scale_values(inv_total_suma)
+unfoldFigAux16to20b.scale_values(inv_total_sumb)
+unfoldFigAux16to20c.scale_values(inv_total_sumc)
+unfoldFigAux16to20d.scale_values(inv_total_sumd)
+unfoldFigAux16to20e.scale_values(inv_total_sume)
+
+tableFigAux16to20.add_variable(mmed_FigAux16to20)
+tableFigAux16to20.add_variable(unfoldFigAux16to20a)
+tableFigAux16to20.add_variable(unfoldFigAux16to20b)
+tableFigAux16to20.add_variable(unfoldFigAux16to20c)
+tableFigAux16to20.add_variable(unfoldFigAux16to20d)
+tableFigAux16to20.add_variable(unfoldFigAux16to20e)
+submission.add_table(tableFigAux16to20)
+### End FigAux16to20
 
 outdir = "smp17010_output"
 submission.create_files(outdir)
