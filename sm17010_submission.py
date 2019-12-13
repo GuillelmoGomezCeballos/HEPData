@@ -1557,7 +1557,7 @@ reader_Fig5b = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/ou
 reader_Fig5c = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystRap_nsel2_dy3_rebin1_default.root")
 
 tableFig5 = Table("Figure 5")
-tableFig5.description = "The measured absolute cross sections in bins of |y(Z)|. The cross sections are normalized by the bin width."
+tableFig5.description = "The measured absolute cross sections in bins of |y(Z)|, using dressed level leptons. The cross sections are normalized by the bin width."
 tableFig5.location = "Data from Figure 5"
 tableFig5.keywords["observables"] = ["N"]
 
@@ -1615,7 +1615,7 @@ reader_Fig6b = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/ou
 reader_Fig6c = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPt_nsel2_dy3_rebin1_default.root")
 
 tableFig6 = Table("Figure 6")
-tableFig6.description = "The measured absolute cross sections in bins of Z pt. The cross sections are normalized by the bin width."
+tableFig6.description = "The measured absolute cross sections in bins of Z pt, using dressed level leptons. The cross sections are normalized by the bin width."
 tableFig6.location = "Data from Figure 6"
 tableFig6.keywords["observables"] = ["N"]
 
@@ -1673,7 +1673,7 @@ reader_Fig8b = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/ou
 reader_Fig8c = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPhiStar_nsel2_dy3_rebin1_default.root")
 
 tableFig8 = Table("Figure 8")
-tableFig8.description = "The measured absolute cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$. The cross sections are normalized by the bin width."
+tableFig8.description = "The measured absolute cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$, using dressed level leptons. The cross sections are normalized by the bin width."
 tableFig8.location = "Data from Figure 8"
 tableFig8.keywords["observables"] = ["N"]
 
@@ -1733,7 +1733,7 @@ reader_Fig9to13d = RootFileReader("HEPData/inputs/smp17010/folders_dressedlepton
 reader_Fig9to13e = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfoldingSystPtRap4_nsel2_dy3_rebin1_default.root")
 
 tableFig9to13 = Table("Figures 9 to 13")
-tableFig9to13.description = "The measured absolute cross sections in bins of Z pt different |y(Z)| bins. The cross sections are normalized by the bin width."
+tableFig9to13.description = "The measured absolute cross sections in bins of Z pt different |y(Z)| bins, using dressed level leptons. The cross sections are normalized by the bin width."
 tableFig9to13.location = "Data from Figures 9 to 13"
 tableFig9to13.keywords["observables"] = ["N"]
 
@@ -1811,7 +1811,7 @@ submission.add_table(tableFig9to13)
 reader_Fig14a = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystPt_nsel2_dy3_rebin1_default.root")
 
 tableFig14a = Table("Figure 14a")
-tableFig14a.description = "The measured normalized cross sections in bins of Z pt."
+tableFig14a.description = "The measured normalized cross sections in bins of Z pt, using dressed level leptons."
 tableFig14a.location = "Data from Figure 14a"
 tableFig14a.keywords["observables"] = ["N"]
 
@@ -1846,7 +1846,7 @@ submission.add_table(tableFig14a)
 reader_Fig14b = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystPhiStar_nsel2_dy3_rebin1_default.root")
 
 tableFig14b = Table("Figure 14b")
-tableFig14b.description = "The measured normalized cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$."
+tableFig14b.description = "The measured normalized cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$, using dressed level leptons."
 tableFig14b.location = "Data from Figure 14b"
 tableFig14b.keywords["observables"] = ["N"]
 
@@ -1881,7 +1881,7 @@ submission.add_table(tableFig14b)
 reader_Fig14c = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystRap_nsel2_dy3_rebin1_default.root")
 
 tableFig14c = Table("Figure 14c")
-tableFig14c.description = "The measured normalized cross sections in bins of |y(Z)|."
+tableFig14c.description = "The measured normalized cross sections in bins of |y(Z)|, using dressed level leptons."
 tableFig14c.location = "Data from Figure 14c"
 tableFig14c.keywords["observables"] = ["N"]
 
@@ -1920,7 +1920,7 @@ reader_Fig15to19d = RootFileReader("HEPData/inputs/smp17010/folders_dressedlepto
 reader_Fig15to19e = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystPtRap4_nsel2_dy3_rebin1_default.root")
 
 tableFig15to19 = Table("Figures 15 to 19")
-tableFig15to19.description = "The measured normalized cross sections (left) in bins of Z pt in |y(Z)| bins."
+tableFig15to19.description = "The measured normalized cross sections (left) in bins of Z pt in |y(Z)| bins, using dressed level leptons."
 tableFig15to19.location = "Data from Figure 15 to 19"
 tableFig15to19.keywords["observables"] = ["N"]
 
@@ -2003,7 +2003,7 @@ z_covariance_mm_Pt = Variable("covariance Matrix", is_independent=False, is_binn
 z_covariance_mm_Pt.values = data_covariance_mm_Pt["z"]
 
 table_covariance_mm_Pt = Table("Covariance Matrix auxiliary Figure 1a")
-table_covariance_mm_Pt.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt in the dimuon final state."
+table_covariance_mm_Pt.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt in the dimuon final state."
 table_covariance_mm_Pt.location = "Supplementary material"
 for var in [x_covariance_mm_Pt,y_covariance_mm_Pt,z_covariance_mm_Pt]:
     table_covariance_mm_Pt.add_variable(var)
@@ -2022,7 +2022,7 @@ z_covariance_mm_Rap = Variable("covariance Matrix", is_independent=False, is_bin
 z_covariance_mm_Rap.values = data_covariance_mm_Rap["z"]
 
 table_covariance_mm_Rap = Table("Covariance Matrix auxiliary Figure 1c")
-table_covariance_mm_Rap.description = "Covariance matrix using dressed leptons for all bins used in bins of |y(Z)| in the dimuon final state."
+table_covariance_mm_Rap.description = "Covariance matrix using dressed level leptons for all bins used in bins of |y(Z)| in the dimuon final state."
 table_covariance_mm_Rap.location = "Supplementary material"
 for var in [x_covariance_mm_Rap,y_covariance_mm_Rap,z_covariance_mm_Rap]:
     table_covariance_mm_Rap.add_variable(var)
@@ -2041,7 +2041,7 @@ z_covariance_mm_PhiStar = Variable("covariance Matrix", is_independent=False, is
 z_covariance_mm_PhiStar.values = data_covariance_mm_PhiStar["z"]
 
 table_covariance_mm_PhiStar = Table("Covariance Matrix auxiliary Figure 1e")
-table_covariance_mm_PhiStar.description = "Covariance matrix using dressed leptons for all bins used in bins of $\phi^{\scriptscriptstyle *}_\eta$ in the dimuon final state."
+table_covariance_mm_PhiStar.description = "Covariance matrix using dressed level leptons for all bins used in bins of $\phi^{\scriptscriptstyle *}_\eta$ in the dimuon final state."
 table_covariance_mm_PhiStar.location = "Supplementary material"
 for var in [x_covariance_mm_PhiStar,y_covariance_mm_PhiStar,z_covariance_mm_PhiStar]:
     table_covariance_mm_PhiStar.add_variable(var)
@@ -2060,7 +2060,7 @@ z_covariance_mm_PtRap0 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_mm_PtRap0.values = data_covariance_mm_PtRap0["z"]
 
 table_covariance_mm_PtRap0 = Table("Covariance Matrix auxiliary Figure 2a")
-table_covariance_mm_PtRap0.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dimuon final state."
+table_covariance_mm_PtRap0.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dimuon final state."
 table_covariance_mm_PtRap0.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap0,y_covariance_mm_PtRap0,z_covariance_mm_PtRap0]:
     table_covariance_mm_PtRap0.add_variable(var)
@@ -2079,7 +2079,7 @@ z_covariance_mm_PtRap1 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_mm_PtRap1.values = data_covariance_mm_PtRap1["z"]
 
 table_covariance_mm_PtRap1 = Table("Covariance Matrix auxiliary Figure 2b")
-table_covariance_mm_PtRap1.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dimuon final state."
+table_covariance_mm_PtRap1.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dimuon final state."
 table_covariance_mm_PtRap1.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap1,y_covariance_mm_PtRap1,z_covariance_mm_PtRap1]:
     table_covariance_mm_PtRap1.add_variable(var)
@@ -2098,7 +2098,7 @@ z_covariance_mm_PtRap2 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_mm_PtRap2.values = data_covariance_mm_PtRap2["z"]
 
 table_covariance_mm_PtRap2 = Table("Covariance Matrix auxiliary Figure 2c")
-table_covariance_mm_PtRap2.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dimuon final state."
+table_covariance_mm_PtRap2.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dimuon final state."
 table_covariance_mm_PtRap2.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap2,y_covariance_mm_PtRap2,z_covariance_mm_PtRap2]:
     table_covariance_mm_PtRap2.add_variable(var)
@@ -2117,7 +2117,7 @@ z_covariance_mm_PtRap3 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_mm_PtRap3.values = data_covariance_mm_PtRap3["z"]
 
 table_covariance_mm_PtRap3 = Table("Covariance Matrix auxiliary Figure 2d")
-table_covariance_mm_PtRap3.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dimuon final state."
+table_covariance_mm_PtRap3.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dimuon final state."
 table_covariance_mm_PtRap3.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap3,y_covariance_mm_PtRap3,z_covariance_mm_PtRap3]:
     table_covariance_mm_PtRap3.add_variable(var)
@@ -2136,7 +2136,7 @@ z_covariance_mm_PtRap4 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_mm_PtRap4.values = data_covariance_mm_PtRap4["z"]
 
 table_covariance_mm_PtRap4 = Table("Covariance Matrix auxiliary Figure 2e")
-table_covariance_mm_PtRap4.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dimuon final state."
+table_covariance_mm_PtRap4.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dimuon final state."
 table_covariance_mm_PtRap4.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap4,y_covariance_mm_PtRap4,z_covariance_mm_PtRap4]:
     table_covariance_mm_PtRap4.add_variable(var)
@@ -2157,7 +2157,7 @@ z_covariance_ee_Pt = Variable("covariance Matrix", is_independent=False, is_binn
 z_covariance_ee_Pt.values = data_covariance_ee_Pt["z"]
 
 table_covariance_ee_Pt = Table("Covariance Matrix auxiliary Figure 1b")
-table_covariance_ee_Pt.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt in the dielectron final state."
+table_covariance_ee_Pt.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt in the dielectron final state."
 table_covariance_ee_Pt.location = "Supplementary material"
 for var in [x_covariance_ee_Pt,y_covariance_ee_Pt,z_covariance_ee_Pt]:
     table_covariance_ee_Pt.add_variable(var)
@@ -2176,7 +2176,7 @@ z_covariance_ee_Rap = Variable("covariance Matrix", is_independent=False, is_bin
 z_covariance_ee_Rap.values = data_covariance_ee_Rap["z"]
 
 table_covariance_ee_Rap = Table("Covariance Matrix auxiliary Figure 1d")
-table_covariance_ee_Rap.description = "Covariance matrix using dressed leptons for all bins used in bins of |y(Z)| in the dielectron final state."
+table_covariance_ee_Rap.description = "Covariance matrix using dressed level leptons for all bins used in bins of |y(Z)| in the dielectron final state."
 table_covariance_ee_Rap.location = "Supplementary material"
 for var in [x_covariance_ee_Rap,y_covariance_ee_Rap,z_covariance_ee_Rap]:
     table_covariance_ee_Rap.add_variable(var)
@@ -2195,7 +2195,7 @@ z_covariance_ee_PhiStar = Variable("covariance Matrix", is_independent=False, is
 z_covariance_ee_PhiStar.values = data_covariance_ee_PhiStar["z"]
 
 table_covariance_ee_PhiStar = Table("Covariance Matrix auxiliary Figure 1f")
-table_covariance_ee_PhiStar.description = "Covariance matrix using dressed leptons for all bins used in bins of $\phi^{\scriptscriptstyle *}_\eta$ in the dielectron final state."
+table_covariance_ee_PhiStar.description = "Covariance matrix using dressed level leptons for all bins used in bins of $\phi^{\scriptscriptstyle *}_\eta$ in the dielectron final state."
 table_covariance_ee_PhiStar.location = "Supplementary material"
 for var in [x_covariance_ee_PhiStar,y_covariance_ee_PhiStar,z_covariance_ee_PhiStar]:
     table_covariance_ee_PhiStar.add_variable(var)
@@ -2214,7 +2214,7 @@ z_covariance_ee_PtRap0 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_ee_PtRap0.values = data_covariance_ee_PtRap0["z"]
 
 table_covariance_ee_PtRap0 = Table("Covariance Matrix auxiliary Figure 3a")
-table_covariance_ee_PtRap0.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dielectron final state."
+table_covariance_ee_PtRap0.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dielectron final state."
 table_covariance_ee_PtRap0.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap0,y_covariance_ee_PtRap0,z_covariance_ee_PtRap0]:
     table_covariance_ee_PtRap0.add_variable(var)
@@ -2233,7 +2233,7 @@ z_covariance_ee_PtRap1 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_ee_PtRap1.values = data_covariance_ee_PtRap1["z"]
 
 table_covariance_ee_PtRap1 = Table("Covariance Matrix auxiliary Figure 3b")
-table_covariance_ee_PtRap1.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dielectron final state."
+table_covariance_ee_PtRap1.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dielectron final state."
 table_covariance_ee_PtRap1.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap1,y_covariance_ee_PtRap1,z_covariance_ee_PtRap1]:
     table_covariance_ee_PtRap1.add_variable(var)
@@ -2252,7 +2252,7 @@ z_covariance_ee_PtRap2 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_ee_PtRap2.values = data_covariance_ee_PtRap2["z"]
 
 table_covariance_ee_PtRap2 = Table("Covariance Matrix auxiliary Figure 3c")
-table_covariance_ee_PtRap2.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dielectron final state."
+table_covariance_ee_PtRap2.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dielectron final state."
 table_covariance_ee_PtRap2.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap2,y_covariance_ee_PtRap2,z_covariance_ee_PtRap2]:
     table_covariance_ee_PtRap2.add_variable(var)
@@ -2271,7 +2271,7 @@ z_covariance_ee_PtRap3 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_ee_PtRap3.values = data_covariance_ee_PtRap3["z"]
 
 table_covariance_ee_PtRap3 = Table("Covariance Matrix auxiliary Figure 3d")
-table_covariance_ee_PtRap3.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dielectron final state."
+table_covariance_ee_PtRap3.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dielectron final state."
 table_covariance_ee_PtRap3.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap3,y_covariance_ee_PtRap3,z_covariance_ee_PtRap3]:
     table_covariance_ee_PtRap3.add_variable(var)
@@ -2290,7 +2290,7 @@ z_covariance_ee_PtRap4 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_ee_PtRap4.values = data_covariance_ee_PtRap4["z"]
 
 table_covariance_ee_PtRap4 = Table("Covariance Matrix auxiliary Figure 3e")
-table_covariance_ee_PtRap4.description = "Covariance matrix using dressed leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dielectron final state."
+table_covariance_ee_PtRap4.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dielectron final state."
 table_covariance_ee_PtRap4.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap4,y_covariance_ee_PtRap4,z_covariance_ee_PtRap4]:
     table_covariance_ee_PtRap4.add_variable(var)
@@ -2312,7 +2312,7 @@ z_covariance_mm_Pt = Variable("covariance Matrix", is_independent=False, is_binn
 z_covariance_mm_Pt.values = data_covariance_mm_Pt["z"]
 
 table_covariance_mm_Pt = Table("Covariance Matrix auxiliary Figure 4a")
-table_covariance_mm_Pt.description = "Covariance matrix using born leptons for all bins used in bins of Z pt in the dimuon final state."
+table_covariance_mm_Pt.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt in the dimuon final state."
 table_covariance_mm_Pt.location = "Supplementary material"
 for var in [x_covariance_mm_Pt,y_covariance_mm_Pt,z_covariance_mm_Pt]:
     table_covariance_mm_Pt.add_variable(var)
@@ -2331,7 +2331,7 @@ z_covariance_mm_Rap = Variable("covariance Matrix", is_independent=False, is_bin
 z_covariance_mm_Rap.values = data_covariance_mm_Rap["z"]
 
 table_covariance_mm_Rap = Table("Covariance Matrix auxiliary Figure 4c")
-table_covariance_mm_Rap.description = "Covariance matrix using born leptons for all bins used in bins of |y(Z)| in the dimuon final state."
+table_covariance_mm_Rap.description = "Covariance matrix using born level leptons for all bins used in bins of |y(Z)| in the dimuon final state."
 table_covariance_mm_Rap.location = "Supplementary material"
 for var in [x_covariance_mm_Rap,y_covariance_mm_Rap,z_covariance_mm_Rap]:
     table_covariance_mm_Rap.add_variable(var)
@@ -2350,7 +2350,7 @@ z_covariance_mm_PhiStar = Variable("covariance Matrix", is_independent=False, is
 z_covariance_mm_PhiStar.values = data_covariance_mm_PhiStar["z"]
 
 table_covariance_mm_PhiStar = Table("Covariance Matrix auxiliary Figure 4e")
-table_covariance_mm_PhiStar.description = "Covariance matrix using born leptons for all bins used in bins of $\phi^{\scriptscriptstyle *}_\eta$ in the dimuon final state."
+table_covariance_mm_PhiStar.description = "Covariance matrix using born level leptons for all bins used in bins of $\phi^{\scriptscriptstyle *}_\eta$ in the dimuon final state."
 table_covariance_mm_PhiStar.location = "Supplementary material"
 for var in [x_covariance_mm_PhiStar,y_covariance_mm_PhiStar,z_covariance_mm_PhiStar]:
     table_covariance_mm_PhiStar.add_variable(var)
@@ -2369,7 +2369,7 @@ z_covariance_mm_PtRap0 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_mm_PtRap0.values = data_covariance_mm_PtRap0["z"]
 
 table_covariance_mm_PtRap0 = Table("Covariance Matrix auxiliary Figure 5a")
-table_covariance_mm_PtRap0.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dimuon final state."
+table_covariance_mm_PtRap0.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dimuon final state."
 table_covariance_mm_PtRap0.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap0,y_covariance_mm_PtRap0,z_covariance_mm_PtRap0]:
     table_covariance_mm_PtRap0.add_variable(var)
@@ -2388,7 +2388,7 @@ z_covariance_mm_PtRap1 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_mm_PtRap1.values = data_covariance_mm_PtRap1["z"]
 
 table_covariance_mm_PtRap1 = Table("Covariance Matrix auxiliary Figure 5b")
-table_covariance_mm_PtRap1.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dimuon final state."
+table_covariance_mm_PtRap1.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dimuon final state."
 table_covariance_mm_PtRap1.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap1,y_covariance_mm_PtRap1,z_covariance_mm_PtRap1]:
     table_covariance_mm_PtRap1.add_variable(var)
@@ -2407,7 +2407,7 @@ z_covariance_mm_PtRap2 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_mm_PtRap2.values = data_covariance_mm_PtRap2["z"]
 
 table_covariance_mm_PtRap2 = Table("Covariance Matrix auxiliary Figure 5c")
-table_covariance_mm_PtRap2.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dimuon final state."
+table_covariance_mm_PtRap2.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dimuon final state."
 table_covariance_mm_PtRap2.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap2,y_covariance_mm_PtRap2,z_covariance_mm_PtRap2]:
     table_covariance_mm_PtRap2.add_variable(var)
@@ -2426,7 +2426,7 @@ z_covariance_mm_PtRap3 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_mm_PtRap3.values = data_covariance_mm_PtRap3["z"]
 
 table_covariance_mm_PtRap3 = Table("Covariance Matrix auxiliary Figure 5d")
-table_covariance_mm_PtRap3.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dimuon final state."
+table_covariance_mm_PtRap3.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dimuon final state."
 table_covariance_mm_PtRap3.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap3,y_covariance_mm_PtRap3,z_covariance_mm_PtRap3]:
     table_covariance_mm_PtRap3.add_variable(var)
@@ -2445,7 +2445,7 @@ z_covariance_mm_PtRap4 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_mm_PtRap4.values = data_covariance_mm_PtRap4["z"]
 
 table_covariance_mm_PtRap4 = Table("Covariance Matrix auxiliary Figure 5e")
-table_covariance_mm_PtRap4.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dimuon final state."
+table_covariance_mm_PtRap4.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dimuon final state."
 table_covariance_mm_PtRap4.location = "Supplementary material"
 for var in [x_covariance_mm_PtRap4,y_covariance_mm_PtRap4,z_covariance_mm_PtRap4]:
     table_covariance_mm_PtRap4.add_variable(var)
@@ -2466,7 +2466,7 @@ z_covariance_ee_Pt = Variable("covariance Matrix", is_independent=False, is_binn
 z_covariance_ee_Pt.values = data_covariance_ee_Pt["z"]
 
 table_covariance_ee_Pt = Table("Covariance Matrix auxiliary Figure 4b")
-table_covariance_ee_Pt.description = "Covariance matrix using born leptons for all bins used in bins of Z pt in the dielectron final state."
+table_covariance_ee_Pt.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt in the dielectron final state."
 table_covariance_ee_Pt.location = "Supplementary material"
 for var in [x_covariance_ee_Pt,y_covariance_ee_Pt,z_covariance_ee_Pt]:
     table_covariance_ee_Pt.add_variable(var)
@@ -2485,7 +2485,7 @@ z_covariance_ee_Rap = Variable("covariance Matrix", is_independent=False, is_bin
 z_covariance_ee_Rap.values = data_covariance_ee_Rap["z"]
 
 table_covariance_ee_Rap = Table("Covariance Matrix auxiliary Figure 4d")
-table_covariance_ee_Rap.description = "Covariance matrix using born leptons for all bins used in bins of |y(Z)| in the dielectron final state."
+table_covariance_ee_Rap.description = "Covariance matrix using born level leptons for all bins used in bins of |y(Z)| in the dielectron final state."
 table_covariance_ee_Rap.location = "Supplementary material"
 for var in [x_covariance_ee_Rap,y_covariance_ee_Rap,z_covariance_ee_Rap]:
     table_covariance_ee_Rap.add_variable(var)
@@ -2504,7 +2504,7 @@ z_covariance_ee_PhiStar = Variable("covariance Matrix", is_independent=False, is
 z_covariance_ee_PhiStar.values = data_covariance_ee_PhiStar["z"]
 
 table_covariance_ee_PhiStar = Table("Covariance Matrix auxiliary Figure 4f")
-table_covariance_ee_PhiStar.description = "Covariance matrix using born leptons for all bins used in bins of $\phi^{\scriptscriptstyle *}_\eta$ in the dielectron final state."
+table_covariance_ee_PhiStar.description = "Covariance matrix using born level leptons for all bins used in bins of $\phi^{\scriptscriptstyle *}_\eta$ in the dielectron final state."
 table_covariance_ee_PhiStar.location = "Supplementary material"
 for var in [x_covariance_ee_PhiStar,y_covariance_ee_PhiStar,z_covariance_ee_PhiStar]:
     table_covariance_ee_PhiStar.add_variable(var)
@@ -2523,7 +2523,7 @@ z_covariance_ee_PtRap0 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_ee_PtRap0.values = data_covariance_ee_PtRap0["z"]
 
 table_covariance_ee_PtRap0 = Table("Covariance Matrix auxiliary Figure 6a")
-table_covariance_ee_PtRap0.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dielectron final state."
+table_covariance_ee_PtRap0.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dielectron final state."
 table_covariance_ee_PtRap0.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap0,y_covariance_ee_PtRap0,z_covariance_ee_PtRap0]:
     table_covariance_ee_PtRap0.add_variable(var)
@@ -2542,7 +2542,7 @@ z_covariance_ee_PtRap1 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_ee_PtRap1.values = data_covariance_ee_PtRap1["z"]
 
 table_covariance_ee_PtRap1 = Table("Covariance Matrix auxiliary Figure 6b")
-table_covariance_ee_PtRap1.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dielectron final state."
+table_covariance_ee_PtRap1.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dielectron final state."
 table_covariance_ee_PtRap1.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap1,y_covariance_ee_PtRap1,z_covariance_ee_PtRap1]:
     table_covariance_ee_PtRap1.add_variable(var)
@@ -2561,7 +2561,7 @@ z_covariance_ee_PtRap2 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_ee_PtRap2.values = data_covariance_ee_PtRap2["z"]
 
 table_covariance_ee_PtRap2 = Table("Covariance Matrix auxiliary Figure 6c")
-table_covariance_ee_PtRap2.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dielectron final state."
+table_covariance_ee_PtRap2.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dielectron final state."
 table_covariance_ee_PtRap2.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap2,y_covariance_ee_PtRap2,z_covariance_ee_PtRap2]:
     table_covariance_ee_PtRap2.add_variable(var)
@@ -2580,7 +2580,7 @@ z_covariance_ee_PtRap3 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_ee_PtRap3.values = data_covariance_ee_PtRap3["z"]
 
 table_covariance_ee_PtRap3 = Table("Covariance Matrix auxiliary Figure 6d")
-table_covariance_ee_PtRap3.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dielectron final state."
+table_covariance_ee_PtRap3.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dielectron final state."
 table_covariance_ee_PtRap3.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap3,y_covariance_ee_PtRap3,z_covariance_ee_PtRap3]:
     table_covariance_ee_PtRap3.add_variable(var)
@@ -2599,7 +2599,7 @@ z_covariance_ee_PtRap4 = Variable("covariance Matrix", is_independent=False, is_
 z_covariance_ee_PtRap4.values = data_covariance_ee_PtRap4["z"]
 
 table_covariance_ee_PtRap4 = Table("Covariance Matrix auxiliary Figure 6e")
-table_covariance_ee_PtRap4.description = "Covariance matrix using born leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dielectron final state."
+table_covariance_ee_PtRap4.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dielectron final state."
 table_covariance_ee_PtRap4.location = "Supplementary material"
 for var in [x_covariance_ee_PtRap4,y_covariance_ee_PtRap4,z_covariance_ee_PtRap4]:
     table_covariance_ee_PtRap4.add_variable(var)
@@ -2612,7 +2612,7 @@ reader_FigAux7b = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/ou
 reader_FigAux7c = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystRap_nsel2_dy3_rebin1_default.root")
 
 tableFigAux7 = Table("Auxiliary Figure 7")
-tableFigAux7.description = "The measured absolute cross sections in bins of |y(Z)|. The cross sections are normalized by the bin width."
+tableFigAux7.description = "The measured absolute cross sections in bins of |y(Z)|, using born level leptons. The cross sections are normalized by the bin width."
 tableFigAux7.location = "Data from Auxiliary Figure 7"
 tableFigAux7.keywords["observables"] = ["N"]
 
@@ -2670,7 +2670,7 @@ reader_FigAux8b = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/ou
 reader_FigAux8c = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystPt_nsel2_dy3_rebin1_default.root")
 
 tableFigAux8 = Table("Auxiliary Figure 8")
-tableFigAux8.description = "The measured absolute cross sections in bins of Z pt. The cross sections are normalized by the bin width."
+tableFigAux8.description = "The measured absolute cross sections in bins of Z pt, using born level leptons. The cross sections are normalized by the bin width. The first bin (0-1 GeV) is not shown as large differences were observed in aMC@NLO and POWHEG predictions at Born level."
 tableFigAux8.location = "Data from Auxiliary Figure 8"
 tableFigAux8.keywords["observables"] = ["N"]
 
@@ -2682,6 +2682,18 @@ histo_unfoldFigAux8a.keys()
 
 for key in histo_unfoldFigAux8a.keys():
     print(key, type(histo_unfoldFigAux8a[key]), type(histo_unfoldFigAux8a[key][0]))
+
+print(histo_unfoldFigAux8a["x"])
+histo_unfoldFigAux8a["x"].pop(0)
+histo_unfoldFigAux8b["x"].pop(0)
+histo_unfoldFigAux8c["x"].pop(0)
+histo_unfoldFigAux8a["y"].pop(0)
+histo_unfoldFigAux8b["y"].pop(0)
+histo_unfoldFigAux8c["y"].pop(0)
+histo_unfoldFigAux8a["dy"].pop(0)
+histo_unfoldFigAux8b["dy"].pop(0)
+histo_unfoldFigAux8c["dy"].pop(0)
+print(histo_unfoldFigAux8a["x"])
 
 mmed_FigAux8 = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
 mmed_FigAux8.values = histo_unfoldFigAux8a["x"]
@@ -2728,7 +2740,7 @@ reader_FigAux9b = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/ou
 reader_FigAux9c = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystPhiStar_nsel2_dy3_rebin1_default.root")
 
 tableFigAux9 = Table("Auxiliary Figure 9")
-tableFigAux9.description = "The measured absolute cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$. The cross sections are normalized by the bin width."
+tableFigAux9.description = "The measured absolute cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$, using born level leptons. The cross sections are normalized by the bin width."
 tableFigAux9.location = "Data from Auxiliary Figure 9"
 tableFigAux9.keywords["observables"] = ["N"]
 
@@ -2788,7 +2800,7 @@ reader_FigAux10to14d = RootFileReader("HEPData/inputs/smp17010/folders_bornlepto
 reader_FigAux10to14e = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfoldingSystPtRap4_nsel2_dy3_rebin1_default.root")
 
 tableFigAux10to14 = Table("Auxiliary Figures 10 to 14")
-tableFigAux10to14.description = "The measured absolute cross sections in bins of Z pt different |y(Z)| bins. The cross sections are normalized by the bin width."
+tableFigAux10to14.description = "The measured absolute cross sections in bins of Z pt different |y(Z)| bins, using born level leptons. The cross sections are normalized by the bin width. The first bin (0-1 GeV) is not shown as large differences were observed in aMC@NLO and POWHEG predictions at Born level."
 tableFigAux10to14.location = "Data from Auxiliary Figures 10 to 14"
 tableFigAux10to14.keywords["observables"] = ["N"]
 
@@ -2802,6 +2814,25 @@ histo_unfoldFigAux10to14a.keys()
 
 for key in histo_unfoldFigAux10to14a.keys():
     print(key, type(histo_unfoldFigAux10to14a[key]), type(histo_unfoldFigAux10to14a[key][0]))
+
+print(histo_unfoldFigAux10to14a["x"])
+histo_unfoldFigAux10to14a["x"].pop(0)
+histo_unfoldFigAux10to14b["x"].pop(0)
+histo_unfoldFigAux10to14c["x"].pop(0)
+histo_unfoldFigAux10to14d["x"].pop(0)
+histo_unfoldFigAux10to14e["x"].pop(0)
+histo_unfoldFigAux10to14a["y"].pop(0)
+histo_unfoldFigAux10to14b["y"].pop(0)
+histo_unfoldFigAux10to14c["y"].pop(0)
+histo_unfoldFigAux10to14d["y"].pop(0)
+histo_unfoldFigAux10to14e["y"].pop(0)
+histo_unfoldFigAux10to14a["dy"].pop(0)
+histo_unfoldFigAux10to14b["dy"].pop(0)
+histo_unfoldFigAux10to14c["dy"].pop(0)
+histo_unfoldFigAux10to14d["dy"].pop(0)
+histo_unfoldFigAux10to14e["dy"].pop(0)
+print(histo_unfoldFigAux10to14a["x"])
+
 
 mmed_FigAux10to14 = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
 mmed_FigAux10to14.values = histo_unfoldFigAux10to14a["x"]
@@ -2866,7 +2897,7 @@ submission.add_table(tableFigAux10to14)
 reader_FigAux15a = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystPt_nsel2_dy3_rebin1_default.root")
 
 tableFigAux15a = Table("Auxiliary Figure 15a")
-tableFigAux15a.description = "The measured normalized cross sections in bins of Z pt."
+tableFigAux15a.description = "The measured normalized cross sections in bins of Z pt, using born level leptons. The first bin (0-1 GeV) is not shown as large differences were observed in aMC@NLO and POWHEG predictions at Born level."
 tableFigAux15a.location = "Data from Auxiliary Figure 15a"
 tableFigAux15a.keywords["observables"] = ["N"]
 
@@ -2877,6 +2908,12 @@ histo_unfoldFigAux15a.keys()
 inv_total_sum = 1.0/sum(histo_unfoldFigAux15a["y"])
 for key in histo_unfoldFigAux15a.keys():
     print(key, type(histo_unfoldFigAux15a[key]), type(histo_unfoldFigAux15a[key][0]))
+
+print(histo_unfoldFigAux15a["x"])
+histo_unfoldFigAux15a["x"].pop(0)
+histo_unfoldFigAux15a["y"].pop(0)
+histo_unfoldFigAux15a["dy"].pop(0)
+print(histo_unfoldFigAux15a["x"])
 
 mmed_FigAux15a = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
 mmed_FigAux15a.values = histo_unfoldFigAux15a["x"]
@@ -2901,7 +2938,7 @@ submission.add_table(tableFigAux15a)
 reader_FigAux15b = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystPhiStar_nsel2_dy3_rebin1_default.root")
 
 tableFigAux15b = Table("Auxiliary Figure 15b")
-tableFigAux15b.description = "The measured normalized cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$."
+tableFigAux15b.description = "The measured normalized cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$, using born level leptons."
 tableFigAux15b.location = "Data from Auxiliary Figure 15b"
 tableFigAux15b.keywords["observables"] = ["N"]
 
@@ -2936,7 +2973,7 @@ submission.add_table(tableFigAux15b)
 reader_FigAux15c = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystRap_nsel2_dy3_rebin1_default.root")
 
 tableFigAux15c = Table("Auxiliary Figure 15c")
-tableFigAux15c.description = "The measured normalized cross sections in bins of |y(Z)|."
+tableFigAux15c.description = "The measured normalized cross sections in bins of |y(Z)|, using born level leptons."
 tableFigAux15c.location = "Data from Auxiliary Figure 15c"
 tableFigAux15c.keywords["observables"] = ["N"]
 
@@ -2975,7 +3012,7 @@ reader_FigAux16to20d = RootFileReader("HEPData/inputs/smp17010/folders_bornlepto
 reader_FigAux16to20e = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystPtRap4_nsel2_dy3_rebin1_default.root")
 
 tableFigAux16to20 = Table("Auxiliary Figures 16 to 20")
-tableFigAux16to20.description = "The measured normalized cross sections (left) in bins of Z pt in |y(Z)| bins."
+tableFigAux16to20.description = "The measured normalized cross sections (left) in bins of Z pt in |y(Z)| bins, using born level leptons. The first bin (0-1 GeV) is not shown as large differences were observed in aMC@NLO and POWHEG predictions at Born level."
 tableFigAux16to20.location = "Data from Auxiliary Figures 16 to 20"
 tableFigAux16to20.keywords["observables"] = ["N"]
 
@@ -2994,6 +3031,24 @@ inv_total_sumd = 1.0/sum(histo_unfoldFigAux16to20d["y"])
 inv_total_sume = 1.0/sum(histo_unfoldFigAux16to20e["y"])
 for key in histo_unfoldFigAux16to20a.keys():
     print(key, type(histo_unfoldFigAux16to20a[key]), type(histo_unfoldFigAux16to20a[key][0]))
+
+print(histo_unfoldFigAux16to20a["x"])
+histo_unfoldFigAux16to20a["x"].pop(0)
+histo_unfoldFigAux16to20b["x"].pop(0)
+histo_unfoldFigAux16to20c["x"].pop(0)
+histo_unfoldFigAux16to20d["x"].pop(0)
+histo_unfoldFigAux16to20e["x"].pop(0)
+histo_unfoldFigAux16to20a["y"].pop(0)
+histo_unfoldFigAux16to20b["y"].pop(0)
+histo_unfoldFigAux16to20c["y"].pop(0)
+histo_unfoldFigAux16to20d["y"].pop(0)
+histo_unfoldFigAux16to20e["y"].pop(0)
+histo_unfoldFigAux16to20a["dy"].pop(0)
+histo_unfoldFigAux16to20b["dy"].pop(0)
+histo_unfoldFigAux16to20c["dy"].pop(0)
+histo_unfoldFigAux16to20d["dy"].pop(0)
+histo_unfoldFigAux16to20e["dy"].pop(0)
+print(histo_unfoldFigAux16to20a["x"])
 
 mmed_FigAux16to20 = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
 mmed_FigAux16to20.values = histo_unfoldFigAux16to20a["x"]
