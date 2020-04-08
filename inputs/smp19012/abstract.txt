@@ -1,16 +1,15 @@
-Measurements of production cross sections of same-sign $W^{+/-}W^{+/-}$ and 
-WZ boson pairs in association with two jets in proton-proton collisions 
+Measurements of production cross sections of WZ and same-sign $W^{+/-}W^{+/-}$ boson pairs in association with two jets in proton-proton collisions 
 at $\sqrt{s}$ = 13 TeV at the LHC are reported. The data sample corresponds to an 
-integrated luminosity of $137~\mathrm{fb^{-1}}$ collected with 
-the CMS detector during 2016--18. The measurements are performed in the leptonic decay modes 
+integrated luminosity of $137~\fbinv$, collected with 
+the CMS detector during 2016--2018. The measurements are performed in the leptonic decay modes 
 $W^{+/-}W^{+/-} \to \ell^{+/-}\nu\ell'^{+/-}\nu$ and 
 $WZ \to \ell\nu\ell'\ell'$, where $\ell, \ell' = \mathrm{e}$, 
-$\mu$. Differential fiducial cross sections of the invariant masses of the jet 
-and lepton pairs as well as the leading lepton transverse momentum are 
-measured for the $W^{+/-}W^{+/-}$ production and found to be consistent with the 
-standard model predictions. Differential fiducial cross sections of the 
-invariant mass of the jet pair are also measured for the WZ production. 
+$\mu$. Differential fiducial cross sections as functions of the invariant masses of the jet 
+and lepton pairs, as well as the leading-lepton transverse momentum, are 
+measured for $\WW$ production and are consistent with the 
+standard model predictions. Differential fiducial cross section as a function of the 
+invariant mass of the jet pair are also measured for WZ production. 
 An observation of electroweak production of WZ boson pairs is reported, 
 with an observed (expected) significance of 6.8 (5.3) standard deviations. 
 Constraints are obtained on the structure of quartic vector boson interactions 
-in the framework of effective theory.
+in the framework of effective field theory.

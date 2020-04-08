@@ -1,0 +1,16 @@
+Process $N_{WW}$ $\Delta N_{WW}$
+-------------------------------------------------------  
+EW-$W^{+/-}W^{+/-}$             210  	26  
+QCD-$W^{+/-}W^{+/-}$             13.7	 2.2
+Interference-$W^{+/-}W^{+/-}$     8.7	 2.3
+EW-WZ                            17.8	 3.9 
+QCD-WZ                           42.7	 7.4 
+Interference-WZ                   0.3	 0.2 
+ZZ                                0.7	 0.2 
+Nonprompt                       193  	40   
+tVx                               7.4	 2.2 
+$W\gamma$                         9.1	 2.9 
+Wrong-sign                       13.9	 6.5 
+Other-background                  5.2	 2.1 
+Total-SM                        522  	49   
+Data                            524	22.9 

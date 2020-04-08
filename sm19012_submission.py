@@ -54,50 +54,73 @@ for table2 in submission.tables:
 
 ### End Table 2
 
-### Begin Table 4
-table4 = Table("Table 4")
-table4.description = "Expected yields from various various SM processes in WW and WZ signal regions. The combination of the statistical and systematic uncertainties are shown. The predicted yields are shown with their best-fit normalizations from the simultaneous fit."
-table4.location = "Data from Table 4"
+### Begin Table 4a
+table4a = Table("Table 4a")
+table4a.description = "Expected and observed yields from various various SM processes in WW signal region. The combination of the statistical and systematic uncertainties are shown. The predicted yields are shown with their best-fit normalizations from the simultaneous fit."
+table4a.location = "Data from Table 4a"
 
-table4.keywords["observables"] = ["Events"]
+table4a.keywords["observables"] = ["Events"]
 
-data4 = np.loadtxt("HEPData/inputs/smp19012/total_yields.txt", dtype='string', skiprows=2)
+data4 = np.loadtxt("HEPData/inputs/smp19012/total_yields_ww.txt", dtype='string', skiprows=2)
 
 print(data4)
 
-table4_data = Variable("Process", is_independent=True, is_binned=False, units="")
-table4_data.values = [str(x) for x in data4[:,0]]
+table4a_data = Variable("Process", is_independent=True, is_binned=False, units="")
+table4a_data.values = [str(x) for x in data4[:,0]]
 
-table4_yields0 = Variable("Events", is_independent=False, is_binned=False, units="")
-table4_yields0.values = [float(x) for x in data4[:,1]]
-table4_yields0.add_qualifier("Expected events", "WW selection")
-table4_yields0.add_qualifier("SQRT(S)", 13, "TeV")
+table4a_yields0 = Variable("Events", is_independent=False, is_binned=False, units="")
+table4a_yields0.values = [float(x) for x in data4[:,1]]
+table4a_yields0.add_qualifier("Expected events", "WW selection")
+table4a_yields0.add_qualifier("SQRT(S)", 13, "TeV")
 
-table4_unc0 = Uncertainty("total uncertainty", is_symmetric=True)
-table4_unc0.values = [float(x) for x in data4[:,2]]
+table4a_unc0 = Uncertainty("total uncertainty", is_symmetric=True)
+table4a_unc0.values = [float(x) for x in data4[:,2]]
 
-table4_yields0.add_uncertainty(table4_unc0)
+table4a_yields0.add_uncertainty(table4a_unc0)
 
-table4_yields1 = Variable("Events", is_independent=False, is_binned=False, units="")
-table4_yields1.values = [float(x) for x in data4[:,3]]
-table4_yields1.add_qualifier("Expected events", "WZ selection")
-table4_yields1.add_qualifier("SQRT(S)", 13, "TeV")
+table4a.add_variable(table4a_data)
+table4a.add_variable(table4a_yields0)
 
-table4_unc1 = Uncertainty("total uncertainty", is_symmetric=True)
-table4_unc1.values = [float(x) for x in data4[:,4]]
+submission.add_table(table4a)
 
-table4_yields1.add_uncertainty(table4_unc1)
+for table4a in submission.tables:
+    table4a.keywords["cmenergies"] = [13000]
 
-table4.add_variable(table4_data)
-table4.add_variable(table4_yields0)
-table4.add_variable(table4_yields1)
+### End Table 4a
 
-submission.add_table(table4)
+### Begin Table 4b
+table4b = Table("Table 4b")
+table4b.description = "Expected and observed yields from various various SM processes in WZ signal region. The combination of the statistical and systematic uncertainties are shown. The predicted yields are shown with their best-fit normalizations from the simultaneous fit."
+table4b.location = "Data from Table 4b"
 
-for table4 in submission.tables:
-    table4.keywords["cmenergies"] = [13000]
+table4b.keywords["observables"] = ["Events"]
 
-### End Table 4
+data4 = np.loadtxt("HEPData/inputs/smp19012/total_yields_ww.txt", dtype='string', skiprows=2)
+
+print(data4)
+
+table4b_data = Variable("Process", is_independent=True, is_binned=False, units="")
+table4b_data.values = [str(x) for x in data4[:,0]]
+
+table4b_yields0 = Variable("Events", is_independent=False, is_binned=False, units="")
+table4b_yields0.values = [float(x) for x in data4[:,1]]
+table4b_yields0.add_qualifier("Expected events", "WZ selection")
+table4b_yields0.add_qualifier("SQRT(S)", 13, "TeV")
+
+table4b_unc0 = Uncertainty("total uncertainty", is_symmetric=True)
+table4b_unc0.values = [float(x) for x in data4[:,2]]
+
+table4b_yields0.add_uncertainty(table4b_unc0)
+
+table4b.add_variable(table4b_data)
+table4b.add_variable(table4b_yields0)
+
+submission.add_table(table4b)
+
+for table4b in submission.tables:
+    table4b.keywords["cmenergies"] = [13000]
+
+### End Table 4b
 
 ### Begin Table 5
 table5 = Table("Table 5")
@@ -218,10 +241,10 @@ submission.add_table(tableFig2a)
 ### End Fig2a
 
 ### Begin Fig2b
-reader_Fig2b = RootFileReader("HEPData/inputs/smp19012/ssww_wwsel_detajj_2019.root")
+reader_Fig2b = RootFileReader("HEPData/inputs/smp19012/ssww_wwsel_mll_2019.root")
 
 tableFig2b = Table("Figure 2b")
-tableFig2b.description = "Distributions of $\Delta \eta_{jj}$ in the WW signal region"
+tableFig2b.description = "Distributions of $m_{ll}$ in the WW signal region"
 tableFig2b.location = "Data from Figure 2b"
 tableFig2b.keywords["observables"] = ["N"]
 
@@ -239,7 +262,7 @@ histo_Bck_Fig2b = reader_Fig2b.read_hist_1d("hBck")
 
 histo_Bck_Fig2b.keys()
 
-mmed_Fig2b = Variable("$\Delta \eta_{jj}$", is_independent=True, is_binned=False, units="GeV")
+mmed_Fig2b = Variable("$mm_{ll}$", is_independent=True, is_binned=False, units="GeV")
 mmed_Fig2b.values = histo0_Fig2b["x"]
 
 # y-axis: N events
@@ -732,10 +755,10 @@ submission.add_table(tableFig4b)
 ### End Fig4b
 
 ### Begin Fig5a
-reader_Fig5a = RootFileReader("HEPData/inputs/smp19012/ssww_aqgc_mll_2019.root")
+reader_Fig5a = RootFileReader("HEPData/inputs/smp19012/ssww_wwsel_aqgc_fullmtww_2019.root")
 
 tableFig5a = Table("Figure 5a")
-tableFig5a.description = "Distributions of $m_{l}$ in the WW signal region"
+tableFig5a.description = "Distributions of $m_{T}^{WW}$ in the WW signal region"
 tableFig5a.location = "Data from Figure 5a"
 tableFig5a.keywords["observables"] = ["N"]
 
@@ -796,9 +819,9 @@ Other_Fig5a.values = histo18_Fig5a["y"]
 Data_Fig5a = Variable("Number of data events", is_independent=False, is_binned=False, units="")
 Data_Fig5a.values = histo0_Fig5a["y"]
 
-unc_data_Fig5a = Uncertainty("Poisson errors", is_symmetric=True)
-unc_data_Fig5a.values = histo0_Fig5a["dy"]
-Data_Fig5a.add_uncertainty(unc_data_Fig5a)
+#unc_data_Fig5a = Uncertainty("Poisson errors", is_symmetric=True)
+#unc_data_Fig5a.values = histo0_Fig5a["dy"]
+#Data_Fig5a.add_uncertainty(unc_data_Fig5a)
 
 tableFig5a.add_variable(mmed_Fig5a)
 tableFig5a.add_variable(totalbackground_Fig5a)
@@ -816,10 +839,10 @@ submission.add_table(tableFig5a)
 ### End Fig5a
 
 ### Begin Fig5b
-reader_Fig5b = RootFileReader("HEPData/inputs/smp19012/ssww_aqgc_mt_2019.root")
+reader_Fig5b = RootFileReader("HEPData/inputs/smp19012/ssww_wzsel_aqgc_fullmtwz_2019.root")
 
 tableFig5b = Table("Figure 5b")
-tableFig5b.description = "Distributions of $m_{T}$ in the WZ signal region"
+tableFig5b.description = "Distributions of $m_{T}^{WZ}$ in the WZ signal region"
 tableFig5b.location = "Data from Figure 5b"
 tableFig5b.keywords["observables"] = ["N"]
 
@@ -876,9 +899,9 @@ Other_Fig5b.values = histo18_Fig5b["y"]
 Data_Fig5b = Variable("Number of data events", is_independent=False, is_binned=False, units="")
 Data_Fig5b.values = histo0_Fig5b["y"]
 
-unc_data_Fig5b = Uncertainty("Poisson errors", is_symmetric=True)
-unc_data_Fig5b.values = histo0_Fig5b["dy"]
-Data_Fig5b.add_uncertainty(unc_data_Fig5b)
+#unc_data_Fig5b = Uncertainty("Poisson errors", is_symmetric=True)
+#unc_data_Fig5b.values = histo0_Fig5b["dy"]
+#Data_Fig5b.add_uncertainty(unc_data_Fig5b)
 
 tableFig5b.add_variable(mmed_Fig5b)
 tableFig5b.add_variable(totalbackground_Fig5b)
