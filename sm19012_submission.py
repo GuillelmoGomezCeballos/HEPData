@@ -22,7 +22,7 @@ submission.add_record_id(1753680, "inspire")
 
 ### Begin Table 2
 table2 = Table("Table 2")
-table2.description = "Relative systematic uncertainties in the electroweak WW and WZ fiducial cross section measurements in units of percent."
+table2.description = "Relative systematic uncertainties in the EW $W^\pm W^\pm$ and WZ cross section measurements in units of percent."
 table2.location = "Data from Table 2"
 
 table2.keywords["observables"] = ["Uncertainty"]
@@ -96,7 +96,7 @@ table4b.location = "Data from Table 4b"
 
 table4b.keywords["observables"] = ["Events"]
 
-data4 = np.loadtxt("HEPData/inputs/smp19012/total_yields_ww.txt", dtype='string', skiprows=2)
+data4 = np.loadtxt("HEPData/inputs/smp19012/total_yields_wz.txt", dtype='string', skiprows=2)
 
 print(data4)
 
@@ -691,7 +691,7 @@ submission.add_table(tableFig4f)
 reader_Fig5a = RootFileReader("HEPData/inputs/smp19012/unf_WZMJJ_normalized0.root")
 
 tableFig5a = Table("Figure 5a")
-tableFig5a.description = "Absolute WW cross section in $m_{jj}$ bins."
+tableFig5a.description = "Absolute WZ cross section in $m_{jj}$ bins."
 tableFig5a.location = "Data from Figure 5a"
 tableFig5a.keywords["observables"] = ["N"]
 
@@ -725,7 +725,7 @@ submission.add_table(tableFig5a)
 reader_Fig5b = RootFileReader("HEPData/inputs/smp19012/unf_WZMJJ_normalized1.root")
 
 tableFig5b = Table("Figure 5b")
-tableFig5b.description = "Normalized WW cross section in $m_{jj}$ bins."
+tableFig5b.description = "Normalized WZ cross section in $m_{jj}$ bins."
 tableFig5b.location = "Data from Figure 5b"
 tableFig5b.keywords["observables"] = ["N"]
 

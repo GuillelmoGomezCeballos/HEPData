@@ -13,4 +13,4 @@ $W\gamma$                         9.1	 2.9
 Wrong-sign                       13.9	 6.5 
 Other-background                  5.2	 2.1 
 Total-SM                        522  	49   
-Data                            524	22.9 
+Data                            524	23

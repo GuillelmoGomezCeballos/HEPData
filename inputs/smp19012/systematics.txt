@@ -1,4 +1,4 @@
-Source WW WZ
+Source $W^\pm W^\pm$ WZ
 -------------------------------------------------------  
 Luminosity                       1.5  1.6
 Lepton-measurement            	 1.8  2.9
@@ -10,5 +10,5 @@ Trigger                          1.1  1.1
 MC-size                          2.6  3.7
 Theory                        	 1.9  3.8
 Total-systematic-uncertainty     5.7  7.9
-Statistical-uncertainty          8.9 21.4
-Total-uncertainty               10.6 22.8
+Statistical-uncertainty          8.9 22  
+Total-uncertainty               11   23  
