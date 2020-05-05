@@ -17,8 +17,8 @@ submission = Submission()
 
 submission.read_abstract("HEPData/inputs/smp19012/abstract.txt")
 submission.add_link("Webpage with all figures and tables", "https://cms-results.web.cern.ch/cms-results/public-results/publications/SMP-19-012/")
-submission.add_link("arXiv", "http://arxiv.org/abs/arXiv:XXXX.XXXXX")
-submission.add_record_id(1753680, "inspire")
+submission.add_link("arXiv", "https://arxiv.org/abs/2005.01173")
+submission.add_record_id(200501173, "inspire")
 
 ### Begin Table 2
 table2 = Table("Table 2")
