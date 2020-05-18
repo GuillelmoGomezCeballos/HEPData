@@ -209,8 +209,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig1a = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig1a.values = histoSystPlot_0["x"]
+mmed_Fig1a = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig1a.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig1a_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -271,8 +271,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig1b = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig1b.values = histoSystPlot_0["x"]
+mmed_Fig1b = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig1b.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig1b_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -333,8 +333,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig1c = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
-mmed_Fig1c.values = histoSystPlot_0["x"]
+mmed_Fig1c = Variable("|y(Z)|", is_independent=True, is_binned=True, units="")
+mmed_Fig1c.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig1c_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -395,8 +395,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig1d = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
-mmed_Fig1d.values = histoSystPlot_0["x"]
+mmed_Fig1d = Variable("|y(Z)|", is_independent=True, is_binned=True, units="")
+mmed_Fig1d.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig1d_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -457,8 +457,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig1e = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=False, units="")
-mmed_Fig1e.values = histoSystPlot_0["x"]
+mmed_Fig1e = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=True, units="")
+mmed_Fig1e.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig1e_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -519,8 +519,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig1f = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=False, units="")
-mmed_Fig1f.values = histoSystPlot_0["x"]
+mmed_Fig1f = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=True, units="")
+mmed_Fig1f.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig1f_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -581,8 +581,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig2a = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig2a.values = histoSystPlot_0["x"]
+mmed_Fig2a = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig2a.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig2a_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -643,8 +643,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig2b = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig2b.values = histoSystPlot_0["x"]
+mmed_Fig2b = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig2b.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig2b_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -705,8 +705,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig2c = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
-mmed_Fig2c.values = histoSystPlot_0["x"]
+mmed_Fig2c = Variable("|y(Z)|", is_independent=True, is_binned=True, units="")
+mmed_Fig2c.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig2c_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -767,8 +767,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig2d = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
-mmed_Fig2d.values = histoSystPlot_0["x"]
+mmed_Fig2d = Variable("|y(Z)|", is_independent=True, is_binned=True, units="")
+mmed_Fig2d.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig2d_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -829,8 +829,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig2e = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=False, units="")
-mmed_Fig2e.values = histoSystPlot_0["x"]
+mmed_Fig2e = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=True, units="")
+mmed_Fig2e.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig2e_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -891,8 +891,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig2f = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=False, units="")
-mmed_Fig2f.values = histoSystPlot_0["x"]
+mmed_Fig2f = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=True, units="")
+mmed_Fig2f.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig2f_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -953,8 +953,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig3a = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig3a.values = histoSystPlot_0["x"]
+mmed_Fig3a = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig3a.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig3a_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -1015,8 +1015,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig3b = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig3b.values = histoSystPlot_0["x"]
+mmed_Fig3b = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig3b.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig3b_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -1077,8 +1077,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig3c = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig3c.values = histoSystPlot_0["x"]
+mmed_Fig3c = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig3c.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig3c_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -1139,8 +1139,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig3d = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig3d.values = histoSystPlot_0["x"]
+mmed_Fig3d = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig3d.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig3d_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -1201,8 +1201,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig3e = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig3e.values = histoSystPlot_0["x"]
+mmed_Fig3e = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig3e.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig3e_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -1263,8 +1263,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig4a = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig4a.values = histoSystPlot_0["x"]
+mmed_Fig4a = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig4a.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig4a_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -1325,8 +1325,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig4b = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig4b.values = histoSystPlot_0["x"]
+mmed_Fig4b = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig4b.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig4b_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -1387,8 +1387,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig4c = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig4c.values = histoSystPlot_0["x"]
+mmed_Fig4c = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig4c.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig4c_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -1449,8 +1449,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig4d = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig4d.values = histoSystPlot_0["x"]
+mmed_Fig4d = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig4d.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig4d_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -1511,8 +1511,8 @@ histoSystPlot_0.keys()
 for key in histoSystPlot_0.keys():
     print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
 
-mmed_Fig4e = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig4e.values = histoSystPlot_0["x"]
+mmed_Fig4e = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig4e.values = histoSystPlot_0["x_edges"]
 
 # y-axis: N events
 histoSystPlotFig4e_0 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
@@ -1570,8 +1570,8 @@ histo_unfoldFig5a.keys()
 for key in histo_unfoldFig5a.keys():
     print(key, type(histo_unfoldFig5a[key]), type(histo_unfoldFig5a[key][0]))
 
-mmed_Fig5 = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
-mmed_Fig5.values = histo_unfoldFig5a["x"]
+mmed_Fig5 = Variable("|y(Z)|", is_independent=True, is_binned=True, units="")
+mmed_Fig5.values = histo_unfoldFig5a["x_edges"]
 
 # y-axis: N events
 unfoldFig5a = Variable("Dimuon cross section (pb)", is_independent=False, is_binned=False, units="")
@@ -1628,8 +1628,8 @@ histo_unfoldFig6a.keys()
 for key in histo_unfoldFig6a.keys():
     print(key, type(histo_unfoldFig6a[key]), type(histo_unfoldFig6a[key][0]))
 
-mmed_Fig6 = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig6.values = histo_unfoldFig6a["x"]
+mmed_Fig6 = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig6.values = histo_unfoldFig6a["x_edges"]
 
 # y-axis: N events
 unfoldFig6a = Variable("Dimuon cross section (pb)", is_independent=False, is_binned=False, units="")
@@ -1686,8 +1686,8 @@ histo_unfoldFig8a.keys()
 for key in histo_unfoldFig8a.keys():
     print(key, type(histo_unfoldFig8a[key]), type(histo_unfoldFig8a[key][0]))
 
-mmed_Fig8 = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=False, units="")
-mmed_Fig8.values = histo_unfoldFig8a["x"]
+mmed_Fig8 = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=True, units="")
+mmed_Fig8.values = histo_unfoldFig8a["x_edges"]
 
 # y-axis: N events
 unfoldFig8a = Variable("Dimuon cross section (pb)", is_independent=False, is_binned=False, units="")
@@ -1748,8 +1748,8 @@ histo_unfoldFig9to13a.keys()
 for key in histo_unfoldFig9to13a.keys():
     print(key, type(histo_unfoldFig9to13a[key]), type(histo_unfoldFig9to13a[key][0]))
 
-mmed_Fig9to13 = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig9to13.values = histo_unfoldFig9to13a["x"]
+mmed_Fig9to13 = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig9to13.values = histo_unfoldFig9to13a["x_edges"]
 
 # y-axis: N events
 unfoldFig9to13a = Variable("Dilepton cross section (pb) in 0 < |y(Z)| < 0.4 bin", is_independent=False, is_binned=False, units="")
@@ -1823,8 +1823,8 @@ inv_total_sum = 1.0/sum(histo_unfoldFig14a["y"])
 for key in histo_unfoldFig14a.keys():
     print(key, type(histo_unfoldFig14a[key]), type(histo_unfoldFig14a[key][0]))
 
-mmed_Fig14a = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig14a.values = histo_unfoldFig14a["x"]
+mmed_Fig14a = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig14a.values = histo_unfoldFig14a["x_edges"]
 
 # y-axis: N events
 unfoldFig14a = Variable("Normalized dilepton cross section", is_independent=False, is_binned=False, units="")
@@ -1858,8 +1858,8 @@ inv_total_sum = 1.0/sum(histo_unfoldFig14b["y"])
 for key in histo_unfoldFig14b.keys():
     print(key, type(histo_unfoldFig14b[key]), type(histo_unfoldFig14b[key][0]))
 
-mmed_Fig14b = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=False, units="")
-mmed_Fig14b.values = histo_unfoldFig14b["x"]
+mmed_Fig14b = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=True, units="")
+mmed_Fig14b.values = histo_unfoldFig14b["x_edges"]
 
 # y-axis: N events
 unfoldFig14b = Variable("Normalized dilepton cross section", is_independent=False, is_binned=False, units="")
@@ -1893,8 +1893,8 @@ inv_total_sum = 1.0/sum(histo_unfoldFig14c["y"])
 for key in histo_unfoldFig14c.keys():
     print(key, type(histo_unfoldFig14c[key]), type(histo_unfoldFig14c[key][0]))
 
-mmed_Fig14c = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
-mmed_Fig14c.values = histo_unfoldFig14c["x"]
+mmed_Fig14c = Variable("|y(Z)|", is_independent=True, is_binned=True, units="")
+mmed_Fig14c.values = histo_unfoldFig14c["x_edges"]
 
 # y-axis: N events
 unfoldFig14c = Variable("Normalized dilepton cross section", is_independent=False, is_binned=False, units="")
@@ -1940,8 +1940,8 @@ inv_total_sume = 1.0/sum(histo_unfoldFig15to19e["y"])
 for key in histo_unfoldFig15to19a.keys():
     print(key, type(histo_unfoldFig15to19a[key]), type(histo_unfoldFig15to19a[key][0]))
 
-mmed_Fig15to19 = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_Fig15to19.values = histo_unfoldFig15to19a["x"]
+mmed_Fig15to19 = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig15to19.values = histo_unfoldFig15to19a["x_edges"]
 
 # y-axis: N events
 unfoldFig15to19a = Variable("Normalized dilepton cross section in 0 < |y(Z)| < 0.4", is_independent=False, is_binned=False, units="")
@@ -1995,8 +1995,8 @@ reader_covariance_mm_Pt = RootFileReader("HEPData/inputs/smp17010/folders_dresse
 # Read the histogram
 data_covariance_mm_Pt = reader_covariance_mm_Pt.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_Pt = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_Pt.values = data_covariance_mm_Pt["x"]
+x_covariance_mm_Pt = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_Pt.values = data_covariance_mm_Pt["x_edges"]
 y_covariance_mm_Pt = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_Pt.values = data_covariance_mm_Pt["y"]
 z_covariance_mm_Pt = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2014,8 +2014,8 @@ reader_covariance_mm_Rap = RootFileReader("HEPData/inputs/smp17010/folders_dress
 # Read the histogram
 data_covariance_mm_Rap = reader_covariance_mm_Rap.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_Rap = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_Rap.values = data_covariance_mm_Rap["x"]
+x_covariance_mm_Rap = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_Rap.values = data_covariance_mm_Rap["x_edges"]
 y_covariance_mm_Rap = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_Rap.values = data_covariance_mm_Rap["y"]
 z_covariance_mm_Rap = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2033,8 +2033,8 @@ reader_covariance_mm_PhiStar = RootFileReader("HEPData/inputs/smp17010/folders_d
 # Read the histogram
 data_covariance_mm_PhiStar = reader_covariance_mm_PhiStar.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_PhiStar = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_PhiStar.values = data_covariance_mm_PhiStar["x"]
+x_covariance_mm_PhiStar = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_PhiStar.values = data_covariance_mm_PhiStar["x_edges"]
 y_covariance_mm_PhiStar = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_PhiStar.values = data_covariance_mm_PhiStar["y"]
 z_covariance_mm_PhiStar = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2052,8 +2052,8 @@ reader_covariance_mm_PtRap0 = RootFileReader("HEPData/inputs/smp17010/folders_dr
 # Read the histogram
 data_covariance_mm_PtRap0 = reader_covariance_mm_PtRap0.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_PtRap0 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_PtRap0.values = data_covariance_mm_PtRap0["x"]
+x_covariance_mm_PtRap0 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_PtRap0.values = data_covariance_mm_PtRap0["x_edges"]
 y_covariance_mm_PtRap0 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_PtRap0.values = data_covariance_mm_PtRap0["y"]
 z_covariance_mm_PtRap0 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2071,8 +2071,8 @@ reader_covariance_mm_PtRap1 = RootFileReader("HEPData/inputs/smp17010/folders_dr
 # Read the histogram
 data_covariance_mm_PtRap1 = reader_covariance_mm_PtRap1.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_PtRap1 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_PtRap1.values = data_covariance_mm_PtRap1["x"]
+x_covariance_mm_PtRap1 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_PtRap1.values = data_covariance_mm_PtRap1["x_edges"]
 y_covariance_mm_PtRap1 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_PtRap1.values = data_covariance_mm_PtRap1["y"]
 z_covariance_mm_PtRap1 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2090,8 +2090,8 @@ reader_covariance_mm_PtRap2 = RootFileReader("HEPData/inputs/smp17010/folders_dr
 # Read the histogram
 data_covariance_mm_PtRap2 = reader_covariance_mm_PtRap2.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_PtRap2 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_PtRap2.values = data_covariance_mm_PtRap2["x"]
+x_covariance_mm_PtRap2 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_PtRap2.values = data_covariance_mm_PtRap2["x_edges"]
 y_covariance_mm_PtRap2 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_PtRap2.values = data_covariance_mm_PtRap2["y"]
 z_covariance_mm_PtRap2 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2109,8 +2109,8 @@ reader_covariance_mm_PtRap3 = RootFileReader("HEPData/inputs/smp17010/folders_dr
 # Read the histogram
 data_covariance_mm_PtRap3 = reader_covariance_mm_PtRap3.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_PtRap3 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_PtRap3.values = data_covariance_mm_PtRap3["x"]
+x_covariance_mm_PtRap3 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_PtRap3.values = data_covariance_mm_PtRap3["x_edges"]
 y_covariance_mm_PtRap3 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_PtRap3.values = data_covariance_mm_PtRap3["y"]
 z_covariance_mm_PtRap3 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2128,8 +2128,8 @@ reader_covariance_mm_PtRap4 = RootFileReader("HEPData/inputs/smp17010/folders_dr
 # Read the histogram
 data_covariance_mm_PtRap4 = reader_covariance_mm_PtRap4.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_PtRap4 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_PtRap4.values = data_covariance_mm_PtRap4["x"]
+x_covariance_mm_PtRap4 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_PtRap4.values = data_covariance_mm_PtRap4["x_edges"]
 y_covariance_mm_PtRap4 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_PtRap4.values = data_covariance_mm_PtRap4["y"]
 z_covariance_mm_PtRap4 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2149,8 +2149,8 @@ reader_covariance_ee_Pt = RootFileReader("HEPData/inputs/smp17010/folders_dresse
 # Read the histogram
 data_covariance_ee_Pt = reader_covariance_ee_Pt.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_Pt = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_Pt.values = data_covariance_ee_Pt["x"]
+x_covariance_ee_Pt = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_Pt.values = data_covariance_ee_Pt["x_edges"]
 y_covariance_ee_Pt = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_Pt.values = data_covariance_ee_Pt["y"]
 z_covariance_ee_Pt = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2168,8 +2168,8 @@ reader_covariance_ee_Rap = RootFileReader("HEPData/inputs/smp17010/folders_dress
 # Read the histogram
 data_covariance_ee_Rap = reader_covariance_ee_Rap.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_Rap = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_Rap.values = data_covariance_ee_Rap["x"]
+x_covariance_ee_Rap = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_Rap.values = data_covariance_ee_Rap["x_edges"]
 y_covariance_ee_Rap = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_Rap.values = data_covariance_ee_Rap["y"]
 z_covariance_ee_Rap = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2187,8 +2187,8 @@ reader_covariance_ee_PhiStar = RootFileReader("HEPData/inputs/smp17010/folders_d
 # Read the histogram
 data_covariance_ee_PhiStar = reader_covariance_ee_PhiStar.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_PhiStar = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_PhiStar.values = data_covariance_ee_PhiStar["x"]
+x_covariance_ee_PhiStar = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_PhiStar.values = data_covariance_ee_PhiStar["x_edges"]
 y_covariance_ee_PhiStar = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_PhiStar.values = data_covariance_ee_PhiStar["y"]
 z_covariance_ee_PhiStar = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2206,8 +2206,8 @@ reader_covariance_ee_PtRap0 = RootFileReader("HEPData/inputs/smp17010/folders_dr
 # Read the histogram
 data_covariance_ee_PtRap0 = reader_covariance_ee_PtRap0.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_PtRap0 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_PtRap0.values = data_covariance_ee_PtRap0["x"]
+x_covariance_ee_PtRap0 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_PtRap0.values = data_covariance_ee_PtRap0["x_edges"]
 y_covariance_ee_PtRap0 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_PtRap0.values = data_covariance_ee_PtRap0["y"]
 z_covariance_ee_PtRap0 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2225,8 +2225,8 @@ reader_covariance_ee_PtRap1 = RootFileReader("HEPData/inputs/smp17010/folders_dr
 # Read the histogram
 data_covariance_ee_PtRap1 = reader_covariance_ee_PtRap1.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_PtRap1 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_PtRap1.values = data_covariance_ee_PtRap1["x"]
+x_covariance_ee_PtRap1 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_PtRap1.values = data_covariance_ee_PtRap1["x_edges"]
 y_covariance_ee_PtRap1 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_PtRap1.values = data_covariance_ee_PtRap1["y"]
 z_covariance_ee_PtRap1 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2244,8 +2244,8 @@ reader_covariance_ee_PtRap2 = RootFileReader("HEPData/inputs/smp17010/folders_dr
 # Read the histogram
 data_covariance_ee_PtRap2 = reader_covariance_ee_PtRap2.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_PtRap2 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_PtRap2.values = data_covariance_ee_PtRap2["x"]
+x_covariance_ee_PtRap2 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_PtRap2.values = data_covariance_ee_PtRap2["x_edges"]
 y_covariance_ee_PtRap2 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_PtRap2.values = data_covariance_ee_PtRap2["y"]
 z_covariance_ee_PtRap2 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2263,8 +2263,8 @@ reader_covariance_ee_PtRap3 = RootFileReader("HEPData/inputs/smp17010/folders_dr
 # Read the histogram
 data_covariance_ee_PtRap3 = reader_covariance_ee_PtRap3.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_PtRap3 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_PtRap3.values = data_covariance_ee_PtRap3["x"]
+x_covariance_ee_PtRap3 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_PtRap3.values = data_covariance_ee_PtRap3["x_edges"]
 y_covariance_ee_PtRap3 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_PtRap3.values = data_covariance_ee_PtRap3["y"]
 z_covariance_ee_PtRap3 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2282,8 +2282,8 @@ reader_covariance_ee_PtRap4 = RootFileReader("HEPData/inputs/smp17010/folders_dr
 # Read the histogram
 data_covariance_ee_PtRap4 = reader_covariance_ee_PtRap4.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_PtRap4 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_PtRap4.values = data_covariance_ee_PtRap4["x"]
+x_covariance_ee_PtRap4 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_PtRap4.values = data_covariance_ee_PtRap4["x_edges"]
 y_covariance_ee_PtRap4 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_PtRap4.values = data_covariance_ee_PtRap4["y"]
 z_covariance_ee_PtRap4 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2304,8 +2304,8 @@ reader_covariance_mm_Pt = RootFileReader("HEPData/inputs/smp17010/folders_bornle
 # Read the histogram
 data_covariance_mm_Pt = reader_covariance_mm_Pt.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_Pt = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_Pt.values = data_covariance_mm_Pt["x"]
+x_covariance_mm_Pt = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_Pt.values = data_covariance_mm_Pt["x_edges"]
 y_covariance_mm_Pt = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_Pt.values = data_covariance_mm_Pt["y"]
 z_covariance_mm_Pt = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2323,8 +2323,8 @@ reader_covariance_mm_Rap = RootFileReader("HEPData/inputs/smp17010/folders_bornl
 # Read the histogram
 data_covariance_mm_Rap = reader_covariance_mm_Rap.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_Rap = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_Rap.values = data_covariance_mm_Rap["x"]
+x_covariance_mm_Rap = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_Rap.values = data_covariance_mm_Rap["x_edges"]
 y_covariance_mm_Rap = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_Rap.values = data_covariance_mm_Rap["y"]
 z_covariance_mm_Rap = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2342,8 +2342,8 @@ reader_covariance_mm_PhiStar = RootFileReader("HEPData/inputs/smp17010/folders_b
 # Read the histogram
 data_covariance_mm_PhiStar = reader_covariance_mm_PhiStar.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_PhiStar = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_PhiStar.values = data_covariance_mm_PhiStar["x"]
+x_covariance_mm_PhiStar = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_PhiStar.values = data_covariance_mm_PhiStar["x_edges"]
 y_covariance_mm_PhiStar = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_PhiStar.values = data_covariance_mm_PhiStar["y"]
 z_covariance_mm_PhiStar = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2361,8 +2361,8 @@ reader_covariance_mm_PtRap0 = RootFileReader("HEPData/inputs/smp17010/folders_bo
 # Read the histogram
 data_covariance_mm_PtRap0 = reader_covariance_mm_PtRap0.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_PtRap0 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_PtRap0.values = data_covariance_mm_PtRap0["x"]
+x_covariance_mm_PtRap0 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_PtRap0.values = data_covariance_mm_PtRap0["x_edges"]
 y_covariance_mm_PtRap0 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_PtRap0.values = data_covariance_mm_PtRap0["y"]
 z_covariance_mm_PtRap0 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2380,8 +2380,8 @@ reader_covariance_mm_PtRap1 = RootFileReader("HEPData/inputs/smp17010/folders_bo
 # Read the histogram
 data_covariance_mm_PtRap1 = reader_covariance_mm_PtRap1.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_PtRap1 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_PtRap1.values = data_covariance_mm_PtRap1["x"]
+x_covariance_mm_PtRap1 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_PtRap1.values = data_covariance_mm_PtRap1["x_edges"]
 y_covariance_mm_PtRap1 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_PtRap1.values = data_covariance_mm_PtRap1["y"]
 z_covariance_mm_PtRap1 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2399,8 +2399,8 @@ reader_covariance_mm_PtRap2 = RootFileReader("HEPData/inputs/smp17010/folders_bo
 # Read the histogram
 data_covariance_mm_PtRap2 = reader_covariance_mm_PtRap2.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_PtRap2 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_PtRap2.values = data_covariance_mm_PtRap2["x"]
+x_covariance_mm_PtRap2 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_PtRap2.values = data_covariance_mm_PtRap2["x_edges"]
 y_covariance_mm_PtRap2 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_PtRap2.values = data_covariance_mm_PtRap2["y"]
 z_covariance_mm_PtRap2 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2418,8 +2418,8 @@ reader_covariance_mm_PtRap3 = RootFileReader("HEPData/inputs/smp17010/folders_bo
 # Read the histogram
 data_covariance_mm_PtRap3 = reader_covariance_mm_PtRap3.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_PtRap3 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_PtRap3.values = data_covariance_mm_PtRap3["x"]
+x_covariance_mm_PtRap3 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_PtRap3.values = data_covariance_mm_PtRap3["x_edges"]
 y_covariance_mm_PtRap3 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_PtRap3.values = data_covariance_mm_PtRap3["y"]
 z_covariance_mm_PtRap3 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2437,8 +2437,8 @@ reader_covariance_mm_PtRap4 = RootFileReader("HEPData/inputs/smp17010/folders_bo
 # Read the histogram
 data_covariance_mm_PtRap4 = reader_covariance_mm_PtRap4.read_hist_2d("covariance_totsum_0")
 # Create variable objects
-x_covariance_mm_PtRap4 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_mm_PtRap4.values = data_covariance_mm_PtRap4["x"]
+x_covariance_mm_PtRap4 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_mm_PtRap4.values = data_covariance_mm_PtRap4["x_edges"]
 y_covariance_mm_PtRap4 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_mm_PtRap4.values = data_covariance_mm_PtRap4["y"]
 z_covariance_mm_PtRap4 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2458,8 +2458,8 @@ reader_covariance_ee_Pt = RootFileReader("HEPData/inputs/smp17010/folders_bornle
 # Read the histogram
 data_covariance_ee_Pt = reader_covariance_ee_Pt.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_Pt = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_Pt.values = data_covariance_ee_Pt["x"]
+x_covariance_ee_Pt = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_Pt.values = data_covariance_ee_Pt["x_edges"]
 y_covariance_ee_Pt = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_Pt.values = data_covariance_ee_Pt["y"]
 z_covariance_ee_Pt = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2477,8 +2477,8 @@ reader_covariance_ee_Rap = RootFileReader("HEPData/inputs/smp17010/folders_bornl
 # Read the histogram
 data_covariance_ee_Rap = reader_covariance_ee_Rap.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_Rap = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_Rap.values = data_covariance_ee_Rap["x"]
+x_covariance_ee_Rap = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_Rap.values = data_covariance_ee_Rap["x_edges"]
 y_covariance_ee_Rap = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_Rap.values = data_covariance_ee_Rap["y"]
 z_covariance_ee_Rap = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2496,8 +2496,8 @@ reader_covariance_ee_PhiStar = RootFileReader("HEPData/inputs/smp17010/folders_b
 # Read the histogram
 data_covariance_ee_PhiStar = reader_covariance_ee_PhiStar.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_PhiStar = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_PhiStar.values = data_covariance_ee_PhiStar["x"]
+x_covariance_ee_PhiStar = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_PhiStar.values = data_covariance_ee_PhiStar["x_edges"]
 y_covariance_ee_PhiStar = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_PhiStar.values = data_covariance_ee_PhiStar["y"]
 z_covariance_ee_PhiStar = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2515,8 +2515,8 @@ reader_covariance_ee_PtRap0 = RootFileReader("HEPData/inputs/smp17010/folders_bo
 # Read the histogram
 data_covariance_ee_PtRap0 = reader_covariance_ee_PtRap0.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_PtRap0 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_PtRap0.values = data_covariance_ee_PtRap0["x"]
+x_covariance_ee_PtRap0 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_PtRap0.values = data_covariance_ee_PtRap0["x_edges"]
 y_covariance_ee_PtRap0 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_PtRap0.values = data_covariance_ee_PtRap0["y"]
 z_covariance_ee_PtRap0 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2534,8 +2534,8 @@ reader_covariance_ee_PtRap1 = RootFileReader("HEPData/inputs/smp17010/folders_bo
 # Read the histogram
 data_covariance_ee_PtRap1 = reader_covariance_ee_PtRap1.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_PtRap1 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_PtRap1.values = data_covariance_ee_PtRap1["x"]
+x_covariance_ee_PtRap1 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_PtRap1.values = data_covariance_ee_PtRap1["x_edges"]
 y_covariance_ee_PtRap1 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_PtRap1.values = data_covariance_ee_PtRap1["y"]
 z_covariance_ee_PtRap1 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2553,8 +2553,8 @@ reader_covariance_ee_PtRap2 = RootFileReader("HEPData/inputs/smp17010/folders_bo
 # Read the histogram
 data_covariance_ee_PtRap2 = reader_covariance_ee_PtRap2.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_PtRap2 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_PtRap2.values = data_covariance_ee_PtRap2["x"]
+x_covariance_ee_PtRap2 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_PtRap2.values = data_covariance_ee_PtRap2["x_edges"]
 y_covariance_ee_PtRap2 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_PtRap2.values = data_covariance_ee_PtRap2["y"]
 z_covariance_ee_PtRap2 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2572,8 +2572,8 @@ reader_covariance_ee_PtRap3 = RootFileReader("HEPData/inputs/smp17010/folders_bo
 # Read the histogram
 data_covariance_ee_PtRap3 = reader_covariance_ee_PtRap3.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_PtRap3 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_PtRap3.values = data_covariance_ee_PtRap3["x"]
+x_covariance_ee_PtRap3 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_PtRap3.values = data_covariance_ee_PtRap3["x_edges"]
 y_covariance_ee_PtRap3 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_PtRap3.values = data_covariance_ee_PtRap3["y"]
 z_covariance_ee_PtRap3 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2591,8 +2591,8 @@ reader_covariance_ee_PtRap4 = RootFileReader("HEPData/inputs/smp17010/folders_bo
 # Read the histogram
 data_covariance_ee_PtRap4 = reader_covariance_ee_PtRap4.read_hist_2d("covariance_totsum_1")
 # Create variable objects
-x_covariance_ee_PtRap4 = Variable("Bin X", is_independent=True, is_binned=False)
-x_covariance_ee_PtRap4.values = data_covariance_ee_PtRap4["x"]
+x_covariance_ee_PtRap4 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ee_PtRap4.values = data_covariance_ee_PtRap4["x_edges"]
 y_covariance_ee_PtRap4 = Variable("Bin Y", is_independent=True, is_binned=False)
 y_covariance_ee_PtRap4.values = data_covariance_ee_PtRap4["y"]
 z_covariance_ee_PtRap4 = Variable("covariance Matrix", is_independent=False, is_binned=False)
@@ -2625,8 +2625,8 @@ histo_unfoldFigAux7a.keys()
 for key in histo_unfoldFigAux7a.keys():
     print(key, type(histo_unfoldFigAux7a[key]), type(histo_unfoldFigAux7a[key][0]))
 
-mmed_FigAux7 = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
-mmed_FigAux7.values = histo_unfoldFigAux7a["x"]
+mmed_FigAux7 = Variable("|y(Z)|", is_independent=True, is_binned=True, units="")
+mmed_FigAux7.values = histo_unfoldFigAux7a["x_edges"]
 
 # y-axis: N events
 unfoldFigAux7a = Variable("Dimuon cross section (pb)", is_independent=False, is_binned=False, units="")
@@ -2695,8 +2695,8 @@ histo_unfoldFigAux8b["dy"].pop(0)
 histo_unfoldFigAux8c["dy"].pop(0)
 print(histo_unfoldFigAux8a["x"])
 
-mmed_FigAux8 = Variable("$p_{T}$", is_independent=True, is_binned=False, units="GeV")
-mmed_FigAux8.values = histo_unfoldFigAux8a["x"]
+mmed_FigAux8 = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_FigAux8.values = histo_unfoldFigAux8a["x_edges"]
 
 # y-axis: N events
 unfoldFigAux8a = Variable("Dimuon cross section (pb)", is_independent=False, is_binned=False, units="")
@@ -2753,8 +2753,8 @@ histo_unfoldFigAux9a.keys()
 for key in histo_unfoldFigAux9a.keys():
     print(key, type(histo_unfoldFigAux9a[key]), type(histo_unfoldFigAux9a[key][0]))
 
-mmed_FigAux9 = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=False, units="")
-mmed_FigAux9.values = histo_unfoldFigAux9a["x"]
+mmed_FigAux9 = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=True, units="")
+mmed_FigAux9.values = histo_unfoldFigAux9a["x_edges"]
 
 # y-axis: N events
 unfoldFigAux9a = Variable("Dimuon cross section (pb)", is_independent=False, is_binned=False, units="")
@@ -2950,8 +2950,8 @@ inv_total_sum = 1.0/sum(histo_unfoldFigAux15b["y"])
 for key in histo_unfoldFigAux15b.keys():
     print(key, type(histo_unfoldFigAux15b[key]), type(histo_unfoldFigAux15b[key][0]))
 
-mmed_FigAux15b = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=False, units="")
-mmed_FigAux15b.values = histo_unfoldFigAux15b["x"]
+mmed_FigAux15b = Variable("$\phi^{\scriptscriptstyle *}_\eta$", is_independent=True, is_binned=True, units="")
+mmed_FigAux15b.values = histo_unfoldFigAux15b["x_edges"]
 
 # y-axis: N events
 unfoldFigAux15b = Variable("Normalized dilepton cross section", is_independent=False, is_binned=False, units="")
@@ -2985,8 +2985,8 @@ inv_total_sum = 1.0/sum(histo_unfoldFigAux15c["y"])
 for key in histo_unfoldFigAux15c.keys():
     print(key, type(histo_unfoldFigAux15c[key]), type(histo_unfoldFigAux15c[key][0]))
 
-mmed_FigAux15c = Variable("|y(Z)|", is_independent=True, is_binned=False, units="")
-mmed_FigAux15c.values = histo_unfoldFigAux15c["x"]
+mmed_FigAux15c = Variable("|y(Z)|", is_independent=True, is_binned=True, units="")
+mmed_FigAux15c.values = histo_unfoldFigAux15c["x_edges"]
 
 # y-axis: N events
 unfoldFigAux15c = Variable("Normalized dilepton cross section", is_independent=False, is_binned=False, units="")
