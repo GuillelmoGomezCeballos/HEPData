@@ -1,16 +1,16 @@
-Process $N_{WW}$ $\Delta N_{WW}$
+Process prefit-$N_{WW}$ prefit-$\Delta N_{WW}$ postfit-$N_{WW}$ postfit-$\Delta N_{WW}$
 -------------------------------------------------------  
-EW-$W^{+/-}W^{+/-}$             210  	26  
-QCD-$W^{+/-}W^{+/-}$             13.7	 2.2
-Interference-$W^{+/-}W^{+/-}$     8.7	 2.3
-EW-WZ                            17.8	 3.9 
-QCD-WZ                           42.7	 7.4 
-Interference-WZ                   0.3	 0.2 
-ZZ                                0.7	 0.2 
-Nonprompt                       193  	40   
-tVx                               7.4	 2.2 
-$W\gamma$                         9.1	 2.9 
-Wrong-sign                       13.9	 6.5 
-Other-background                  5.2	 2.1 
-Total-SM                        522  	49   
-Data                            524	23
+EW-$W^{+/-}W^{+/-}$            209    22   210     26  
+QCD-$W^{+/-}W^{+/-}$            13.6   2.3  13.7    2.2
+Interference-$W^{+/-}W^{+/-}$    8.4   2.3   8.7    2.3
+EW-WZ                           14.1   1.7  17.8    3.9 
+QCD-WZ                          42.9   4.7  42.7    7.4 
+Interference-WZ                  0.3   0.1   0.3    0.2 
+ZZ                               0.7   0.1   0.7    0.2 
+Nonprompt                      211    55   193     40	
+tVx                              9.0   3.1   7.4    2.2 
+$W\gamma$                        7.8   2.0   9.1    2.9 
+Wrong-sign                      13.5   7.1  13.9    6.5 
+Other-background                 5.0   2.4   5.2    2.1 
+Total-SM                        535   60   522     49   
+Data                            524   23   524     23

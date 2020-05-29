@@ -69,18 +69,23 @@ print(data4)
 table4a_data = Variable("Process", is_independent=True, is_binned=False, units="")
 table4a_data.values = [str(x) for x in data4[:,0]]
 
-table4a_yields0 = Variable("Events", is_independent=False, is_binned=False, units="")
+table4a_yields0 = Variable("Prefit yields", is_independent=False, is_binned=False, units="")
 table4a_yields0.values = [float(x) for x in data4[:,1]]
-table4a_yields0.add_qualifier("Expected events", "WW selection")
 table4a_yields0.add_qualifier("SQRT(S)", 13, "TeV")
-
+table4a_yields0.add_qualifier("WW selection", "Yields")
 table4a_unc0 = Uncertainty("total uncertainty", is_symmetric=True)
 table4a_unc0.values = [float(x) for x in data4[:,2]]
-
 table4a_yields0.add_uncertainty(table4a_unc0)
+
+table4a_yields1 = Variable("Postfit yields", is_independent=False, is_binned=False, units="")
+table4a_yields1.values = [float(x) for x in data4[:,3]]
+table4a_unc1 = Uncertainty("total uncertainty", is_symmetric=True)
+table4a_unc1.values = [float(x) for x in data4[:,4]]
+table4a_yields1.add_uncertainty(table4a_unc1)
 
 table4a.add_variable(table4a_data)
 table4a.add_variable(table4a_yields0)
+table4a.add_variable(table4a_yields1)
 
 submission.add_table(table4a)
 
@@ -103,18 +108,23 @@ print(data4)
 table4b_data = Variable("Process", is_independent=True, is_binned=False, units="")
 table4b_data.values = [str(x) for x in data4[:,0]]
 
-table4b_yields0 = Variable("Events", is_independent=False, is_binned=False, units="")
+table4b_yields0 = Variable("Prefit yields", is_independent=False, is_binned=False, units="")
 table4b_yields0.values = [float(x) for x in data4[:,1]]
-table4b_yields0.add_qualifier("Expected events", "WZ selection")
 table4b_yields0.add_qualifier("SQRT(S)", 13, "TeV")
-
+table4b_yields0.add_qualifier("WZ selection", "Yields")
 table4b_unc0 = Uncertainty("total uncertainty", is_symmetric=True)
 table4b_unc0.values = [float(x) for x in data4[:,2]]
-
 table4b_yields0.add_uncertainty(table4b_unc0)
+
+table4b_yields1 = Variable("Postfit yields", is_independent=False, is_binned=False, units="")
+table4b_yields1.values = [float(x) for x in data4[:,3]]
+table4b_unc1 = Uncertainty("total uncertainty", is_symmetric=True)
+table4b_unc1.values = [float(x) for x in data4[:,4]]
+table4b_yields1.add_uncertainty(table4b_unc1)
 
 table4b.add_variable(table4b_data)
 table4b.add_variable(table4b_yields0)
+table4b.add_variable(table4b_yields1)
 
 submission.add_table(table4b)
 
@@ -125,7 +135,7 @@ for table4b in submission.tables:
 
 ### Begin Table 5
 table5 = Table("Table 5")
-table5.description = "The measured inclusive fiducial cross section measurements."
+table5.description = "The measured inclusive fiducial cross section measurements. The WW fiducial region is defined by requiring two same-sign leptons with $p_{T}>20$, $|\eta|<2.5$, and $m_{ll}>20$, and two jets with $m_{jj}>500$ and $|\Delta \eta_{jj}|>2.5$. The jets at generator level are clustered from stable particles, excluding neutrinos, using the anti-kt clustering algorithm with R = 0.4, and are required to have $p_{T}>50$ and $|\eta|<4.7$. The jets within $\Delta R<0.4$ of the selected charged leptons are not included. The WZ fiducial region is defined by requiring three leptons with $p_{T}>20$, $|\eta|<2.5$, a pair of opposite charge same-flavor lepton pair with $|m_{ll}-m_{Z}|<15$, and two jets with $m_{jj}>500$ and $|\Delta \eta_{jj}|>2.5$."
 table5.location = "Data from Table 5"
 
 table5.keywords["observables"] = ["Events"]
@@ -137,18 +147,30 @@ print(data4)
 table5_data = Variable("Process", is_independent=True, is_binned=False, units="")
 table5_data.values = [str(x) for x in data4[:,0]]
 
-table5_yields0 = Variable("Events", is_independent=False, is_binned=False, units="")
+table5_yields0 = Variable("Observed result", is_independent=False, is_binned=False, units="")
 table5_yields0.values = [float(x) for x in data4[:,1]]
-table5_yields0.add_qualifier("Expected events", "Cross section (fb)")
+table5_yields0.add_qualifier("Fiducial cross section", "Cross section (fb)")
 table5_yields0.add_qualifier("SQRT(S)", 13, "TeV")
-
 table5_unc0 = Uncertainty("total uncertainty", is_symmetric=True)
 table5_unc0.values = [float(x) for x in data4[:,2]]
-
 table5_yields0.add_uncertainty(table5_unc0)
+
+table5_yields1 = Variable("Theoretical prediction without NLO corrections", is_independent=False, is_binned=False, units="")
+table5_yields1.values = [float(x) for x in data4[:,3]]
+table5_unc1 = Uncertainty("total uncertainty", is_symmetric=True)
+table5_unc1.values = [float(x) for x in data4[:,4]]
+table5_yields1.add_uncertainty(table5_unc1)
+
+table5_yields2 = Variable("Theoretical prediction with NLO corrections", is_independent=False, is_binned=False, units="")
+table5_yields2.values = [float(x) for x in data4[:,5]]
+table5_unc2 = Uncertainty("total uncertainty", is_symmetric=True)
+table5_unc2.values = [float(x) for x in data4[:,6]]
+table5_yields2.add_uncertainty(table5_unc2)
 
 table5.add_variable(table5_data)
 table5.add_variable(table5_yields0)
+table5.add_variable(table5_yields1)
+table5.add_variable(table5_yields2)
 
 submission.add_table(table5)
 
@@ -184,7 +206,7 @@ mmed_Fig3a.values = histo0_Fig3a["x"]
 
 # y-axis: N events
 
-totalbackground_Fig3a = Variable("Number of background events", is_independent=False, is_binned=False, units="")
+totalbackground_Fig3a = Variable("Number of background events/GeV", is_independent=False, is_binned=False, units="")
 totalbackground_Fig3a.values = histo_Bck_Fig3a["y"]
 
 unc_totalbackground_Fig3a = Uncertainty("total uncertainty", is_symmetric=True)
@@ -192,34 +214,34 @@ unc_totalbackground_Fig3a.values = histo_Bck_Fig3a["dy"]
 
 totalbackground_Fig3a.add_uncertainty(unc_totalbackground_Fig3a)
 
-WW_Fig3a = Variable("Number of W^{+/-}W^{+/-} events", is_independent=False, is_binned=False, units="")
+WW_Fig3a = Variable("Number of W^{+/-}W^{+/-} events/GeV", is_independent=False, is_binned=False, units="")
 WW_Fig3a.values = histo5_Fig3a["y"]
 
-EWKWZ_Fig3a = Variable("Number of EW WZ events", is_independent=False, is_binned=False, units="")
+EWKWZ_Fig3a = Variable("Number of EW WZ events/GeV", is_independent=False, is_binned=False, units="")
 EWKWZ_Fig3a.values = histo7_Fig3a["y"]
 
-QCDWZ_Fig3a = Variable("Number of QCD WZ events", is_independent=False, is_binned=False, units="")
+QCDWZ_Fig3a = Variable("Number of QCD WZ events/GeV", is_independent=False, is_binned=False, units="")
 QCDWZ_Fig3a.values = histo8_Fig3a["y"]
 
-ZZ_Fig3a = Variable("Number of ZZ events", is_independent=False, is_binned=False, units="")
+ZZ_Fig3a = Variable("Number of ZZ events/GeV", is_independent=False, is_binned=False, units="")
 ZZ_Fig3a.values = histo9_Fig3a["y"]
 
-Fake_Fig3a = Variable("Number of nonprompt events", is_independent=False, is_binned=False, units="")
+Fake_Fig3a = Variable("Number of nonprompt events/GeV", is_independent=False, is_binned=False, units="")
 Fake_Fig3a.values = histo10_Fig3a["y"]
 
-TVX_Fig3a = Variable("Number of tVx events", is_independent=False, is_binned=False, units="")
+TVX_Fig3a = Variable("Number of tVx events/GeV", is_independent=False, is_binned=False, units="")
 TVX_Fig3a.values = histo12_Fig3a["y"]
 
-VG_Fig3a = Variable("Number of V#gamma events", is_independent=False, is_binned=False, units="")
+VG_Fig3a = Variable("Number of V#gamma events/GeV", is_independent=False, is_binned=False, units="")
 VG_Fig3a.values = histo13_Fig3a["y"]
 
-WS_Fig3a = Variable("Number of wrong-sign events", is_independent=False, is_binned=False, units="")
+WS_Fig3a = Variable("Number of wrong-sign events/GeV", is_independent=False, is_binned=False, units="")
 WS_Fig3a.values = histo16_Fig3a["y"]
 
-Other_Fig3a = Variable("Number of Other events", is_independent=False, is_binned=False, units="")
+Other_Fig3a = Variable("Number of Other events/GeV", is_independent=False, is_binned=False, units="")
 Other_Fig3a.values = histo18_Fig3a["y"]
 
-Data_Fig3a = Variable("Number of data events", is_independent=False, is_binned=False, units="")
+Data_Fig3a = Variable("Number of data events/GeV", is_independent=False, is_binned=False, units="")
 Data_Fig3a.values = histo0_Fig3a["y"]
 
 #unc_data_Fig3a = Uncertainty("Poisson errors", is_symmetric=True)
@@ -268,7 +290,7 @@ mmed_Fig3b.values = histo0_Fig3b["x"]
 
 # y-axis: N events
 
-totalbackground_Fig3b = Variable("Number of background events", is_independent=False, is_binned=False, units="")
+totalbackground_Fig3b = Variable("Number of background events/GeV", is_independent=False, is_binned=False, units="")
 totalbackground_Fig3b.values = histo_Bck_Fig3b["y"]
 
 unc_totalbackground_Fig3b = Uncertainty("total uncertainty", is_symmetric=True)
@@ -276,34 +298,34 @@ unc_totalbackground_Fig3b.values = histo_Bck_Fig3b["dy"]
 
 totalbackground_Fig3b.add_uncertainty(unc_totalbackground_Fig3b)
 
-WW_Fig3b = Variable("Number of W^{+/-}W^{+/-} events", is_independent=False, is_binned=False, units="")
+WW_Fig3b = Variable("Number of W^{+/-}W^{+/-} events/GeV", is_independent=False, is_binned=False, units="")
 WW_Fig3b.values = histo5_Fig3b["y"]
 
-EWKWZ_Fig3b = Variable("Number of EW WZ events", is_independent=False, is_binned=False, units="")
+EWKWZ_Fig3b = Variable("Number of EW WZ events/GeV", is_independent=False, is_binned=False, units="")
 EWKWZ_Fig3b.values = histo7_Fig3b["y"]
 
-QCDWZ_Fig3b = Variable("Number of QCD WZ events", is_independent=False, is_binned=False, units="")
+QCDWZ_Fig3b = Variable("Number of QCD WZ events/GeV", is_independent=False, is_binned=False, units="")
 QCDWZ_Fig3b.values = histo8_Fig3b["y"]
 
-ZZ_Fig3b = Variable("Number of ZZ events", is_independent=False, is_binned=False, units="")
+ZZ_Fig3b = Variable("Number of ZZ events/GeV", is_independent=False, is_binned=False, units="")
 ZZ_Fig3b.values = histo9_Fig3b["y"]
 
-Fake_Fig3b = Variable("Number of nonprompt events", is_independent=False, is_binned=False, units="")
+Fake_Fig3b = Variable("Number of nonprompt events/GeV", is_independent=False, is_binned=False, units="")
 Fake_Fig3b.values = histo10_Fig3b["y"]
 
-TVX_Fig3b = Variable("Number of tVx events", is_independent=False, is_binned=False, units="")
+TVX_Fig3b = Variable("Number of tVx events/GeV", is_independent=False, is_binned=False, units="")
 TVX_Fig3b.values = histo12_Fig3b["y"]
 
-VG_Fig3b = Variable("Number of V#gamma events", is_independent=False, is_binned=False, units="")
+VG_Fig3b = Variable("Number of V#gamma events/GeV", is_independent=False, is_binned=False, units="")
 VG_Fig3b.values = histo13_Fig3b["y"]
 
-WS_Fig3b = Variable("Number of wrong-sign events", is_independent=False, is_binned=False, units="")
+WS_Fig3b = Variable("Number of wrong-sign events/GeV", is_independent=False, is_binned=False, units="")
 WS_Fig3b.values = histo16_Fig3b["y"]
 
-Other_Fig3b = Variable("Number of Other events", is_independent=False, is_binned=False, units="")
+Other_Fig3b = Variable("Number of Other events/GeV", is_independent=False, is_binned=False, units="")
 Other_Fig3b.values = histo18_Fig3b["y"]
 
-Data_Fig3b = Variable("Number of data events", is_independent=False, is_binned=False, units="")
+Data_Fig3b = Variable("Number of data events/GeV", is_independent=False, is_binned=False, units="")
 Data_Fig3b.values = histo0_Fig3b["y"]
 
 #unc_data_Fig3b = Uncertainty("Poisson errors", is_symmetric=True)
@@ -351,7 +373,7 @@ mmed_Fig3c.values = histo0_Fig3c["x"]
 
 # y-axis: N events
 
-totalbackground_Fig3c = Variable("Number of background events", is_independent=False, is_binned=False, units="")
+totalbackground_Fig3c = Variable("Number of background events/GeV", is_independent=False, is_binned=False, units="")
 totalbackground_Fig3c.values = histo_Bck_Fig3c["y"]
 
 unc_totalbackground_Fig3c = Uncertainty("total uncertainty", is_symmetric=True)
@@ -359,31 +381,31 @@ unc_totalbackground_Fig3c.values = histo_Bck_Fig3c["dy"]
 
 totalbackground_Fig3c.add_uncertainty(unc_totalbackground_Fig3c)
 
-EWKWZ_Fig3c = Variable("Number of EW WZ events", is_independent=False, is_binned=False, units="")
+EWKWZ_Fig3c = Variable("Number of EW WZ events/GeV", is_independent=False, is_binned=False, units="")
 EWKWZ_Fig3c.values = histo7_Fig3c["y"]
 
-QCDWZ_Fig3c = Variable("Number of QCD WZ events", is_independent=False, is_binned=False, units="")
+QCDWZ_Fig3c = Variable("Number of QCD WZ events/GeV", is_independent=False, is_binned=False, units="")
 QCDWZ_Fig3c.values = histo8_Fig3c["y"]
 
-ZZ_Fig3c = Variable("Number of ZZ events", is_independent=False, is_binned=False, units="")
+ZZ_Fig3c = Variable("Number of ZZ events/GeV", is_independent=False, is_binned=False, units="")
 ZZ_Fig3c.values = histo9_Fig3c["y"]
 
-Fake_Fig3c = Variable("Number of nonprompt events", is_independent=False, is_binned=False, units="")
+Fake_Fig3c = Variable("Number of nonprompt events/GeV", is_independent=False, is_binned=False, units="")
 Fake_Fig3c.values = histo10_Fig3c["y"]
 
-TVX_Fig3c = Variable("Number of tVx events", is_independent=False, is_binned=False, units="")
+TVX_Fig3c = Variable("Number of tVx events/GeV", is_independent=False, is_binned=False, units="")
 TVX_Fig3c.values = histo12_Fig3c["y"]
 
-VG_Fig3c = Variable("Number of V#gamma events", is_independent=False, is_binned=False, units="")
+VG_Fig3c = Variable("Number of V#gamma events/GeV", is_independent=False, is_binned=False, units="")
 VG_Fig3c.values = histo13_Fig3c["y"]
 
-WS_Fig3c = Variable("Number of wrong-sign events", is_independent=False, is_binned=False, units="")
+WS_Fig3c = Variable("Number of wrong-sign events/GeV", is_independent=False, is_binned=False, units="")
 WS_Fig3c.values = histo16_Fig3c["y"]
 
-Other_Fig3c = Variable("Number of Other events", is_independent=False, is_binned=False, units="")
+Other_Fig3c = Variable("Number of Other events/GeV", is_independent=False, is_binned=False, units="")
 Other_Fig3c.values = histo18_Fig3c["y"]
 
-Data_Fig3c = Variable("Number of data events", is_independent=False, is_binned=False, units="")
+Data_Fig3c = Variable("Number of data events/GeV", is_independent=False, is_binned=False, units="")
 Data_Fig3c.values = histo0_Fig3c["y"]
 
 #unc_data_Fig3c = Uncertainty("Poisson errors", is_symmetric=True)
@@ -425,7 +447,7 @@ histo_Bck_Fig3d = reader_Fig3d.read_hist_1d("hBck")
 
 histo_Bck_Fig3d.keys()
 
-mmed_Fig3d = Variable("$m_{jj}$", is_independent=True, is_binned=False, units="GeV")
+mmed_Fig3d = Variable("BDT score", is_independent=True, is_binned=False, units="")
 mmed_Fig3d.values = histo0_Fig3d["x"]
 
 # y-axis: N events
@@ -502,7 +524,7 @@ mmed_Fig4a = Variable("$m_{jj}$", is_independent=True, is_binned=False, units=""
 mmed_Fig4a.values = histo_unfoldFig4a["x"]
 
 # y-axis: N events
-unfoldFig4a = Variable("WW cross section (fb)", is_independent=False, is_binned=False, units="")
+unfoldFig4a = Variable("WW cross section (fb/GeV)", is_independent=False, is_binned=False, units="")
 unfoldFig4a.values = histo_unfoldFig4a["y"]
 
 unc_unfoldFig4a = Uncertainty("", is_symmetric=True)
@@ -536,7 +558,7 @@ mmed_Fig4b = Variable("$m_{jj}$", is_independent=True, is_binned=False, units=""
 mmed_Fig4b.values = histo_unfoldFig4b["x"]
 
 # y-axis: N events
-unfoldFig4b = Variable("WW cross section", is_independent=False, is_binned=False, units="")
+unfoldFig4b = Variable("Normalized WW cross section", is_independent=False, is_binned=False, units="")
 unfoldFig4b.values = histo_unfoldFig4b["y"]
 
 unc_unfoldFig4b = Uncertainty("", is_symmetric=True)
@@ -570,7 +592,7 @@ mmed_Fig4c = Variable("$m_{ll}$", is_independent=True, is_binned=False, units=""
 mmed_Fig4c.values = histo_unfoldFig4c["x"]
 
 # y-axis: N events
-unfoldFig4c = Variable("WW cross section (fb)", is_independent=False, is_binned=False, units="")
+unfoldFig4c = Variable("WW cross section (fb/GeV)", is_independent=False, is_binned=False, units="")
 unfoldFig4c.values = histo_unfoldFig4c["y"]
 
 unc_unfoldFig4c = Uncertainty("", is_symmetric=True)
@@ -604,7 +626,7 @@ mmed_Fig4d = Variable("$m_{ll}$", is_independent=True, is_binned=False, units=""
 mmed_Fig4d.values = histo_unfoldFig4d["x"]
 
 # y-axis: N events
-unfoldFig4d = Variable("WW cross section", is_independent=False, is_binned=False, units="")
+unfoldFig4d = Variable("Normalized WW cross section", is_independent=False, is_binned=False, units="")
 unfoldFig4d.values = histo_unfoldFig4d["y"]
 
 unc_unfoldFig4d = Uncertainty("", is_symmetric=True)
@@ -638,7 +660,7 @@ mmed_Fig4e = Variable("$p_{T}^{l max}$", is_independent=True, is_binned=False, u
 mmed_Fig4e.values = histo_unfoldFig4e["x"]
 
 # y-axis: N events
-unfoldFig4e = Variable("WW cross section (fb)", is_independent=False, is_binned=False, units="")
+unfoldFig4e = Variable("WW cross section (fb/GeV)", is_independent=False, is_binned=False, units="")
 unfoldFig4e.values = histo_unfoldFig4e["y"]
 
 unc_unfoldFig4e = Uncertainty("", is_symmetric=True)
@@ -672,7 +694,7 @@ mmed_Fig4f = Variable("$p_{T}^{l max}$", is_independent=True, is_binned=False, u
 mmed_Fig4f.values = histo_unfoldFig4f["x"]
 
 # y-axis: N events
-unfoldFig4f = Variable("WW cross section", is_independent=False, is_binned=False, units="")
+unfoldFig4f = Variable("Normalized WW cross section", is_independent=False, is_binned=False, units="")
 unfoldFig4f.values = histo_unfoldFig4f["y"]
 
 unc_unfoldFig4f = Uncertainty("", is_symmetric=True)
@@ -706,7 +728,7 @@ mmed_Fig5a = Variable("$m_{jj}$", is_independent=True, is_binned=False, units=""
 mmed_Fig5a.values = histo_unfoldFig5a["x"]
 
 # y-axis: N events
-unfoldFig5a = Variable("WZ cross section (fb)", is_independent=False, is_binned=False, units="")
+unfoldFig5a = Variable("WZ cross section (fb/GeV)", is_independent=False, is_binned=False, units="")
 unfoldFig5a.values = histo_unfoldFig5a["y"]
 
 unc_unfoldFig5a = Uncertainty("", is_symmetric=True)
@@ -740,7 +762,7 @@ mmed_Fig5b = Variable("$m_{jj}$", is_independent=True, is_binned=False, units=""
 mmed_Fig5b.values = histo_unfoldFig5b["x"]
 
 # y-axis: N events
-unfoldFig5b = Variable("WZ cross section", is_independent=False, is_binned=False, units="")
+unfoldFig5b = Variable("Normalized WZ cross section", is_independent=False, is_binned=False, units="")
 unfoldFig5b.values = histo_unfoldFig5b["y"]
 
 unc_unfoldFig5b = Uncertainty("", is_symmetric=True)
@@ -773,6 +795,8 @@ histo12_Fig6a   = reader_Fig6a.read_hist_1d("histo12") # TVX
 histo13_Fig6a   = reader_Fig6a.read_hist_1d("histo13") # VG
 histo16_Fig6a   = reader_Fig6a.read_hist_1d("histo16") # WS
 histo18_Fig6a   = reader_Fig6a.read_hist_1d("histo18") # Other
+histo19_Fig6a   = reader_Fig6a.read_hist_1d("histo19") # BSM1
+histo20_Fig6a   = reader_Fig6a.read_hist_1d("histo20") # BSM2
 histo_Bck_Fig6a = reader_Fig6a.read_hist_1d("hBck")
 
 histo_Bck_Fig6a.keys()
@@ -817,6 +841,12 @@ WS_Fig6a.values = histo16_Fig6a["y"]
 Other_Fig6a = Variable("Number of Other events", is_independent=False, is_binned=False, units="")
 Other_Fig6a.values = histo18_Fig6a["y"]
 
+BSM1_Fig6a = Variable("Number of aQGC f$_{T2}$/$\Lambda^{4}$ = 2.9 TeV$^{-4}$ events", is_independent=False, is_binned=False, units="")
+BSM1_Fig6a.values = histo19_Fig6a["y"]
+
+BSM2_Fig6a = Variable("Number of aQGC f$_{S0}$/$\Lambda^{4}$ = 20 TeV$^{-4}$ events", is_independent=False, is_binned=False, units="")
+BSM2_Fig6a.values = histo20_Fig6a["y"]
+
 Data_Fig6a = Variable("Number of data events", is_independent=False, is_binned=False, units="")
 Data_Fig6a.values = histo0_Fig6a["y"]
 
@@ -835,6 +865,8 @@ tableFig6a.add_variable(TVX_Fig6a)
 tableFig6a.add_variable(VG_Fig6a)
 tableFig6a.add_variable(WS_Fig6a)
 tableFig6a.add_variable(Other_Fig6a)
+tableFig6a.add_variable(BSM1_Fig6a)
+tableFig6a.add_variable(BSM2_Fig6a)
 tableFig6a.add_variable(Data_Fig6a)
 submission.add_table(tableFig6a)
 ### End Fig6a
@@ -856,6 +888,8 @@ histo12_Fig6b   = reader_Fig6b.read_hist_1d("histo12") # TVX
 histo13_Fig6b   = reader_Fig6b.read_hist_1d("histo13") # VG
 histo16_Fig6b   = reader_Fig6b.read_hist_1d("histo16") # WS
 histo18_Fig6b   = reader_Fig6b.read_hist_1d("histo18") # Other
+histo19_Fig6b   = reader_Fig6b.read_hist_1d("histo19") # BSM1
+histo20_Fig6b   = reader_Fig6b.read_hist_1d("histo20") # BSM2
 histo_Bck_Fig6b = reader_Fig6b.read_hist_1d("hBck")
 
 histo_Bck_Fig6b.keys()
@@ -897,6 +931,12 @@ WS_Fig6b.values = histo16_Fig6b["y"]
 Other_Fig6b = Variable("Number of Other events", is_independent=False, is_binned=False, units="")
 Other_Fig6b.values = histo18_Fig6b["y"]
 
+BSM1_Fig6b = Variable("Number of aQGC f$_{T2}$/$\Lambda^{4}$ = 2.9 TeV$^{-4}$ events", is_independent=False, is_binned=False, units="")
+BSM1_Fig6b.values = histo19_Fig6a["y"]
+
+BSM2_Fig6b = Variable("Number of aQGC f$_{S0}$/$\Lambda^{4}$ = 20 TeV$^{-4}$ events", is_independent=False, is_binned=False, units="")
+BSM2_Fig6b.values = histo20_Fig6b["y"]
+
 Data_Fig6b = Variable("Number of data events", is_independent=False, is_binned=False, units="")
 Data_Fig6b.values = histo0_Fig6b["y"]
 
@@ -914,6 +954,8 @@ tableFig6b.add_variable(TVX_Fig6b)
 tableFig6b.add_variable(VG_Fig6b)
 tableFig6b.add_variable(WS_Fig6b)
 tableFig6b.add_variable(Other_Fig6b)
+tableFig6b.add_variable(BSM1_Fig6b)
+tableFig6b.add_variable(BSM2_Fig6b)
 tableFig6b.add_variable(Data_Fig6b)
 submission.add_table(tableFig6b)
 ### End Fig6b
@@ -930,62 +972,62 @@ data6 = np.loadtxt("HEPData/inputs/smp19012/aqgc_limits.txt", dtype='string', sk
 table6_data = Variable("Operator", is_independent=True, is_binned=False, units="")
 table6_data.values = [str(x) for x in data6[:,0]]
 
-table6_yields1 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table6_yields1 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table6_yields1.values = [str(x) for x in data6[:,1]]
 table6_yields1.add_qualifier("Lmits", "Expected WW negative")
 table6_yields1.add_qualifier("SQRT(S)", 13, "TeV")
 
-table6_yields2 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table6_yields2 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table6_yields2.values = [str(x) for x in data6[:,2]]
 table6_yields2.add_qualifier("Lmits", "Expected WW positive")
 table6_yields2.add_qualifier("SQRT(S)", 13, "TeV")
 
-table6_yields3 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table6_yields3 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table6_yields3.values = [str(x) for x in data6[:,3]]
 table6_yields3.add_qualifier("Lmits", "Observed WW negative")
 table6_yields3.add_qualifier("SQRT(S)", 13, "TeV")
 
-table6_yields4 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table6_yields4 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table6_yields4.values = [str(x) for x in data6[:,4]]
 table6_yields4.add_qualifier("Lmits", "Observed WW positive")
 table6_yields4.add_qualifier("SQRT(S)", 13, "TeV")
 
-table6_yields5 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table6_yields5 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table6_yields5.values = [str(x) for x in data6[:,5]]
 table6_yields5.add_qualifier("Lmits", "Expected WZ negative")
 table6_yields5.add_qualifier("SQRT(S)", 13, "TeV")
 
-table6_yields6 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table6_yields6 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table6_yields6.values = [str(x) for x in data6[:,6]]
 table6_yields6.add_qualifier("Lmits", "Expected WZ positive")
 table6_yields6.add_qualifier("SQRT(S)", 13, "TeV")
 
-table6_yields7 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table6_yields7 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table6_yields7.values = [str(x) for x in data6[:,7]]
 table6_yields7.add_qualifier("Lmits", "Observed WZ negative")
 table6_yields7.add_qualifier("SQRT(S)", 13, "TeV")
 
-table6_yields8 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table6_yields8 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table6_yields8.values = [str(x) for x in data6[:,8]]
 table6_yields8.add_qualifier("Lmits", "Observed WZ positive")
 table6_yields8.add_qualifier("SQRT(S)", 13, "TeV")
 
-table6_yields9 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table6_yields9 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table6_yields9.values = [str(x) for x in data6[:,9]]
 table6_yields9.add_qualifier("Lmits", "Expected WW+WZ negative")
 table6_yields9.add_qualifier("SQRT(S)", 13, "TeV")
 
-table6_yields10 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table6_yields10 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table6_yields10.values = [str(x) for x in data6[:,10]]
 table6_yields10.add_qualifier("Lmits", "Expected WW+WZ positive")
 table6_yields10.add_qualifier("SQRT(S)", 13, "TeV")
 
-table6_yields11 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table6_yields11 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table6_yields11.values = [str(x) for x in data6[:,11]]
 table6_yields11.add_qualifier("Lmits", "Observed WW+WZ negative")
 table6_yields11.add_qualifier("SQRT(S)", 13, "TeV")
 
-table6_yields12 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table6_yields12 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table6_yields12.values = [str(x) for x in data6[:,12]]
 table6_yields12.add_qualifier("Lmits", "Observed WW+WZ positive")
 table6_yields12.add_qualifier("SQRT(S)", 13, "TeV")
@@ -1024,62 +1066,62 @@ print(data7)
 table7_data = Variable("Operator", is_independent=True, is_binned=False, units="")
 table7_data.values = [str(x) for x in data7[:,0]]
 
-table7_yields1 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table7_yields1 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table7_yields1.values = [str(x) for x in data7[:,1]]
 table7_yields1.add_qualifier("Lmits", "Expected WW negative")
 table7_yields1.add_qualifier("SQRT(S)", 13, "TeV")
 
-table7_yields2 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table7_yields2 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table7_yields2.values = [str(x) for x in data7[:,2]]
 table7_yields2.add_qualifier("Lmits", "Expected WW positive")
 table7_yields2.add_qualifier("SQRT(S)", 13, "TeV")
 
-table7_yields3 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table7_yields3 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table7_yields3.values = [str(x) for x in data7[:,3]]
 table7_yields3.add_qualifier("Lmits", "Observed WW negative")
 table7_yields3.add_qualifier("SQRT(S)", 13, "TeV")
 
-table7_yields4 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table7_yields4 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table7_yields4.values = [str(x) for x in data7[:,4]]
 table7_yields4.add_qualifier("Lmits", "Observed WW positive")
 table7_yields4.add_qualifier("SQRT(S)", 13, "TeV")
 
-table7_yields5 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table7_yields5 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table7_yields5.values = [str(x) for x in data7[:,5]]
 table7_yields5.add_qualifier("Lmits", "Expected WZ negative")
 table7_yields5.add_qualifier("SQRT(S)", 13, "TeV")
 
-table7_yields6 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table7_yields6 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table7_yields6.values = [str(x) for x in data7[:,6]]
 table7_yields6.add_qualifier("Lmits", "Expected WZ positive")
 table7_yields6.add_qualifier("SQRT(S)", 13, "TeV")
 
-table7_yields7 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table7_yields7 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table7_yields7.values = [str(x) for x in data7[:,7]]
 table7_yields7.add_qualifier("Lmits", "Observed WZ negative")
 table7_yields7.add_qualifier("SQRT(S)", 13, "TeV")
 
-table7_yields8 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table7_yields8 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table7_yields8.values = [str(x) for x in data7[:,8]]
 table7_yields8.add_qualifier("Lmits", "Observed WZ positive")
 table7_yields8.add_qualifier("SQRT(S)", 13, "TeV")
 
-table7_yields9 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table7_yields9 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table7_yields9.values = [str(x) for x in data7[:,9]]
 table7_yields9.add_qualifier("Lmits", "Expected WW+WZ negative")
 table7_yields9.add_qualifier("SQRT(S)", 13, "TeV")
 
-table7_yields10 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table7_yields10 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table7_yields10.values = [str(x) for x in data7[:,10]]
 table7_yields10.add_qualifier("Lmits", "Expected WW+WZ positive")
 table7_yields10.add_qualifier("SQRT(S)", 13, "TeV")
 
-table7_yields11 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table7_yields11 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table7_yields11.values = [str(x) for x in data7[:,11]]
 table7_yields11.add_qualifier("Lmits", "Observed WW+WZ negative")
 table7_yields11.add_qualifier("SQRT(S)", 13, "TeV")
 
-table7_yields12 = Variable("Limits", is_independent=False, is_binned=False, units="")
+table7_yields12 = Variable("Limits (TeV$^{-4}$)", is_independent=False, is_binned=False, units="")
 table7_yields12.values = [str(x) for x in data7[:,12]]
 table7_yields12.add_qualifier("Lmits", "Observed WW+WZ positive")
 table7_yields12.add_qualifier("SQRT(S)", 13, "TeV")
