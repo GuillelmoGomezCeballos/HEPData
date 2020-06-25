@@ -1811,7 +1811,7 @@ submission.add_table(tableFig9to13)
 reader_Fig14a = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystPt_nsel2_dy3_rebin1_default.root")
 
 tableFig14a = Table("Figure 14a")
-tableFig14a.description = "The measured normalized cross sections in bins of Z pt, using dressed level leptons."
+tableFig14a.description = "The measured normalized cross sections in bins of Z pt, using dressed level leptons. The cross sections are divided by the bin width and then the distributions are normalized to 1."
 tableFig14a.location = "Data from Figure 14a"
 tableFig14a.keywords["observables"] = ["N"]
 
@@ -1846,7 +1846,7 @@ submission.add_table(tableFig14a)
 reader_Fig14b = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystPhiStar_nsel2_dy3_rebin1_default.root")
 
 tableFig14b = Table("Figure 14b")
-tableFig14b.description = "The measured normalized cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$, using dressed level leptons."
+tableFig14b.description = "The measured normalized cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$, using dressed level leptons. The cross sections are divided by the bin width and then the distributions are normalized to 1."
 tableFig14b.location = "Data from Figure 14b"
 tableFig14b.keywords["observables"] = ["N"]
 
@@ -1881,7 +1881,7 @@ submission.add_table(tableFig14b)
 reader_Fig14c = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystRap_nsel2_dy3_rebin1_default.root")
 
 tableFig14c = Table("Figure 14c")
-tableFig14c.description = "The measured normalized cross sections in bins of |y(Z)|, using dressed level leptons."
+tableFig14c.description = "The measured normalized cross sections in bins of |y(Z)|, using dressed level leptons. The cross sections are divided by the bin width and then the distributions are normalized to 1."
 tableFig14c.location = "Data from Figure 14c"
 tableFig14c.keywords["observables"] = ["N"]
 
@@ -1920,7 +1920,7 @@ reader_Fig15to19d = RootFileReader("HEPData/inputs/smp17010/folders_dressedlepto
 reader_Fig15to19e = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/outputs/histoUnfolding_XSRatioSystPtRap4_nsel2_dy3_rebin1_default.root")
 
 tableFig15to19 = Table("Figures 15 to 19")
-tableFig15to19.description = "The measured normalized cross sections (left) in bins of Z pt in |y(Z)| bins, using dressed level leptons."
+tableFig15to19.description = "The measured normalized cross sections in bins of Z pt in |y(Z)| bins, using dressed level leptons. The cross sections are divided by the bin width and then the distributions are normalized to 1."
 tableFig15to19.location = "Data from Figure 15 to 19"
 tableFig15to19.keywords["observables"] = ["N"]
 
@@ -3514,7 +3514,7 @@ submission.add_table(tableFigAux10to14)
 reader_FigAux15a = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystPt_nsel2_dy3_rebin1_default.root")
 
 tableFigAux15a = Table("Auxiliary Figure 15a")
-tableFigAux15a.description = "The measured normalized cross sections in bins of Z pt, using born level leptons. The first bin (0-1 GeV) is not shown as large differences were observed in aMC@NLO and POWHEG predictions at Born level."
+tableFigAux15a.description = "The measured normalized cross sections in bins of Z pt, using born level leptons. The first bin (0-1 GeV) is not shown as large differences were observed in aMC@NLO and POWHEG predictions at Born level. The cross sections are divided by the bin width and then the distributions are normalized to 1."
 tableFigAux15a.location = "Data from Auxiliary Figure 15a"
 tableFigAux15a.keywords["observables"] = ["N"]
 
@@ -3555,7 +3555,7 @@ submission.add_table(tableFigAux15a)
 reader_FigAux15b = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystPhiStar_nsel2_dy3_rebin1_default.root")
 
 tableFigAux15b = Table("Auxiliary Figure 15b")
-tableFigAux15b.description = "The measured normalized cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$, using born level leptons."
+tableFigAux15b.description = "The measured normalized cross sections in bins of $\phi^{\scriptscriptstyle *}_\eta$, using born level leptons. The cross sections are divided by the bin width and then the distributions are normalized to 1."
 tableFigAux15b.location = "Data from Auxiliary Figure 15b"
 tableFigAux15b.keywords["observables"] = ["N"]
 
@@ -3629,7 +3629,7 @@ reader_FigAux16to20d = RootFileReader("HEPData/inputs/smp17010/folders_bornlepto
 reader_FigAux16to20e = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/outputs/histoUnfolding_XSRatioSystPtRap4_nsel2_dy3_rebin1_default.root")
 
 tableFigAux16to20 = Table("Auxiliary Figures 16 to 20")
-tableFigAux16to20.description = "The measured normalized cross sections (left) in bins of Z pt in |y(Z)| bins, using born level leptons. The first bin (0-1 GeV) is not shown as large differences were observed in aMC@NLO and POWHEG predictions at Born level."
+tableFigAux16to20.description = "The measured normalized cross sections (left) in bins of Z pt in |y(Z)| bins, using born level leptons. The first bin (0-1 GeV) is not shown as large differences were observed in aMC@NLO and POWHEG predictions at Born level. The cross sections are divided by the bin width and then the distributions are normalized to 1."
 tableFigAux16to20.location = "Data from Auxiliary Figures 16 to 20"
 tableFigAux16to20.keywords["observables"] = ["N"]
 
