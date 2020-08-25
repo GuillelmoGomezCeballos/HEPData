@@ -1,0 +1,12 @@
+Source Process Uncertainty
+-------------------------------------------------------  
+Electron~trigger                    $W_{SR}/W_{e\nu}$	     1.0
+ptmiss~trigger                      $W_{SR}/W_{e(\mu)\nu}$   0--2.0
+Muon~reconstruction~efficiency      $W_{SR}/W_{\mu\nu}$	     1.0
+Muon~identification~efficiency      $W_{SR}/W_{\mu\nu}$	     1.0
+Electron~reconstruction~efficiency  $W_{SR}/W_{e\nu}$	     1.0
+Electron~identification~efficiency  $W_{SR}/W_{e\nu}$	     1.5
+Muon~veto                           $W_{SR}/W_{e(\mu)\nu}$   $<$1.0
+Electron~veto                       $W_{SR}/W_{e(\mu)\nu}$   $<$1.0
+Tau~veto                            $W_{SR}/W_{e(\mu)\nu}$   1.0--2.0
+PDF                                 $W_{SR}/W_{e(\mu)\nu}$   1.0--2.0

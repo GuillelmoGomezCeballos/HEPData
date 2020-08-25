@@ -1,0 +1,17 @@
+Source Process Uncertainty
+-------------------------------------------------------  
+Luminosity                           All~processes			    2.3
+Electron~trigger                     All~processes~in~single~electron~CR    1.0
+ptmiss~trigger                       All~processes~in~SR~and~single~muon~CR 0--2.0
+Jet/ptmiss~momentum~scale	     All~processes			    4.0
+Pileup                               All~processes			    1.0--2.0
+Muon~reconstruction~efficiency       All~processes~in~single~muon~CR	    1.0
+Muon~identification~efficiency       All~processes~in~single~electron~CR    1.0
+Electron~reconstruction~efficiency   All~processes~in~single~electron~CR    1.0
+Electron~identification~efficiency   All~processes~in~single~electron~CR    1.5
+Bottom~jet~veto                      Top~in~SR~and~all~CRs		    3.0
+Top~pt~reweight                      Top~quark  			    10
+Top~normalization                    Top~quark  			    10
+VV~normalization                     VV 				    20
+$Z\rightarrow\ell\ell$~normalization $Z\rightarrow\ell\ell$		    20
+QCD~normalization                    QCD~in~SR  			    50--100

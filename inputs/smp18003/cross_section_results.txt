@@ -1,0 +1,4 @@
+State Value syst+ syst-
+------------------------------------------  
+Experimental                  3036 177 166
+Theoretical-Madgraph-aMC@NLO  2725 441 441
