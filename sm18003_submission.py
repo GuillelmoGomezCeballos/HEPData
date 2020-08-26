@@ -207,5 +207,353 @@ for table5 in submission.tables:
     table5.keywords["cmenergies"] = [13000]
 ### End Table 5
 
+### Begin FigAux1a
+reader_FigAux1a = RootFileReader("HEPData/inputs/smp18003/ZnnSystHist.root")
+
+tableFigAux1a = Table("Figure Aux1a")
+tableFigAux1a.description = "The relative statistical and systematic uncertainties from various sources for the absolute cross section measurements in bins of Z pt on neutrinos."
+tableFigAux1a.location = "Data from Figure Aux1a"
+tableFigAux1a.keywords["observables"] = ["N"]
+
+histoSystPlot_0  = reader_FigAux1a.read_hist_1d("histoResult_0_0")
+histoSystPlot_1  = reader_FigAux1a.read_hist_1d("histoResult_1_0")
+histoSystPlot_2  = reader_FigAux1a.read_hist_1d("histoResult_2_0")
+histoSystPlot_3  = reader_FigAux1a.read_hist_1d("histoResult_3_0")
+histoSystPlot_4  = reader_FigAux1a.read_hist_1d("histoResult_4_0")
+histoSystPlot_5  = reader_FigAux1a.read_hist_1d("histoResult_5_0")
+histoSystPlot_6  = reader_FigAux1a.read_hist_1d("histoResult_6_0")
+histoSystPlot_7  = reader_FigAux1a.read_hist_1d("histoResult_7_0")
+histoSystPlot_8  = reader_FigAux1a.read_hist_1d("histoResult_8_0")
+histoSystPlot_9  = reader_FigAux1a.read_hist_1d("histoResult_9_0")
+histoSystPlot_10 = reader_FigAux1a.read_hist_1d("histoResult_10_0")
+histoSystPlot_11 = reader_FigAux1a.read_hist_1d("histoResult_11_0")
+histoSystPlot_12 = reader_FigAux1a.read_hist_1d("histoResult_12_0")
+
+histoSystPlot_0.keys()
+
+for key in histoSystPlot_0.keys():
+    print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
+
+mmed_FigAux1a = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_FigAux1a.values = histoSystPlot_0["x_edges"]
+
+# y-axis: N events
+histoSystPlotFigAux1a_0 = Variable("MC Statistical", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1a_0.values = histoSystPlot_0["y"]
+
+histoSystPlotFigAux1a_1 = Variable("Luminosity", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1a_1.values = histoSystPlot_1["y"]
+
+histoSystPlotFigAux1a_2 = Variable("Jet energy scale", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1a_2.values = histoSystPlot_2["y"]
+
+histoSystPlotFigAux1a_3 = Variable("Lepton indentification", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1a_3.values = histoSystPlot_3["y"]
+
+histoSystPlotFigAux1a_4 = Variable("Theory", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1a_4.values = histoSystPlot_4["y"]
+
+histoSystPlotFigAux1a_5 = Variable("Lepton resolution", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1a_5.values = histoSystPlot_5["y"]
+
+histoSystPlotFigAux1a_6 = Variable("Pileup", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1a_6.values = histoSystPlot_6["y"]
+
+histoSystPlotFigAux1a_7 = Variable("Btagging", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1a_7.values = histoSystPlot_7["y"]
+
+histoSystPlotFigAux1a_8 = Variable("Background normalization", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1a_8.values = histoSystPlot_8["y"]
+
+histoSystPlotFigAux1a_9 = Variable("Trigger efficiency", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1a_9.values = histoSystPlot_9["y"]
+
+histoSystPlotFigAux1a_10 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1a_10.values = histoSystPlot_10["y"]
+
+histoSystPlotFigAux1a_11 = Variable("Data uncertainty", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1a_11.values = histoSystPlot_11["y"]
+
+histoSystPlotFigAux1a_12 = Variable("Total systematic uncertainty", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1a_12.values = histoSystPlot_12["y"]
+
+tableFigAux1a.add_variable(mmed_FigAux1a)
+tableFigAux1a.add_variable(histoSystPlotFigAux1a_0)
+tableFigAux1a.add_variable(histoSystPlotFigAux1a_1)
+tableFigAux1a.add_variable(histoSystPlotFigAux1a_2)
+tableFigAux1a.add_variable(histoSystPlotFigAux1a_3)
+tableFigAux1a.add_variable(histoSystPlotFigAux1a_4)
+tableFigAux1a.add_variable(histoSystPlotFigAux1a_5)
+tableFigAux1a.add_variable(histoSystPlotFigAux1a_6)
+tableFigAux1a.add_variable(histoSystPlotFigAux1a_7)
+tableFigAux1a.add_variable(histoSystPlotFigAux1a_8)
+tableFigAux1a.add_variable(histoSystPlotFigAux1a_9)
+tableFigAux1a.add_variable(histoSystPlotFigAux1a_10)
+tableFigAux1a.add_variable(histoSystPlotFigAux1a_11)
+tableFigAux1a.add_variable(histoSystPlotFigAux1a_12)
+submission.add_table(tableFigAux1a)
+### End FigAux1a
+
+### Begin FigAux1b
+reader_FigAux1b = RootFileReader("HEPData/inputs/smp18003/ZnnSystHist.root")
+
+tableFigAux1b = Table("Figure Aux1b")
+tableFigAux1b.description = "The relative statistical and systematic uncertainties from various sources for the relative cross section measurements in bins of Z pt on neutrinos."
+tableFigAux1b.location = "Data from Figure Aux1b"
+tableFigAux1b.keywords["observables"] = ["N"]
+
+histoSystPlot_0  = reader_FigAux1b.read_hist_1d("histoResult_0_1")
+histoSystPlot_1  = reader_FigAux1b.read_hist_1d("histoResult_1_1")
+histoSystPlot_2  = reader_FigAux1b.read_hist_1d("histoResult_2_1")
+histoSystPlot_3  = reader_FigAux1b.read_hist_1d("histoResult_3_1")
+histoSystPlot_4  = reader_FigAux1b.read_hist_1d("histoResult_4_1")
+histoSystPlot_5  = reader_FigAux1b.read_hist_1d("histoResult_5_1")
+histoSystPlot_6  = reader_FigAux1b.read_hist_1d("histoResult_6_1")
+histoSystPlot_7  = reader_FigAux1b.read_hist_1d("histoResult_7_1")
+histoSystPlot_8  = reader_FigAux1b.read_hist_1d("histoResult_8_1")
+histoSystPlot_9  = reader_FigAux1b.read_hist_1d("histoResult_9_1")
+histoSystPlot_10 = reader_FigAux1b.read_hist_1d("histoResult_10_1")
+histoSystPlot_11 = reader_FigAux1b.read_hist_1d("histoResult_11_1")
+histoSystPlot_12 = reader_FigAux1b.read_hist_1d("histoResult_12_1")
+
+histoSystPlot_0.keys()
+
+for key in histoSystPlot_0.keys():
+    print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
+
+mmed_FigAux1b = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_FigAux1b.values = histoSystPlot_0["x_edges"]
+
+# y-axis: N events
+histoSystPlotFigAux1b_0 = Variable("MC Statistical", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1b_0.values = histoSystPlot_0["y"]
+
+histoSystPlotFigAux1b_1 = Variable("Luminosity", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1b_1.values = histoSystPlot_1["y"]
+
+histoSystPlotFigAux1b_2 = Variable("Jet energy scale", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1b_2.values = histoSystPlot_2["y"]
+
+histoSystPlotFigAux1b_3 = Variable("Lepton indentification", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1b_3.values = histoSystPlot_3["y"]
+
+histoSystPlotFigAux1b_4 = Variable("Theory", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1b_4.values = histoSystPlot_4["y"]
+
+histoSystPlotFigAux1b_5 = Variable("Lepton resolution", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1b_5.values = histoSystPlot_5["y"]
+
+histoSystPlotFigAux1b_6 = Variable("Pileup", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1b_6.values = histoSystPlot_6["y"]
+
+histoSystPlotFigAux1b_7 = Variable("Btagging", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1b_7.values = histoSystPlot_7["y"]
+
+histoSystPlotFigAux1b_8 = Variable("Background normalization", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1b_8.values = histoSystPlot_8["y"]
+
+histoSystPlotFigAux1b_9 = Variable("Trigger efficiency", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1b_9.values = histoSystPlot_9["y"]
+
+histoSystPlotFigAux1b_10 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1b_10.values = histoSystPlot_10["y"]
+
+histoSystPlotFigAux1b_11 = Variable("Data uncertainty", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1b_11.values = histoSystPlot_11["y"]
+
+histoSystPlotFigAux1b_12 = Variable("Total systematic uncertainty", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1b_12.values = histoSystPlot_12["y"]
+
+tableFigAux1b.add_variable(mmed_FigAux1b)
+tableFigAux1b.add_variable(histoSystPlotFigAux1b_0)
+tableFigAux1b.add_variable(histoSystPlotFigAux1b_1)
+tableFigAux1b.add_variable(histoSystPlotFigAux1b_2)
+tableFigAux1b.add_variable(histoSystPlotFigAux1b_3)
+tableFigAux1b.add_variable(histoSystPlotFigAux1b_4)
+tableFigAux1b.add_variable(histoSystPlotFigAux1b_5)
+tableFigAux1b.add_variable(histoSystPlotFigAux1b_6)
+tableFigAux1b.add_variable(histoSystPlotFigAux1b_7)
+tableFigAux1b.add_variable(histoSystPlotFigAux1b_8)
+tableFigAux1b.add_variable(histoSystPlotFigAux1b_9)
+tableFigAux1b.add_variable(histoSystPlotFigAux1b_10)
+tableFigAux1b.add_variable(histoSystPlotFigAux1b_11)
+tableFigAux1b.add_variable(histoSystPlotFigAux1b_12)
+submission.add_table(tableFigAux1b)
+### End FigAux1b
+
+### Begin FigAux1c
+reader_FigAux1c = RootFileReader("HEPData/inputs/smp18003/ZnnSystHist.root")
+
+tableFigAux1c = Table("Figure Aux1c")
+tableFigAux1c.description = "The relative statistical and systematic uncertainties from various sources for the absolute cross section measurements in bins of Z pt on neutrinos and charged leptons."
+tableFigAux1c.location = "Data from Figure Aux1c"
+tableFigAux1c.keywords["observables"] = ["N"]
+
+histoSystPlot_0  = reader_FigAux1c.read_hist_1d("histoResult_0_2")
+histoSystPlot_1  = reader_FigAux1c.read_hist_1d("histoResult_1_2")
+histoSystPlot_2  = reader_FigAux1c.read_hist_1d("histoResult_2_2")
+histoSystPlot_3  = reader_FigAux1c.read_hist_1d("histoResult_3_2")
+histoSystPlot_4  = reader_FigAux1c.read_hist_1d("histoResult_4_2")
+histoSystPlot_5  = reader_FigAux1c.read_hist_1d("histoResult_5_2")
+histoSystPlot_6  = reader_FigAux1c.read_hist_1d("histoResult_6_2")
+histoSystPlot_7  = reader_FigAux1c.read_hist_1d("histoResult_7_2")
+histoSystPlot_8  = reader_FigAux1c.read_hist_1d("histoResult_8_2")
+histoSystPlot_9  = reader_FigAux1c.read_hist_1d("histoResult_9_2")
+histoSystPlot_10 = reader_FigAux1c.read_hist_1d("histoResult_10_2")
+histoSystPlot_11 = reader_FigAux1c.read_hist_1d("histoResult_11_2")
+histoSystPlot_12 = reader_FigAux1c.read_hist_1d("histoResult_12_2")
+
+histoSystPlot_0.keys()
+
+for key in histoSystPlot_0.keys():
+    print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
+
+mmed_FigAux1c = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_FigAux1c.values = histoSystPlot_0["x_edges"]
+
+# y-axis: N events
+histoSystPlotFigAux1c_0 = Variable("MC Statistical", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1c_0.values = histoSystPlot_0["y"]
+
+histoSystPlotFigAux1c_1 = Variable("Luminosity", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1c_1.values = histoSystPlot_1["y"]
+
+histoSystPlotFigAux1c_2 = Variable("Jet energy scale", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1c_2.values = histoSystPlot_2["y"]
+
+histoSystPlotFigAux1c_3 = Variable("Lepton indentification", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1c_3.values = histoSystPlot_3["y"]
+
+histoSystPlotFigAux1c_4 = Variable("Theory", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1c_4.values = histoSystPlot_4["y"]
+
+histoSystPlotFigAux1c_5 = Variable("Lepton resolution", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1c_5.values = histoSystPlot_5["y"]
+
+histoSystPlotFigAux1c_6 = Variable("Pileup", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1c_6.values = histoSystPlot_6["y"]
+
+histoSystPlotFigAux1c_7 = Variable("Btagging", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1c_7.values = histoSystPlot_7["y"]
+
+histoSystPlotFigAux1c_8 = Variable("Background normalization", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1c_8.values = histoSystPlot_8["y"]
+
+histoSystPlotFigAux1c_9 = Variable("Trigger efficiency", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1c_9.values = histoSystPlot_9["y"]
+
+histoSystPlotFigAux1c_10 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1c_10.values = histoSystPlot_10["y"]
+
+histoSystPlotFigAux1c_11 = Variable("Data uncertainty", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1c_11.values = histoSystPlot_11["y"]
+
+histoSystPlotFigAux1c_12 = Variable("Total systematic uncertainty", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1c_12.values = histoSystPlot_12["y"]
+
+tableFigAux1c.add_variable(mmed_FigAux1c)
+tableFigAux1c.add_variable(histoSystPlotFigAux1c_0)
+tableFigAux1c.add_variable(histoSystPlotFigAux1c_1)
+tableFigAux1c.add_variable(histoSystPlotFigAux1c_2)
+tableFigAux1c.add_variable(histoSystPlotFigAux1c_3)
+tableFigAux1c.add_variable(histoSystPlotFigAux1c_4)
+tableFigAux1c.add_variable(histoSystPlotFigAux1c_5)
+tableFigAux1c.add_variable(histoSystPlotFigAux1c_6)
+tableFigAux1c.add_variable(histoSystPlotFigAux1c_7)
+tableFigAux1c.add_variable(histoSystPlotFigAux1c_8)
+tableFigAux1c.add_variable(histoSystPlotFigAux1c_9)
+tableFigAux1c.add_variable(histoSystPlotFigAux1c_10)
+tableFigAux1c.add_variable(histoSystPlotFigAux1c_11)
+tableFigAux1c.add_variable(histoSystPlotFigAux1c_12)
+submission.add_table(tableFigAux1c)
+### End FigAux1c
+
+### Begin FigAux1d
+reader_FigAux1d = RootFileReader("HEPData/inputs/smp18003/ZnnSystHist.root")
+
+tableFigAux1d = Table("Figure Aux1d")
+tableFigAux1d.description = "The relative statistical and systematic uncertainties from various sources for the relative cross section measurements in bins of Z pt on neutrinos."
+tableFigAux1d.location = "Data from Figure Aux1d"
+tableFigAux1d.keywords["observables"] = ["N"]
+
+histoSystPlot_0  = reader_FigAux1d.read_hist_1d("histoResult_0_3")
+histoSystPlot_1  = reader_FigAux1d.read_hist_1d("histoResult_1_3")
+histoSystPlot_2  = reader_FigAux1d.read_hist_1d("histoResult_2_3")
+histoSystPlot_3  = reader_FigAux1d.read_hist_1d("histoResult_3_3")
+histoSystPlot_4  = reader_FigAux1d.read_hist_1d("histoResult_4_3")
+histoSystPlot_5  = reader_FigAux1d.read_hist_1d("histoResult_5_3")
+histoSystPlot_6  = reader_FigAux1d.read_hist_1d("histoResult_6_3")
+histoSystPlot_7  = reader_FigAux1d.read_hist_1d("histoResult_7_3")
+histoSystPlot_8  = reader_FigAux1d.read_hist_1d("histoResult_8_3")
+histoSystPlot_9  = reader_FigAux1d.read_hist_1d("histoResult_9_3")
+histoSystPlot_10 = reader_FigAux1d.read_hist_1d("histoResult_10_3")
+histoSystPlot_11 = reader_FigAux1d.read_hist_1d("histoResult_11_3")
+histoSystPlot_12 = reader_FigAux1d.read_hist_1d("histoResult_12_3")
+
+histoSystPlot_0.keys()
+
+for key in histoSystPlot_0.keys():
+    print(key, type(histoSystPlot_0[key]), type(histoSystPlot_0[key][0]))
+
+mmed_FigAux1d = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_FigAux1d.values = histoSystPlot_0["x_edges"]
+
+# y-axis: N events
+histoSystPlotFigAux1d_0 = Variable("MC Statistical", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1d_0.values = histoSystPlot_0["y"]
+
+histoSystPlotFigAux1d_1 = Variable("Luminosity", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1d_1.values = histoSystPlot_1["y"]
+
+histoSystPlotFigAux1d_2 = Variable("Jet energy scale", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1d_2.values = histoSystPlot_2["y"]
+
+histoSystPlotFigAux1d_3 = Variable("Lepton indentification", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1d_3.values = histoSystPlot_3["y"]
+
+histoSystPlotFigAux1d_4 = Variable("Theory", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1d_4.values = histoSystPlot_4["y"]
+
+histoSystPlotFigAux1d_5 = Variable("Lepton resolution", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1d_5.values = histoSystPlot_5["y"]
+
+histoSystPlotFigAux1d_6 = Variable("Pileup", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1d_6.values = histoSystPlot_6["y"]
+
+histoSystPlotFigAux1d_7 = Variable("Btagging", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1d_7.values = histoSystPlot_7["y"]
+
+histoSystPlotFigAux1d_8 = Variable("Background normalization", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1d_8.values = histoSystPlot_8["y"]
+
+histoSystPlotFigAux1d_9 = Variable("Trigger efficiency", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1d_9.values = histoSystPlot_9["y"]
+
+histoSystPlotFigAux1d_10 = Variable("Total uncertainty", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1d_10.values = histoSystPlot_10["y"]
+
+histoSystPlotFigAux1d_11 = Variable("Data uncertainty", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1d_11.values = histoSystPlot_11["y"]
+
+histoSystPlotFigAux1d_12 = Variable("Total systematic uncertainty", is_independent=False, is_binned=False, units="")
+histoSystPlotFigAux1d_12.values = histoSystPlot_12["y"]
+
+tableFigAux1d.add_variable(mmed_FigAux1d)
+tableFigAux1d.add_variable(histoSystPlotFigAux1d_0)
+tableFigAux1d.add_variable(histoSystPlotFigAux1d_1)
+tableFigAux1d.add_variable(histoSystPlotFigAux1d_2)
+tableFigAux1d.add_variable(histoSystPlotFigAux1d_3)
+tableFigAux1d.add_variable(histoSystPlotFigAux1d_4)
+tableFigAux1d.add_variable(histoSystPlotFigAux1d_5)
+tableFigAux1d.add_variable(histoSystPlotFigAux1d_6)
+tableFigAux1d.add_variable(histoSystPlotFigAux1d_7)
+tableFigAux1d.add_variable(histoSystPlotFigAux1d_8)
+tableFigAux1d.add_variable(histoSystPlotFigAux1d_9)
+tableFigAux1d.add_variable(histoSystPlotFigAux1d_10)
+tableFigAux1d.add_variable(histoSystPlotFigAux1d_11)
+tableFigAux1d.add_variable(histoSystPlotFigAux1d_12)
+submission.add_table(tableFigAux1d)
+### End FigAux1d
+
 outdir = "smp18003_output"
 submission.create_files(outdir)
