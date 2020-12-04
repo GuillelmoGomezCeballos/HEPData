@@ -51,6 +51,10 @@ except ImportError:
 try:
     from hepdata_validator.submission_file_validator import SubmissionFileValidator
     from hepdata_validator.data_file_validator import DataFileValidator
+    import hepdata_validator
+
+    print(hepdata_validator.__path__)
+
     validator_imported = True
 except ImportError:
     print('hepdata-validator not installed: only check YAML parsing.')
@@ -70,6 +74,7 @@ with open(submission_file_path, 'r') as stream:
     # Need to remove independent_variables and dependent_variables from single YAML file.
     if single_yaml_file:
         for doc in docs:
+            print(doc)
             if 'name' in doc:
                 file_name = doc['name'].replace(' ', '_').replace('/', '-') + '.yaml'
                 doc['data_file'] = file_name
