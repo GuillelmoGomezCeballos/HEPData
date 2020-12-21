@@ -22,7 +22,7 @@ submission.add_record_id(999999999, "inspire")
 
 ### Begin Figure 2
 figure2 = Table("Figure 2")
-figure2.description = "The measured inclusive fiducial cross section."
+figure2.description = "The measured inclusive fiducial cross section in fb."
 figure2.location = "Data from Figure 2"
 
 figure2.keywords["observables"] = ["Events"]
@@ -60,7 +60,7 @@ for figure2 in submission.tables:
 
 ### Begin Table 2
 table2 = Table("Table 2")
-table2.description = "Experimental uncertainties affecting transfer factors used in the analysis to estimate the W boson background in the SR."
+table2.description = "Experimental uncertainties affecting transfer factors in the analysis that is used to estimate the W background in the signal region (SR). The number of W boson events are denoted as $W_{SR}$ for the SR and in analogy as $W_{\mu\nu}$ ($W_{e\nu}$) for the single-muon (single-electron) control region (CR)."
 table2.location = "Data from Table 2"
 
 table2.keywords["observables"] = ["Uncertainty"]
@@ -120,7 +120,7 @@ for table3 in submission.tables:
 
 ### Begin Table 4
 table4 = Table("Table 4")
-table4.description = "Cross section measurements at high Z pt values in the  Z -> ll and Z -> $\nu\nu$ channels, and in their combination. The theoretical predictions from Madgraph MC@NLO at NLO in QCD and corrected to NLO in EW using the NNPDF 3.0 are also reported."
+table4.description = "Cross sections (fb) at large Z $p_{T}$ values in the Z -> $\ell\ell$ and Z -> $\nu\nu$ channels, and their combination. The theoretical predictions from Madgraph at NLO in QCD and corrected to NLO in electroweak using the NNPDF 3.0 are also reported. With the exception of the largest Z $p_{T}$ bin, the statistical uncertainties in the measurements are much smaller than the systematic  uncertainties. Both measurements and predictions correspond to $\sigma \mathcal{B}(Z -> \ell\ell)$, where $\sigma$ is the total fiducial cross section, $\mathcal{B}$ is the branching fraction, and $\ell$ is a charged lepton. The $Z -> \nu\nu$ measurement corresponds to $\sigma \mathcal{B}(Z -> \ell\ell)/\mathcal{B}(Z -> \nu\nu)$."
 table4.location = "Data from Table 4"
 
 table4.keywords["observables"] = ["Uncertainty"]
@@ -129,32 +129,32 @@ data4 = np.loadtxt("HEPData/inputs/smp18003/table4.txt", dtype='string', skiprow
 
 print(data4)
 
-table4_data = Variable("Z pt (GeV)", is_independent=True, is_binned=False, units="")
+table4_data = Variable("Z $p_{T}$ (GeV)", is_independent=True, is_binned=False, units="")
 table4_data.values = [str(x) for x in data4[:,0]]
 
 table4_yields0 = Variable("Cross section (fb)", is_independent=False, is_binned=False, units="")
 table4_yields0.values = [str(x) for x in data4[:,1]]
-table4_yields0.add_qualifier("Z pt (GeV)", "Z -> ee")
+table4_yields0.add_qualifier("Z $p_{T}$ (GeV)", "Z -> ee")
 
 table4_yields1 = Variable("Cross section (fb)", is_independent=False, is_binned=False, units="")
 table4_yields1.values = [str(x) for x in data4[:,2]]
-table4_yields1.add_qualifier("Z pt (GeV)", "Z -> $\mu\mu$")
+table4_yields1.add_qualifier("Z $p_{T}$ (GeV)", "Z -> $\mu\mu$")
 
 table4_yields2 = Variable("Cross section (fb)", is_independent=False, is_binned=False, units="")
 table4_yields2.values = [str(x) for x in data4[:,3]]
-table4_yields2.add_qualifier("Z pt (GeV)", "Z -> ll")
+table4_yields2.add_qualifier("Z $p_{T}$ (GeV)", "Z -> ll")
 
 table4_yields3 = Variable("Cross section (fb)", is_independent=False, is_binned=False, units="")
 table4_yields3.values = [str(x) for x in data4[:,4]]
-table4_yields3.add_qualifier("Z pt (GeV)", "Z -> $\nu\nu$")
+table4_yields3.add_qualifier("Z $p_{T}$ (GeV)", "Z -> $\nu\nu$")
 
 table4_yields4 = Variable("Cross section (fb)", is_independent=False, is_binned=False, units="")
 table4_yields4.values = [str(x) for x in data4[:,5]]
-table4_yields4.add_qualifier("Z pt (GeV)", "Z -> ll+$\nu\nu$")
+table4_yields4.add_qualifier("Z $p_{T}$ (GeV)", "Z -> ll+$\nu\nu$")
 
 table4_yields5 = Variable("Cross section (fb)", is_independent=False, is_binned=False, units="")
 table4_yields5.values = [str(x) for x in data4[:,6]]
-table4_yields5.add_qualifier("Z pt (GeV)", "Theory")
+table4_yields5.add_qualifier("Z $p_{T}$ (GeV)", "Theory")
 
 table4.add_variable(table4_data)
 table4.add_variable(table4_yields0)
@@ -172,7 +172,7 @@ for table4 in submission.tables:
 
 ### Begin Table 5
 table5 = Table("Table 5")
-table5.description = "Cross section measurements normalized to the total cross section at high Z pt values in the  Z -> ll and Z -> $\nu\nu$ channels, and in their combination."
+table5.description = "Cross sections normalized to the total cross section measurements at high Z $p_{T}$ values in the  Z -> $\ell\ell$ and Z -> $\nu\nu$ channels, and in their combination."
 table5.location = "Data from Table 5"
 
 table5.keywords["observables"] = ["Uncertainty"]
@@ -181,20 +181,20 @@ data5 = np.loadtxt("HEPData/inputs/smp18003/table5.txt", dtype='string', skiprow
 
 print(data5)
 
-table5_data = Variable("Z pt (GeV)", is_independent=True, is_binned=False, units="")
+table5_data = Variable("Z $p_{T}$ (GeV)", is_independent=True, is_binned=False, units="")
 table5_data.values = [str(x) for x in data5[:,0]]
 
 table5_yields0 = Variable("Cross section", is_independent=False, is_binned=False, units="")
 table5_yields0.values = [str(x) for x in data5[:,1]]
-table5_yields0.add_qualifier("Z pt (GeV)", "Z -> ee")
+table5_yields0.add_qualifier("Z $p_{T}$ (GeV)", "Z -> ee")
 
 table5_yields1 = Variable("Cross section", is_independent=False, is_binned=False, units="")
 table5_yields1.values = [str(x) for x in data5[:,2]]
-table5_yields1.add_qualifier("Z pt (GeV)", "Z -> $\nu\nu$")
+table5_yields1.add_qualifier("Z $p_{T}$ (GeV)", "Z -> $\nu\nu$")
 
 table5_yields2 = Variable("Cross section", is_independent=False, is_binned=False, units="")
 table5_yields2.values = [str(x) for x in data5[:,3]]
-table5_yields2.add_qualifier("Z pt (GeV)", "Z -> ll+$\nu\nu$")
+table5_yields2.add_qualifier("Z $p_{T}$ (GeV)", "Z -> ll+$\nu\nu$")
 
 table5.add_variable(table5_data)
 table5.add_variable(table5_yields0)
@@ -211,7 +211,7 @@ for table5 in submission.tables:
 reader_FigAux1a = RootFileReader("HEPData/inputs/smp18003/ZnnSystHist.root")
 
 tableFigAux1a = Table("Figure Aux1a")
-tableFigAux1a.description = "The relative statistical and systematic uncertainties from various sources for the absolute cross section measurements in bins of Z pt on neutrinos."
+tableFigAux1a.description = "The relative statistical and systematic uncertainties from various sources for the absolute cross section measurements in bins of Z $p_{T}$ on neutrinos."
 tableFigAux1a.location = "Data from Figure Aux1a"
 tableFigAux1a.keywords["observables"] = ["N"]
 
@@ -298,7 +298,7 @@ submission.add_table(tableFigAux1a)
 reader_FigAux1b = RootFileReader("HEPData/inputs/smp18003/ZnnSystHist.root")
 
 tableFigAux1b = Table("Figure Aux1b")
-tableFigAux1b.description = "The relative statistical and systematic uncertainties from various sources for the relative cross section measurements in bins of Z pt on neutrinos."
+tableFigAux1b.description = "The relative statistical and systematic uncertainties from various sources for the relative cross section measurements in bins of Z $p_{T}$ on neutrinos."
 tableFigAux1b.location = "Data from Figure Aux1b"
 tableFigAux1b.keywords["observables"] = ["N"]
 
@@ -385,7 +385,7 @@ submission.add_table(tableFigAux1b)
 reader_FigAux1c = RootFileReader("HEPData/inputs/smp18003/ZnnSystHist.root")
 
 tableFigAux1c = Table("Figure Aux1c")
-tableFigAux1c.description = "The relative statistical and systematic uncertainties from various sources for the absolute cross section measurements in bins of Z pt on neutrinos and charged leptons."
+tableFigAux1c.description = "The relative statistical and systematic uncertainties from various sources for the absolute cross section measurements in bins of Z $p_{T}$ on neutrinos and charged leptons."
 tableFigAux1c.location = "Data from Figure Aux1c"
 tableFigAux1c.keywords["observables"] = ["N"]
 
@@ -472,7 +472,7 @@ submission.add_table(tableFigAux1c)
 reader_FigAux1d = RootFileReader("HEPData/inputs/smp18003/ZnnSystHist.root")
 
 tableFigAux1d = Table("Figure Aux1d")
-tableFigAux1d.description = "The relative statistical and systematic uncertainties from various sources for the relative cross section measurements in bins of Z pt on neutrinos."
+tableFigAux1d.description = "The relative statistical and systematic uncertainties from various sources for the relative cross section measurements in bins of Z $p_{T}$ on neutrinos."
 tableFigAux1d.location = "Data from Figure Aux1d"
 tableFigAux1d.keywords["observables"] = ["N"]
 
