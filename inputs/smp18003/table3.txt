@@ -10,8 +10,9 @@ Muon~identification~efficiency       All~processes~in~single~electron~CR    1.0
 Electron~reconstruction~efficiency   All~processes~in~single~electron~CR    1.0
 Electron~identification~efficiency   All~processes~in~single~electron~CR    1.5
 Bottom~jet~veto                      Top~in~SR~and~all~CRs		    3.0
+Bottom~jet~veto                      All~remaining~in~SR~and~all~CRs        1.0
 Top~pt~reweight                      Top~quark  			    10
 Top~normalization                    Top~quark  			    10
 VV~normalization                     VV 				    20
-$Z\rightarrow\ell\ell$~normalization $Z\rightarrow\ell\ell$		    20
-QCD~normalization                    QCD~in~SR  			    50--100
+$Z\rightarrow\ell\ell$~normalization $Z\rightarrow\ell\ell$~in~SR           20
+QCD~normalization                    QCD~in~SR  			    50--150

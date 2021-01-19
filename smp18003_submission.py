@@ -22,29 +22,34 @@ submission.add_record_id(999999999, "inspire")
 
 ### Begin Figure 2
 figure2 = Table("Figure 2")
-figure2.description = "The measured inclusive fiducial cross section in fb."
+figure2.description = "The measured and predicted inclusive fiducial cross sections in fb. The experimental measurement includes both statistical and systematics uncertainties. The theoretical prediction includes both the QCD scale and PDF uncertainties."
 figure2.location = "Data from Figure 2"
 
-figure2.keywords["observables"] = ["Events"]
+figure2.keywords["observables"] = ["SIG"]
+figure2.keywords["phrases"] = ["Electroweak", "Cross Section", "Proton-Proton", "Z boson production"]
+figure2.keywords["reactions"] = ["PP -> Z"]
 
 figure2_load = np.loadtxt("HEPData/inputs/smp18003/cross_section_results.txt", dtype='string', skiprows=2)
 
 print(figure2_load)
 
-figure2_data = Variable("Final State", is_independent=True, is_binned=False, units="")
+figure2_data = Variable("", is_independent=True, is_binned=False, units="")
 figure2_data.values = [str(x) for x in figure2_load[:,0]]
 
 figure2_yields1 = Variable("Cross Section", is_independent=False, is_binned=False, units="")
-figure2_yields1.values = [float(x) for x in figure2_load[:,1]]
-figure2_yields1.add_qualifier("fb", "Cross Section")
+figure2_yields1.digits = 0
+figure2_yields1.values = [int(x) for x in figure2_load[:,1]]
+figure2_yields1.add_qualifier("", "Cross Section (fb)")
 
 figure2_yields2 = Variable("Positive uncertainty", is_independent=False, is_binned=False, units="")
-figure2_yields2.values = [float(x) for x in figure2_load[:,2]]
-figure2_yields2.add_qualifier("fb", "Cross Section")
+figure2_yields2.digits = 0
+figure2_yields2.values = [int(x) for x in figure2_load[:,2]]
+figure2_yields2.add_qualifier("", "Cross Section (fb)")
 
 figure2_yields3 = Variable("Negative uncertainty", is_independent=False, is_binned=False, units="")
-figure2_yields3.values = [float(x) for x in figure2_load[:,3]]
-figure2_yields3.add_qualifier("fb", "Cross Section")
+figure2_yields3.digits = 0
+figure2_yields3.values = [int(x) for x in figure2_load[:,3]]
+figure2_yields3.add_qualifier("", "Cross Section (fb)")
 
 figure2.add_variable(figure2_data)
 figure2.add_variable(figure2_yields1)
@@ -60,10 +65,12 @@ for figure2 in submission.tables:
 
 ### Begin Table 2
 table2 = Table("Table 2")
-table2.description = "Experimental uncertainties affecting transfer factors in the analysis that is used to estimate the W background in the signal region (SR). The number of W boson events are denoted as $W_{SR}$ for the SR and in analogy as $W_{\mu\nu}$ ($W_{e\nu}$) for the single-muon (single-electron) control region (CR)."
+table2.description = "Experimental uncertainties affecting transfer factors in the analysis that is used to estimate the W background in the signal region (SR). The number of W boson events are denoted as $W_{SR}$ for the SR and in analogy as $W_{\mu\\nu}$ ($W_{e\\nu}$) for the single-muon (single-electron) control region (CR)."
 table2.location = "Data from Table 2"
 
 table2.keywords["observables"] = ["Uncertainty"]
+table2.keywords["phrases"] = ["Electroweak", "Cross Section", "Proton-Proton", "Z boson production"]
+table2.keywords["reactions"] = ["PP -> Z"]
 
 data2 = np.loadtxt("HEPData/inputs/smp18003/table2.txt", dtype='string', skiprows=2)
 
@@ -94,6 +101,8 @@ table3.description = "Uncertainties assigned to the simulation based processes i
 table3.location = "Data from Table 3"
 
 table3.keywords["observables"] = ["Uncertainty"]
+table3.keywords["phrases"] = ["Electroweak", "Cross Section", "Proton-Proton", "Z boson production"]
+table3.keywords["reactions"] = ["PP -> Z"]
 
 data3 = np.loadtxt("HEPData/inputs/smp18003/table3.txt", dtype='string', skiprows=2)
 
@@ -120,10 +129,12 @@ for table3 in submission.tables:
 
 ### Begin Table 4
 table4 = Table("Table 4")
-table4.description = "Cross sections (fb) at large Z $p_{T}$ values in the Z -> $\ell\ell$ and Z -> $\nu\nu$ channels, and their combination. The theoretical predictions from Madgraph at NLO in QCD and corrected to NLO in electroweak using the NNPDF 3.0 are also reported. With the exception of the largest Z $p_{T}$ bin, the statistical uncertainties in the measurements are much smaller than the systematic  uncertainties. Both measurements and predictions correspond to $\sigma \mathcal{B}(Z -> \ell\ell)$, where $\sigma$ is the total fiducial cross section, $\mathcal{B}$ is the branching fraction, and $\ell$ is a charged lepton. The $Z -> \nu\nu$ measurement corresponds to $\sigma \mathcal{B}(Z -> \ell\ell)/\mathcal{B}(Z -> \nu\nu)$."
+table4.description = "Cross sections (fb) at large Z $p_{T}$ values in the Z -> $\ell\ell$ and Z -> $\\nu\\nu$ channels, and their combination. The theoretical predictions from Madgraph at NLO in QCD and corrected to NLO in electroweak using the NNPDF 3.0 are also reported. With the exception of the largest Z $p_{T}$ bin, the statistical uncertainties in the measurements are much smaller than the systematic  uncertainties. Both measurements and predictions correspond to $\sigma \mathcal{B}(Z -> \ell\ell)$, where $\sigma$ is the total fiducial cross section, $\mathcal{B}$ is the branching fraction, and $\ell$ is a charged lepton. The $Z -> \\nu\\nu$ measurement corresponds to $\sigma \mathcal{B}(Z -> \ell\ell)/\mathcal{B}(Z -> \\nu\\nu)$."
 table4.location = "Data from Table 4"
 
-table4.keywords["observables"] = ["Uncertainty"]
+table4.keywords["observables"] = ["SIG"]
+table4.keywords["phrases"] = ["Electroweak", "Cross Section", "Proton-Proton", "Z boson production"]
+table4.keywords["reactions"] = ["PP -> Z"]
 
 data4 = np.loadtxt("HEPData/inputs/smp18003/table4.txt", dtype='string', skiprows=2)
 
@@ -146,11 +157,11 @@ table4_yields2.add_qualifier("Z $p_{T}$ (GeV)", "Z -> ll")
 
 table4_yields3 = Variable("Cross section (fb)", is_independent=False, is_binned=False, units="")
 table4_yields3.values = [str(x) for x in data4[:,4]]
-table4_yields3.add_qualifier("Z $p_{T}$ (GeV)", "Z -> $\nu\nu$")
+table4_yields3.add_qualifier("Z $p_{T}$ (GeV)", "Z -> $\\nu\\nu$")
 
 table4_yields4 = Variable("Cross section (fb)", is_independent=False, is_binned=False, units="")
 table4_yields4.values = [str(x) for x in data4[:,5]]
-table4_yields4.add_qualifier("Z $p_{T}$ (GeV)", "Z -> ll+$\nu\nu$")
+table4_yields4.add_qualifier("Z $p_{T}$ (GeV)", "Z -> ll+$\\nu\\nu$")
 
 table4_yields5 = Variable("Cross section (fb)", is_independent=False, is_binned=False, units="")
 table4_yields5.values = [str(x) for x in data4[:,6]]
@@ -172,10 +183,12 @@ for table4 in submission.tables:
 
 ### Begin Table 5
 table5 = Table("Table 5")
-table5.description = "Cross sections normalized to the total cross section measurements at high Z $p_{T}$ values in the  Z -> $\ell\ell$ and Z -> $\nu\nu$ channels, and in their combination."
+table5.description = "Cross sections normalized to the total cross section measurements at high Z $p_{T}$ values in the Z -> $\ell\ell$ and Z -> $\\nu\\nu$ channels, and in their combination. The uncertainty includes both statistical and systematic  uncertainties."
 table5.location = "Data from Table 5"
 
-table5.keywords["observables"] = ["Uncertainty"]
+table5.keywords["observables"] = ["SIG"]
+table5.keywords["phrases"] = ["Electroweak", "Cross Section", "Proton-Proton", "Z boson production"]
+table5.keywords["reactions"] = ["PP -> Z"]
 
 data5 = np.loadtxt("HEPData/inputs/smp18003/table5.txt", dtype='string', skiprows=2)
 
@@ -184,17 +197,17 @@ print(data5)
 table5_data = Variable("Z $p_{T}$ (GeV)", is_independent=True, is_binned=False, units="")
 table5_data.values = [str(x) for x in data5[:,0]]
 
-table5_yields0 = Variable("Cross section", is_independent=False, is_binned=False, units="")
+table5_yields0 = Variable("Cross section normalized to prediction", is_independent=False, is_binned=False, units="")
 table5_yields0.values = [str(x) for x in data5[:,1]]
-table5_yields0.add_qualifier("Z $p_{T}$ (GeV)", "Z -> ee")
+table5_yields0.add_qualifier("Z $p_{T}$ (GeV)", "Z -> ll")
 
-table5_yields1 = Variable("Cross section", is_independent=False, is_binned=False, units="")
+table5_yields1 = Variable("Cross section normalized to prediction", is_independent=False, is_binned=False, units="")
 table5_yields1.values = [str(x) for x in data5[:,2]]
-table5_yields1.add_qualifier("Z $p_{T}$ (GeV)", "Z -> $\nu\nu$")
+table5_yields1.add_qualifier("Z $p_{T}$ (GeV)", "Z -> $\\nu\\nu$")
 
-table5_yields2 = Variable("Cross section", is_independent=False, is_binned=False, units="")
+table5_yields2 = Variable("Cross section normalized to prediction", is_independent=False, is_binned=False, units="")
 table5_yields2.values = [str(x) for x in data5[:,3]]
-table5_yields2.add_qualifier("Z $p_{T}$ (GeV)", "Z -> ll+$\nu\nu$")
+table5_yields2.add_qualifier("Z $p_{T}$ (GeV)", "Z -> ll+$\\nu\\nu$")
 
 table5.add_variable(table5_data)
 table5.add_variable(table5_yields0)
@@ -213,7 +226,10 @@ reader_FigAux1a = RootFileReader("HEPData/inputs/smp18003/ZnnSystHist.root")
 tableFigAux1a = Table("Figure Aux1a")
 tableFigAux1a.description = "The relative statistical and systematic uncertainties from various sources for the absolute cross section measurements in bins of Z $p_{T}$ on neutrinos."
 tableFigAux1a.location = "Data from Figure Aux1a"
-tableFigAux1a.keywords["observables"] = ["N"]
+tableFigAux1a.keywords["observables"] = ["uncertainties"]
+tableFigAux1a.keywords["phrases"] = ["Electroweak", "Cross Section", "Proton-Proton", "Z boson production"]
+tableFigAux1a.keywords["reactions"] = ["PP -> Z"]
+tableFigAux1a.keywords["cmenergies"] = [13000]
 
 histoSystPlot_0  = reader_FigAux1a.read_hist_1d("histoResult_0_0")
 histoSystPlot_1  = reader_FigAux1a.read_hist_1d("histoResult_1_0")
@@ -300,7 +316,10 @@ reader_FigAux1b = RootFileReader("HEPData/inputs/smp18003/ZnnSystHist.root")
 tableFigAux1b = Table("Figure Aux1b")
 tableFigAux1b.description = "The relative statistical and systematic uncertainties from various sources for the relative cross section measurements in bins of Z $p_{T}$ on neutrinos."
 tableFigAux1b.location = "Data from Figure Aux1b"
-tableFigAux1b.keywords["observables"] = ["N"]
+tableFigAux1b.keywords["observables"] = ["uncertainties"]
+tableFigAux1b.keywords["phrases"] = ["Electroweak", "Cross Section", "Proton-Proton", "Z boson production"]
+tableFigAux1b.keywords["reactions"] = ["PP -> Z"]
+tableFigAux1b.keywords["cmenergies"] = [13000]
 
 histoSystPlot_0  = reader_FigAux1b.read_hist_1d("histoResult_0_1")
 histoSystPlot_1  = reader_FigAux1b.read_hist_1d("histoResult_1_1")
@@ -387,7 +406,10 @@ reader_FigAux1c = RootFileReader("HEPData/inputs/smp18003/ZnnSystHist.root")
 tableFigAux1c = Table("Figure Aux1c")
 tableFigAux1c.description = "The relative statistical and systematic uncertainties from various sources for the absolute cross section measurements in bins of Z $p_{T}$ on neutrinos and charged leptons."
 tableFigAux1c.location = "Data from Figure Aux1c"
-tableFigAux1c.keywords["observables"] = ["N"]
+tableFigAux1c.keywords["observables"] = ["uncertainties"]
+tableFigAux1c.keywords["phrases"] = ["Electroweak", "Cross Section", "Proton-Proton", "Z boson production"]
+tableFigAux1c.keywords["reactions"] = ["PP -> Z"]
+tableFigAux1c.keywords["cmenergies"] = [13000]
 
 histoSystPlot_0  = reader_FigAux1c.read_hist_1d("histoResult_0_2")
 histoSystPlot_1  = reader_FigAux1c.read_hist_1d("histoResult_1_2")
@@ -475,6 +497,7 @@ tableFigAux1d = Table("Figure Aux1d")
 tableFigAux1d.description = "The relative statistical and systematic uncertainties from various sources for the relative cross section measurements in bins of Z $p_{T}$ on neutrinos."
 tableFigAux1d.location = "Data from Figure Aux1d"
 tableFigAux1d.keywords["observables"] = ["N"]
+tableFigAux1d.keywords["cmenergies"] = [13000]
 
 histoSystPlot_0  = reader_FigAux1d.read_hist_1d("histoResult_0_3")
 histoSystPlot_1  = reader_FigAux1d.read_hist_1d("histoResult_1_3")
