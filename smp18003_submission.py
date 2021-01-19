@@ -674,7 +674,7 @@ submission.add_table(tableFigAux1e)
 reader_FigAux1f = RootFileReader("HEPData/inputs/smp18003/ZnnSystHist.root")
 
 tableFigAux1f = Table("Figure Aux1f")
-tableFigAux1f.description = "The relative statistical and systematic uncertainties from various sources for the relative cross section measurements in bins of Z $p_{T}$ on neutrinos."
+tableFigAux1f.description = "The relative statistical and systematic uncertainties from various sources for the relative cross section measurements in bins of Z $p_{T}$ on neutrinos and charged leptons."
 tableFigAux1f.location = "Data from Figure Aux1f"
 tableFigAux1f.keywords["observables"] = ["N"]
 tableFigAux1f.keywords["cmenergies"] = [13000]
