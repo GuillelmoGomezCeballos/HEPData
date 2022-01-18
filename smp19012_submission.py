@@ -520,8 +520,8 @@ histo_unfoldFig4a.keys()
 for key in histo_unfoldFig4a.keys():
     print(key, type(histo_unfoldFig4a[key]), type(histo_unfoldFig4a[key][0]))
 
-mmed_Fig4a = Variable("$m_{jj}$", is_independent=True, is_binned=False, units="")
-mmed_Fig4a.values = histo_unfoldFig4a["x"]
+mmed_Fig4a = Variable("$m_{jj}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig4a.values = histo_unfoldFig4a["x_edges"]
 
 # y-axis: N events
 unfoldFig4a = Variable("WW cross section (fb/GeV)", is_independent=False, is_binned=False, units="")
@@ -554,8 +554,8 @@ histo_unfoldFig4b.keys()
 for key in histo_unfoldFig4b.keys():
     print(key, type(histo_unfoldFig4b[key]), type(histo_unfoldFig4b[key][0]))
 
-mmed_Fig4b = Variable("$m_{jj}$", is_independent=True, is_binned=False, units="")
-mmed_Fig4b.values = histo_unfoldFig4b["x"]
+mmed_Fig4b = Variable("$m_{jj}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig4b.values = histo_unfoldFig4b["x_edges"]
 
 # y-axis: N events
 unfoldFig4b = Variable("Normalized WW cross section", is_independent=False, is_binned=False, units="")
@@ -588,8 +588,8 @@ histo_unfoldFig4c.keys()
 for key in histo_unfoldFig4c.keys():
     print(key, type(histo_unfoldFig4c[key]), type(histo_unfoldFig4c[key][0]))
 
-mmed_Fig4c = Variable("$m_{ll}$", is_independent=True, is_binned=False, units="")
-mmed_Fig4c.values = histo_unfoldFig4c["x"]
+mmed_Fig4c = Variable("$m_{ll}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig4c.values = histo_unfoldFig4c["x_edges"]
 
 # y-axis: N events
 unfoldFig4c = Variable("WW cross section (fb/GeV)", is_independent=False, is_binned=False, units="")
@@ -622,8 +622,8 @@ histo_unfoldFig4d.keys()
 for key in histo_unfoldFig4d.keys():
     print(key, type(histo_unfoldFig4d[key]), type(histo_unfoldFig4d[key][0]))
 
-mmed_Fig4d = Variable("$m_{ll}$", is_independent=True, is_binned=False, units="")
-mmed_Fig4d.values = histo_unfoldFig4d["x"]
+mmed_Fig4d = Variable("$m_{ll}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig4d.values = histo_unfoldFig4d["x_edges"]
 
 # y-axis: N events
 unfoldFig4d = Variable("Normalized WW cross section", is_independent=False, is_binned=False, units="")
@@ -656,8 +656,8 @@ histo_unfoldFig4e.keys()
 for key in histo_unfoldFig4e.keys():
     print(key, type(histo_unfoldFig4e[key]), type(histo_unfoldFig4e[key][0]))
 
-mmed_Fig4e = Variable("$p_{T}^{l max}$", is_independent=True, is_binned=False, units="")
-mmed_Fig4e.values = histo_unfoldFig4e["x"]
+mmed_Fig4e = Variable("$p_{T}^{l max}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig4e.values = histo_unfoldFig4e["x_edges"]
 
 # y-axis: N events
 unfoldFig4e = Variable("WW cross section (fb/GeV)", is_independent=False, is_binned=False, units="")
@@ -690,8 +690,8 @@ histo_unfoldFig4f.keys()
 for key in histo_unfoldFig4f.keys():
     print(key, type(histo_unfoldFig4f[key]), type(histo_unfoldFig4f[key][0]))
 
-mmed_Fig4f = Variable("$p_{T}^{l max}$", is_independent=True, is_binned=False, units="")
-mmed_Fig4f.values = histo_unfoldFig4f["x"]
+mmed_Fig4f = Variable("$p_{T}^{l max}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig4f.values = histo_unfoldFig4f["x_edges"]
 
 # y-axis: N events
 unfoldFig4f = Variable("Normalized WW cross section", is_independent=False, is_binned=False, units="")
@@ -724,8 +724,8 @@ histo_unfoldFig5a.keys()
 for key in histo_unfoldFig5a.keys():
     print(key, type(histo_unfoldFig5a[key]), type(histo_unfoldFig5a[key][0]))
 
-mmed_Fig5a = Variable("$m_{jj}$", is_independent=True, is_binned=False, units="")
-mmed_Fig5a.values = histo_unfoldFig5a["x"]
+mmed_Fig5a = Variable("$m_{jj}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig5a.values = histo_unfoldFig5a["x_edges"]
 
 # y-axis: N events
 unfoldFig5a = Variable("WZ cross section (fb/GeV)", is_independent=False, is_binned=False, units="")
@@ -758,8 +758,8 @@ histo_unfoldFig5b.keys()
 for key in histo_unfoldFig5b.keys():
     print(key, type(histo_unfoldFig5b[key]), type(histo_unfoldFig5b[key][0]))
 
-mmed_Fig5b = Variable("$m_{jj}$", is_independent=True, is_binned=False, units="")
-mmed_Fig5b.values = histo_unfoldFig5b["x"]
+mmed_Fig5b = Variable("$m_{jj}$", is_independent=True, is_binned=True, units="GeV")
+mmed_Fig5b.values = histo_unfoldFig5b["x_edges"]
 
 # y-axis: N events
 unfoldFig5b = Variable("Normalized WZ cross section", is_independent=False, is_binned=False, units="")

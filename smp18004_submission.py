@@ -125,25 +125,25 @@ table8_jetmulti_labels.values = [ str("$0$ Jet"),
 
 table8_jetmulti_0 = Variable("Fraction of events", is_independent=False, is_binned=False, units="")
 table8_jetmulti_0.values = [
-                            0.773,
-                            0.193,
-                            0.034,
+                            0.681188,
+                            0.219611,
+                            0.054951,
                            ]
 
 
 table8_0_statunc = Uncertainty("Statistical uncertainty", is_symmetric=True)
 table8_0_statunc.values = [
-                           0.008,
-                           0.007,
-                           0.006,
+                           0.008000,
+                           0.007000,
+                           0.006000,
                           ]
 
 
 table8_0_sysunc = Uncertainty("Systematic uncertainty", is_symmetric=True)
 table8_0_sysunc.values = [
-                          0.075,
-                          0.043,
-                          0.033,
+                          0.066467,
+                          0.049573,
+                          0.054209,
                          ]
 
 
@@ -320,7 +320,12 @@ table6.location = "Data from Table 6"
 
 
 pt_thresholds = Variable("$p_T$ threshold", is_independent=True, is_binned=False, units="GeV")
-pt_thresholds.values = [25, 30, 35, 45, 60]
+pt_thresholds.values = [ str("p_{T}^{j} < 25 GeV"),
+                         str("p_{T}^{j} < 30 GeV"),
+                         str("p_{T}^{j} < 35 GeV"),
+                         str("p_{T}^{j} < 45 GeV"),
+                         str("p_{T}^{j} < 60 GeV"),
+                       ]
 
 cross_sections= Variable("Cross section", is_independent=False, is_binned=False, units="pb")
 cross_sections.values = [0.836, 0.892, 0.932, 1.011, 1.118]

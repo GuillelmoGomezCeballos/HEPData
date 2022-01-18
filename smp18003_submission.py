@@ -758,5 +758,65 @@ tableFigAux1f.add_variable(histoSystPlotFigAux1f_12)
 submission.add_table(tableFigAux1f)
 ### End FigAux1f
 
+### Begin FigAux2a
+reader_FigAux2a = RootFileReader("HEPData/inputs/smp18003/ZnnSystHist.root")
+
+tableFigAux2a = Table("Figure Aux2a")
+tableFigAux2a.description = "Cross section measurements in bins of Z $p_{T}$ on neutrinos and charged leptons."
+tableFigAux2a.location = "Data from Figure Aux2a"
+tableFigAux2a.keywords["observables"] = ["N"]
+tableFigAux2a.keywords["cmenergies"] = [13000]
+
+histoResultXS_0 = reader_FigAux2a.read_hist_1d("histoResultXS_0")
+
+histoResultXS_0.keys()
+
+mmed_FigAux2a = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_FigAux2a.values = histoResultXS_0["x_edges"]
+
+# y-axis: N events
+unfoldFigAux2a = Variable("Z to nn/ll cross section (pb)", is_independent=False, is_binned=False, units="")
+unfoldFigAux2a.values = histoResultXS_0["y"]
+
+unc_unfoldFigAux2a = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux2a.values = histoResultXS_0["dy"]
+
+unfoldFigAux2a.add_uncertainty(unc_unfoldFigAux2a)
+
+tableFigAux2a.add_variable(mmed_FigAux2a)
+tableFigAux2a.add_variable(unfoldFigAux2a)
+submission.add_table(tableFigAux2a)
+### End FigAux2a
+
+### Begin FigAux2b
+reader_FigAux2b = RootFileReader("HEPData/inputs/smp18003/ZnnSystHist.root")
+
+tableFigAux2b = Table("Figure Aux2b")
+tableFigAux2b.description = "Cross section measurements in bins of Z $p_{T}$ on neutrinos and charged leptons."
+tableFigAux2b.location = "Data from Figure Aux2b"
+tableFigAux2b.keywords["observables"] = ["N"]
+tableFigAux2b.keywords["cmenergies"] = [13000]
+
+histoResultXS_1 = reader_FigAux2b.read_hist_1d("histoResultXS_1")
+
+histoResultXS_1.keys()
+
+mmed_FigAux2b = Variable("$p_{T}$", is_independent=True, is_binned=True, units="GeV")
+mmed_FigAux2b.values = histoResultXS_1["x_edges"]
+
+# y-axis: N events
+unfoldFigAux2b = Variable("Z to nn/ll normalized cross section (pb)", is_independent=False, is_binned=False, units="")
+unfoldFigAux2b.values = histoResultXS_1["y"]
+
+unc_unfoldFigAux2b = Uncertainty("", is_symmetric=True)
+unc_unfoldFigAux2b.values = histoResultXS_1["dy"]
+
+unfoldFigAux2b.add_uncertainty(unc_unfoldFigAux2b)
+
+tableFigAux2b.add_variable(mmed_FigAux2b)
+tableFigAux2b.add_variable(unfoldFigAux2b)
+submission.add_table(tableFigAux2b)
+### End FigAux2b
+
 outdir = "smp18003_output"
 submission.create_files(outdir)
