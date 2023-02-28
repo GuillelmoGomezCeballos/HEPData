@@ -3774,6 +3774,102 @@ for var in [x_covariance_ll_PhiStar,y_covariance_ll_PhiStar,z_covariance_ll_PhiS
     table_covariance_ll_PhiStar.add_variable(var)
 submission.add_table(table_covariance_ll_PhiStar)
 
+# Create a reader for the input file
+reader_covariance_ll_PtRap0 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix23_SystPtRap0.root")
+# Read the histogram
+data_covariance_ll_PtRap0 = reader_covariance_ll_PtRap0.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap0 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap0.values = data_covariance_ll_PtRap0["x_edges"]
+y_covariance_ll_PtRap0 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap0.values = data_covariance_ll_PtRap0["y"]
+z_covariance_ll_PtRap0 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap0.values = data_covariance_ll_PtRap0["z"]
+
+table_covariance_ll_PtRap0 = Table("Covariance Matrix auxiliary Figure 23d")
+table_covariance_ll_PtRap0.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dilepton final state."
+table_covariance_ll_PtRap0.location = "Covariance Matrix auxiliary Figure 23d"
+for var in [x_covariance_ll_PtRap0,y_covariance_ll_PtRap0,z_covariance_ll_PtRap0]:
+    table_covariance_ll_PtRap0.add_variable(var)
+submission.add_table(table_covariance_ll_PtRap0)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap1 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix23_SystPtRap1.root")
+# Read the histogram
+data_covariance_ll_PtRap1 = reader_covariance_ll_PtRap1.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap1 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap1.values = data_covariance_ll_PtRap1["x_edges"]
+y_covariance_ll_PtRap1 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap1.values = data_covariance_ll_PtRap1["y"]
+z_covariance_ll_PtRap1 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap1.values = data_covariance_ll_PtRap1["z"]
+
+table_covariance_ll_PtRap1 = Table("Covariance Matrix auxiliary Figure 23e")
+table_covariance_ll_PtRap1.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dilepton final state."
+table_covariance_ll_PtRap1.location = "Covariance Matrix auxiliary Figure 23e"
+for var in [x_covariance_ll_PtRap1,y_covariance_ll_PtRap1,z_covariance_ll_PtRap1]:
+    table_covariance_ll_PtRap1.add_variable(var)
+submission.add_table(table_covariance_ll_PtRap1)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap2 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix23_SystPtRap2.root")
+# Read the histogram
+data_covariance_ll_PtRap2 = reader_covariance_ll_PtRap2.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap2 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap2.values = data_covariance_ll_PtRap2["x_edges"]
+y_covariance_ll_PtRap2 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap2.values = data_covariance_ll_PtRap2["y"]
+z_covariance_ll_PtRap2 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap2.values = data_covariance_ll_PtRap2["z"]
+
+table_covariance_ll_PtRap2 = Table("Covariance Matrix auxiliary Figure 23f")
+table_covariance_ll_PtRap2.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dilepton final state."
+table_covariance_ll_PtRap2.location = "Covariance Matrix auxiliary Figure 23f"
+for var in [x_covariance_ll_PtRap2,y_covariance_ll_PtRap2,z_covariance_ll_PtRap2]:
+    table_covariance_ll_PtRap2.add_variable(var)
+submission.add_table(table_covariance_ll_PtRap2)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap3 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix23_SystPtRap3.root")
+# Read the histogram
+data_covariance_ll_PtRap3 = reader_covariance_ll_PtRap3.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap3 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap3.values = data_covariance_ll_PtRap3["x_edges"]
+y_covariance_ll_PtRap3 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap3.values = data_covariance_ll_PtRap3["y"]
+z_covariance_ll_PtRap3 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap3.values = data_covariance_ll_PtRap3["z"]
+
+table_covariance_ll_PtRap3 = Table("Covariance Matrix auxiliary Figure 23g")
+table_covariance_ll_PtRap3.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dilepton final state."
+table_covariance_ll_PtRap3.location = "Covariance Matrix auxiliary Figure 23g"
+for var in [x_covariance_ll_PtRap3,y_covariance_ll_PtRap3,z_covariance_ll_PtRap3]:
+    table_covariance_ll_PtRap3.add_variable(var)
+submission.add_table(table_covariance_ll_PtRap3)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap4 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix23_SystPtRap4.root")
+# Read the histogram
+data_covariance_ll_PtRap4 = reader_covariance_ll_PtRap4.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap4 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap4.values = data_covariance_ll_PtRap4["x_edges"]
+y_covariance_ll_PtRap4 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap4.values = data_covariance_ll_PtRap4["y"]
+z_covariance_ll_PtRap4 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap4.values = data_covariance_ll_PtRap4["z"]
+
+table_covariance_ll_PtRap4 = Table("Covariance Matrix auxiliary Figure 23h")
+table_covariance_ll_PtRap4.description = "Covariance matrix using dressed level leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dilepton final state."
+table_covariance_ll_PtRap4.location = "Covariance Matrix auxiliary Figure 23h"
+for var in [x_covariance_ll_PtRap4,y_covariance_ll_PtRap4,z_covariance_ll_PtRap4]:
+    table_covariance_ll_PtRap4.add_variable(var)
+submission.add_table(table_covariance_ll_PtRap4)
+### End covariance ll
+
 ### Begin covariance ll born
 # Create a reader for the input file
 reader_covariance_ll_Pt = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix23_SystPt.root")
@@ -3831,6 +3927,102 @@ table_covariance_ll_PhiStar.location = "Covariance Matrix auxiliary Figure 24c"
 for var in [x_covariance_ll_PhiStar,y_covariance_ll_PhiStar,z_covariance_ll_PhiStar]:
     table_covariance_ll_PhiStar.add_variable(var)
 submission.add_table(table_covariance_ll_PhiStar)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap0 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix23_SystPtRap0.root")
+# Read the histogram
+data_covariance_ll_PtRap0 = reader_covariance_ll_PtRap0.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap0 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap0.values = data_covariance_ll_PtRap0["x_edges"]
+y_covariance_ll_PtRap0 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap0.values = data_covariance_ll_PtRap0["y"]
+z_covariance_ll_PtRap0 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap0.values = data_covariance_ll_PtRap0["z"]
+
+table_covariance_ll_PtRap0 = Table("Covariance Matrix auxiliary Figure 24d")
+table_covariance_ll_PtRap0.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dilepton final state."
+table_covariance_ll_PtRap0.location = "Covariance Matrix auxiliary Figure 24d"
+for var in [x_covariance_ll_PtRap0,y_covariance_ll_PtRap0,z_covariance_ll_PtRap0]:
+    table_covariance_ll_PtRap0.add_variable(var)
+submission.add_table(table_covariance_ll_PtRap0)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap1 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix23_SystPtRap1.root")
+# Read the histogram
+data_covariance_ll_PtRap1 = reader_covariance_ll_PtRap1.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap1 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap1.values = data_covariance_ll_PtRap1["x_edges"]
+y_covariance_ll_PtRap1 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap1.values = data_covariance_ll_PtRap1["y"]
+z_covariance_ll_PtRap1 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap1.values = data_covariance_ll_PtRap1["z"]
+
+table_covariance_ll_PtRap1 = Table("Covariance Matrix auxiliary Figure 24e")
+table_covariance_ll_PtRap1.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dilepton final state."
+table_covariance_ll_PtRap1.location = "Covariance Matrix auxiliary Figure 24e"
+for var in [x_covariance_ll_PtRap1,y_covariance_ll_PtRap1,z_covariance_ll_PtRap1]:
+    table_covariance_ll_PtRap1.add_variable(var)
+submission.add_table(table_covariance_ll_PtRap1)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap2 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix23_SystPtRap2.root")
+# Read the histogram
+data_covariance_ll_PtRap2 = reader_covariance_ll_PtRap2.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap2 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap2.values = data_covariance_ll_PtRap2["x_edges"]
+y_covariance_ll_PtRap2 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap2.values = data_covariance_ll_PtRap2["y"]
+z_covariance_ll_PtRap2 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap2.values = data_covariance_ll_PtRap2["z"]
+
+table_covariance_ll_PtRap2 = Table("Covariance Matrix auxiliary Figure 24f")
+table_covariance_ll_PtRap2.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dilepton final state."
+table_covariance_ll_PtRap2.location = "Covariance Matrix auxiliary Figure 24f"
+for var in [x_covariance_ll_PtRap2,y_covariance_ll_PtRap2,z_covariance_ll_PtRap2]:
+    table_covariance_ll_PtRap2.add_variable(var)
+submission.add_table(table_covariance_ll_PtRap2)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap3 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix23_SystPtRap3.root")
+# Read the histogram
+data_covariance_ll_PtRap3 = reader_covariance_ll_PtRap3.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap3 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap3.values = data_covariance_ll_PtRap3["x_edges"]
+y_covariance_ll_PtRap3 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap3.values = data_covariance_ll_PtRap3["y"]
+z_covariance_ll_PtRap3 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap3.values = data_covariance_ll_PtRap3["z"]
+
+table_covariance_ll_PtRap3 = Table("Covariance Matrix auxiliary Figure 24g")
+table_covariance_ll_PtRap3.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dilepton final state."
+table_covariance_ll_PtRap3.location = "Covariance Matrix auxiliary Figure 24g"
+for var in [x_covariance_ll_PtRap3,y_covariance_ll_PtRap3,z_covariance_ll_PtRap3]:
+    table_covariance_ll_PtRap3.add_variable(var)
+submission.add_table(table_covariance_ll_PtRap3)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap4 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix23_SystPtRap4.root")
+# Read the histogram
+data_covariance_ll_PtRap4 = reader_covariance_ll_PtRap4.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap4 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap4.values = data_covariance_ll_PtRap4["x_edges"]
+y_covariance_ll_PtRap4 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap4.values = data_covariance_ll_PtRap4["y"]
+z_covariance_ll_PtRap4 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap4.values = data_covariance_ll_PtRap4["z"]
+
+table_covariance_ll_PtRap4 = Table("Covariance Matrix auxiliary Figure 24h")
+table_covariance_ll_PtRap4.description = "Covariance matrix using born level leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dilepton final state."
+table_covariance_ll_PtRap4.location = "Covariance Matrix auxiliary Figure 24h"
+for var in [x_covariance_ll_PtRap4,y_covariance_ll_PtRap4,z_covariance_ll_PtRap4]:
+    table_covariance_ll_PtRap4.add_variable(var)
+submission.add_table(table_covariance_ll_PtRap4)
+### End covariance ll
 
 ### Begin covariance ll dressed
 # Create a reader for the input file
@@ -3890,6 +4082,102 @@ for var in [x_covariance_ll_PhiStar,y_covariance_ll_PhiStar,z_covariance_ll_PhiS
     table_covariance_XSRatio_ll_PhiStar.add_variable(var)
 submission.add_table(table_covariance_XSRatio_ll_PhiStar)
 
+# Create a reader for the input file
+reader_covariance_ll_PtRap0 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix23__XSRatioSystPtRap0.root")
+# Read the histogram
+data_covariance_ll_PtRap0 = reader_covariance_ll_PtRap0.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap0 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap0.values = data_covariance_ll_PtRap0["x_edges"]
+y_covariance_ll_PtRap0 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap0.values = data_covariance_ll_PtRap0["y"]
+z_covariance_ll_PtRap0 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap0.values = data_covariance_ll_PtRap0["z"]
+
+table_covariance_XSRatio_ll_PtRap0 = Table("Covariance Matrix auxiliary Figure 25d")
+table_covariance_XSRatio_ll_PtRap0.description = "Covariance matrix for normalized cross sections using dressed level leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dilepton final state."
+table_covariance_XSRatio_ll_PtRap0.location = "Covariance Matrix auxiliary Figure 25d"
+for var in [x_covariance_ll_PtRap0,y_covariance_ll_PtRap0,z_covariance_ll_PtRap0]:
+    table_covariance_XSRatio_ll_PtRap0.add_variable(var)
+submission.add_table(table_covariance_XSRatio_ll_PtRap0)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap1 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix23__XSRatioSystPtRap1.root")
+# Read the histogram
+data_covariance_ll_PtRap1 = reader_covariance_ll_PtRap1.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap1 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap1.values = data_covariance_ll_PtRap1["x_edges"]
+y_covariance_ll_PtRap1 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap1.values = data_covariance_ll_PtRap1["y"]
+z_covariance_ll_PtRap1 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap1.values = data_covariance_ll_PtRap1["z"]
+
+table_covariance_XSRatio_ll_PtRap1 = Table("Covariance Matrix auxiliary Figure 25e")
+table_covariance_XSRatio_ll_PtRap1.description = "Covariance matrix for normalized cross sections using dressed level leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dilepton final state."
+table_covariance_XSRatio_ll_PtRap1.location = "Covariance Matrix auxiliary Figure 25e"
+for var in [x_covariance_ll_PtRap1,y_covariance_ll_PtRap1,z_covariance_ll_PtRap1]:
+    table_covariance_XSRatio_ll_PtRap1.add_variable(var)
+submission.add_table(table_covariance_XSRatio_ll_PtRap1)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap2 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix23__XSRatioSystPtRap2.root")
+# Read the histogram
+data_covariance_ll_PtRap2 = reader_covariance_ll_PtRap2.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap2 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap2.values = data_covariance_ll_PtRap2["x_edges"]
+y_covariance_ll_PtRap2 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap2.values = data_covariance_ll_PtRap2["y"]
+z_covariance_ll_PtRap2 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap2.values = data_covariance_ll_PtRap2["z"]
+
+table_covariance_XSRatio_ll_PtRap2 = Table("Covariance Matrix auxiliary Figure 25f")
+table_covariance_XSRatio_ll_PtRap2.description = "Covariance matrix for normalized cross sections using dressed level leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dilepton final state."
+table_covariance_XSRatio_ll_PtRap2.location = "Covariance Matrix auxiliary Figure 25f"
+for var in [x_covariance_ll_PtRap2,y_covariance_ll_PtRap2,z_covariance_ll_PtRap2]:
+    table_covariance_XSRatio_ll_PtRap2.add_variable(var)
+submission.add_table(table_covariance_XSRatio_ll_PtRap2)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap3 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix23__XSRatioSystPtRap3.root")
+# Read the histogram
+data_covariance_ll_PtRap3 = reader_covariance_ll_PtRap3.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap3 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap3.values = data_covariance_ll_PtRap3["x_edges"]
+y_covariance_ll_PtRap3 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap3.values = data_covariance_ll_PtRap3["y"]
+z_covariance_ll_PtRap3 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap3.values = data_covariance_ll_PtRap3["z"]
+
+table_covariance_XSRatio_ll_PtRap3 = Table("Covariance Matrix auxiliary Figure 25g")
+table_covariance_XSRatio_ll_PtRap3.description = "Covariance matrix for normalized cross sections using dressed level leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dilepton final state."
+table_covariance_XSRatio_ll_PtRap3.location = "Covariance Matrix auxiliary Figure 25g"
+for var in [x_covariance_ll_PtRap3,y_covariance_ll_PtRap3,z_covariance_ll_PtRap3]:
+    table_covariance_XSRatio_ll_PtRap3.add_variable(var)
+submission.add_table(table_covariance_XSRatio_ll_PtRap3)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap4 = RootFileReader("HEPData/inputs/smp17010/folders_dressedleptons/output_root/matrix23__XSRatioSystPtRap4.root")
+# Read the histogram
+data_covariance_ll_PtRap4 = reader_covariance_ll_PtRap4.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap4 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap4.values = data_covariance_ll_PtRap4["x_edges"]
+y_covariance_ll_PtRap4 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap4.values = data_covariance_ll_PtRap4["y"]
+z_covariance_ll_PtRap4 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap4.values = data_covariance_ll_PtRap4["z"]
+
+table_covariance_XSRatio_ll_PtRap4 = Table("Covariance Matrix auxiliary Figure 25h")
+table_covariance_XSRatio_ll_PtRap4.description = "Covariance matrix for normalized cross sections using dressed level leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dilepton final state."
+table_covariance_XSRatio_ll_PtRap4.location = "Covariance Matrix auxiliary Figure 25h"
+for var in [x_covariance_ll_PtRap4,y_covariance_ll_PtRap4,z_covariance_ll_PtRap4]:
+    table_covariance_XSRatio_ll_PtRap4.add_variable(var)
+submission.add_table(table_covariance_XSRatio_ll_PtRap4)
+### End covariance ll
+
 ### Begin covariance ll born
 # Create a reader for the input file
 reader_covariance_ll_Pt = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix23__XSRatioSystPt.root")
@@ -3947,6 +4235,102 @@ table_covariance_XSRatio_ll_PhiStar.location = "Covariance Matrix auxiliary Figu
 for var in [x_covariance_ll_PhiStar,y_covariance_ll_PhiStar,z_covariance_ll_PhiStar]:
     table_covariance_XSRatio_ll_PhiStar.add_variable(var)
 submission.add_table(table_covariance_XSRatio_ll_PhiStar)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap0 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix23__XSRatioSystPtRap0.root")
+# Read the histogram
+data_covariance_ll_PtRap0 = reader_covariance_ll_PtRap0.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap0 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap0.values = data_covariance_ll_PtRap0["x_edges"]
+y_covariance_ll_PtRap0 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap0.values = data_covariance_ll_PtRap0["y"]
+z_covariance_ll_PtRap0 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap0.values = data_covariance_ll_PtRap0["z"]
+
+table_covariance_XSRatio_ll_PtRap0 = Table("Covariance Matrix auxiliary Figure 26d")
+table_covariance_XSRatio_ll_PtRap0.description = "Covariance matrix for normalized cross sections using born level leptons for all bins used in bins of Z pt for the 0 < |y(Z)| < 0.4 bin in the dilepton final state."
+table_covariance_XSRatio_ll_PtRap0.location = "Covariance Matrix auxiliary Figure 26d"
+for var in [x_covariance_ll_PtRap0,y_covariance_ll_PtRap0,z_covariance_ll_PtRap0]:
+    table_covariance_XSRatio_ll_PtRap0.add_variable(var)
+submission.add_table(table_covariance_XSRatio_ll_PtRap0)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap1 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix23__XSRatioSystPtRap1.root")
+# Read the histogram
+data_covariance_ll_PtRap1 = reader_covariance_ll_PtRap1.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap1 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap1.values = data_covariance_ll_PtRap1["x_edges"]
+y_covariance_ll_PtRap1 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap1.values = data_covariance_ll_PtRap1["y"]
+z_covariance_ll_PtRap1 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap1.values = data_covariance_ll_PtRap1["z"]
+
+table_covariance_XSRatio_ll_PtRap1 = Table("Covariance Matrix auxiliary Figure 26e")
+table_covariance_XSRatio_ll_PtRap1.description = "Covariance matrix for normalized cross sections using born level leptons for all bins used in bins of Z pt for the 0.4 < |y(Z)| < 0.8 bin in the dilepton final state."
+table_covariance_XSRatio_ll_PtRap1.location = "Covariance Matrix auxiliary Figure 26e"
+for var in [x_covariance_ll_PtRap1,y_covariance_ll_PtRap1,z_covariance_ll_PtRap1]:
+    table_covariance_XSRatio_ll_PtRap1.add_variable(var)
+submission.add_table(table_covariance_XSRatio_ll_PtRap1)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap2 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix23__XSRatioSystPtRap2.root")
+# Read the histogram
+data_covariance_ll_PtRap2 = reader_covariance_ll_PtRap2.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap2 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap2.values = data_covariance_ll_PtRap2["x_edges"]
+y_covariance_ll_PtRap2 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap2.values = data_covariance_ll_PtRap2["y"]
+z_covariance_ll_PtRap2 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap2.values = data_covariance_ll_PtRap2["z"]
+
+table_covariance_XSRatio_ll_PtRap2 = Table("Covariance Matrix auxiliary Figure 26f")
+table_covariance_XSRatio_ll_PtRap2.description = "Covariance matrix for normalized cross sections using born level leptons for all bins used in bins of Z pt for the 0.8 < |y(Z)| < 1.2 bin in the dilepton final state."
+table_covariance_XSRatio_ll_PtRap2.location = "Covariance Matrix auxiliary Figure 26f"
+for var in [x_covariance_ll_PtRap2,y_covariance_ll_PtRap2,z_covariance_ll_PtRap2]:
+    table_covariance_XSRatio_ll_PtRap2.add_variable(var)
+submission.add_table(table_covariance_XSRatio_ll_PtRap2)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap3 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix23__XSRatioSystPtRap3.root")
+# Read the histogram
+data_covariance_ll_PtRap3 = reader_covariance_ll_PtRap3.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap3 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap3.values = data_covariance_ll_PtRap3["x_edges"]
+y_covariance_ll_PtRap3 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap3.values = data_covariance_ll_PtRap3["y"]
+z_covariance_ll_PtRap3 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap3.values = data_covariance_ll_PtRap3["z"]
+
+table_covariance_XSRatio_ll_PtRap3 = Table("Covariance Matrix auxiliary Figure 26g")
+table_covariance_XSRatio_ll_PtRap3.description = "Covariance matrix for normalized cross sections using born level leptons for all bins used in bins of Z pt for the 1.2 < |y(Z)| < 1.6 bin in the dilepton final state."
+table_covariance_XSRatio_ll_PtRap3.location = "Covariance Matrix auxiliary Figure 26g"
+for var in [x_covariance_ll_PtRap3,y_covariance_ll_PtRap3,z_covariance_ll_PtRap3]:
+    table_covariance_XSRatio_ll_PtRap3.add_variable(var)
+submission.add_table(table_covariance_XSRatio_ll_PtRap3)
+
+# Create a reader for the input file
+reader_covariance_ll_PtRap4 = RootFileReader("HEPData/inputs/smp17010/folders_bornleptons/output_root/matrix23__XSRatioSystPtRap4.root")
+# Read the histogram
+data_covariance_ll_PtRap4 = reader_covariance_ll_PtRap4.read_hist_2d("covariance_totsum_2")
+# Create variable objects
+x_covariance_ll_PtRap4 = Variable("Bin X", is_independent=True, is_binned=True)
+x_covariance_ll_PtRap4.values = data_covariance_ll_PtRap4["x_edges"]
+y_covariance_ll_PtRap4 = Variable("Bin Y", is_independent=True, is_binned=False)
+y_covariance_ll_PtRap4.values = data_covariance_ll_PtRap4["y"]
+z_covariance_ll_PtRap4 = Variable("covariance Matrix", is_independent=False, is_binned=False)
+z_covariance_ll_PtRap4.values = data_covariance_ll_PtRap4["z"]
+
+table_covariance_XSRatio_ll_PtRap4 = Table("Covariance Matrix auxiliary Figure 26h")
+table_covariance_XSRatio_ll_PtRap4.description = "Covariance matrix for normalized cross sections using born level leptons for all bins used in bins of Z pt for the 1.6 < |y(Z)| < 2.4 bin in the dilepton final state."
+table_covariance_XSRatio_ll_PtRap4.location = "Covariance Matrix auxiliary Figure 26h"
+for var in [x_covariance_ll_PtRap4,y_covariance_ll_PtRap4,z_covariance_ll_PtRap4]:
+    table_covariance_XSRatio_ll_PtRap4.add_variable(var)
+submission.add_table(table_covariance_XSRatio_ll_PtRap4)
+### End covariance ll
 
 outdir = "smp17010_output"
 submission.create_files(outdir)
