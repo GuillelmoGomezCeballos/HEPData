@@ -30,7 +30,8 @@ sub.add_record_id(123456, "inspire")
 
 #########################
 tableMain_xs =  Table("Main result")
-tableMain_xs.description = "Summary of inclusive cross section"
+tableMain_xs.description = "Summary of inclusive cross section."
+tableMain_xs.location = ""
 tableMain_xs.keywords["observables"] = ["SIG"]
 
 tableMain_data = Variable("Category", is_independent=True, is_binned=False, units="")
@@ -112,6 +113,44 @@ figure2_jetmulti.add_variable(figure2_jetmulti_0)
 sub.add_table(figure2_jetmulti)
 for table in sub.tables:
         table.keywords["cmenergies"] = [13600]
+############################################
+table1aux = Table("Additional Table 1")
+table1aux.description = "Correlation matrix from inclusive and normalized cross section measurements"
+table1aux.location = "Data from Additional Table 1"
+
+table1aux.keywords["observables"] = ["Uncertainty"]
+table1aux.keywords["phrases"] = ["Electroweak", "Cross Section", "Proton-Proton", "WW production"]
+table1aux.keywords["reactions"] = ["PP -> WW"]
+
+data1aux = np.loadtxt("HEPData/inputs/smp24001/table1_aux.txt", dtype='string', skiprows=2)
+
+print(data1aux)
+
+table1aux_data = Variable("Observable", is_independent=True, is_binned=False, units="")
+table1aux_data.values = [str(x) for x in data1aux[:,0]]
+
+table1aux_yields0 = Variable("Correlation", is_independent=False, is_binned=False, units="")
+table1aux_yields0.values = [str(x) for x in data1aux[:,1]]
+
+table1aux_yields1 = Variable("Correlation", is_independent=False, is_binned=False, units="")
+table1aux_yields1.values = [str(x) for x in data1aux[:,2]]
+
+table1aux_yields2 = Variable("Correlation", is_independent=False, is_binned=False, units="")
+table1aux_yields2.values = [str(x) for x in data1aux[:,3]]
+
+table1aux_yields3 = Variable("Correlation", is_independent=False, is_binned=False, units="")
+table1aux_yields3.values = [str(x) for x in data1aux[:,4]]
+
+table1aux.add_variable(table1aux_data)
+table1aux.add_variable(table1aux_yields0)
+table1aux.add_variable(table1aux_yields1)
+table1aux.add_variable(table1aux_yields2)
+table1aux.add_variable(table1aux_yields3)
+
+sub.add_table(table1aux)
+
+for table1aux in sub.tables:
+    table1aux.keywords["cmenergies"] = [13600]
 ############################################
 table3aux_jetmulti = Table("Additional Table 3")
 table3aux_jetmulti.description = "Fiducial cross sections for $N_J = 0, 1, \geq 2$ jets. The total uncertainty is reported."
