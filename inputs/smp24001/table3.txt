@@ -1,0 +1,12 @@
+Source Uncertainty
+------------------------------
+Integrated-luminosity    0.014
+Lepton-experimental      0.019
+Jet-experimental         0.008
+B-tagging                0.012
+Nonprompt-background     0.010
+Limited-sample-size      0.017
+Background-normalization 0.018
+Theory                   0.011
+Statistical              0.018
+Total                    0.044
