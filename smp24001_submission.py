@@ -158,7 +158,7 @@ y_covariance_ww_fid_normalized0.values = data_covariance_ww_fid_normalized0["y"]
 z_covariance_ww_fid_normalized0 = Variable("covariance Matrix", is_independent=False, is_binned=False)
 z_covariance_ww_fid_normalized0.values = data_covariance_ww_fid_normalized0["z"]
 
-table_covariance_ww_fid_normalized0 = Table("Covariance Matrix fiducial and normalized cross sections fit (total, and one and two jet bin fractions)")
+table_covariance_ww_fid_normalized0 = Table("Covariance Matrix ww_fid_normalized0")
 table_covariance_ww_fid_normalized0.description = "Covariance Matrix fiducial and normalized cross sections fit (total, and one and two jet bin fractions)."
 table_covariance_ww_fid_normalized0.location = "Supplementary material"
 for var in [x_covariance_ww_fid_normalized0,y_covariance_ww_fid_normalized0,z_covariance_ww_fid_normalized0]:
