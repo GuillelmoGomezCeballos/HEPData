@@ -1,0 +1,5 @@
+Observable Cross-section 1-jet-fraction 2-jet-fraction
+------------------------------
+Cross-section  +0.00181646 -0.00028004 +0.00044910
+1-jet-fraction -0.00028004 +0.00253527 +0.00025113
+2-jet-fraction +0.00044910 +0.00025113 +0.01298569
